@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "climbing data visualization",
   "scripts": {
+    "dev": "./scripts/dev.sh",
     "build": "./scripts/build.sh --prod",
     "build:dev": "./scripts/build.sh --dev",
     "fix": "prettier . --write",
