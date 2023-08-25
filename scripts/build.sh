@@ -20,6 +20,7 @@ main() {
     node ./scripts/compile.js
     node ./build/server.js >dist/index.html
     cp ./build/client.js dist/client.js
+    cp -r ./static/* dist/
 }
 
 main "$@"
