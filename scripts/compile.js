@@ -17,7 +17,7 @@ async function main() {
     minify: true,
   });
   await fs.promises.writeFile(
-    "dist/meta.json",
+    "build/meta.json",
     JSON.stringify(result.metafile),
   );
 }

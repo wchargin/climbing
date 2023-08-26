@@ -21,13 +21,21 @@ main() {
     fi
 
     set -x
-    rm -rf dist build
-    mkdir dist build
+    rm -rf build dist.new
+    mkdir build dist.new
     node ./scripts/compile.js
-    node ./build/server.js >dist/index.html
-    node ./node_modules/.bin/tailwindcss ${prod:+--minify} -i src/main.css -o dist/styles.css
-    cp ./build/client.js dist/client.js
-    # cp -r ./static/* dist/  # no statics right now
+    node ./build/server.js >dist.new/index.html
+    node ./node_modules/.bin/tailwindcss ${prod:+--minify} -i src/main.css -o dist.new/styles.css
+    cp ./build/client.js dist.new/client.js
+    # cp -r ./static/* dist.new/  # no statics right now
+
+    if [ -e dist ]; then
+        mv dist dist.old
+        mv dist.new dist
+        rm -rf dist.old
+    else
+        mv dist.new dist
+    fi
 }
 
 main "$@"

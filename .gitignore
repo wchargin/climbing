@@ -2,3 +2,5 @@ node_modules/
 
 build/
 dist/
+dist.new/
+dist.old/

@@ -9,7 +9,7 @@ main() {
     python3 -m http.server "${PORT}" --directory ./dist &
     serverpid=$!
     nodemon -V \
-        -i build -i dist \
+        -i build -i dist -i dist.new -i dist.old \
         -e js,json,sh,css \
         -x './scripts/build.sh --dev'
 }
