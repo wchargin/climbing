@@ -1,5 +1,69 @@
 [
   {
+    "id": 115,
+    "category": "blue",
+    "indexInCategory": 16,
+    "date": "2023-07-26",
+    "location": "poplar",
+    "notes": [
+      "Flashed. This one ends at the lower right sloper! It's not too bad; just match in the slot before moving to the top sloper."
+    ]
+  },
+  {
+    "id": 116,
+    "category": "black",
+    "indexInCategory": 87,
+    "date": "2023-07-26",
+    "location": "poplar",
+    "notes": [
+      "You can't see the hold on the right side of the volume while you're climbing, but you should grab it first! (…before the other one on that volume.)"
+    ]
+  },
+  {
+    "id": 117,
+    "category": "pink",
+    "indexInCategory": 2,
+    "date": "2023-07-26",
+    "location": "poplar",
+    "notes": [
+      "Flashed. (One start tape on the volume; don't see any other.) The hold under the volume is textured but extremely slick. Used the back side of the top corner of the volume, which is very strong: you can fully grip it. Would like to clear without so much aid. A friendly stranger suggests using the undercling at the end for that to help with the stand. Repeated on second try with much more legit use of the volume: I used the top lip in kind of the normal way, but didn't reach around the tip."
+    ]
+  },
+  {
+    "id": 118,
+    "category": "blue",
+    "indexInCategory": 17,
+    "date": "2023-07-29",
+    "location": "poplar",
+    "notes": [
+      "One thing I'm proud of here: I figured out before even getting on the wall that I would need to flag left on the start hold to prevent flagpoling. This would have been an easy adjustment to do live, but I'm happy I could see it ahead of time. Technique is fairly straightforward: slap right hand to hold 2 sloper, match with left, then grab the pinch and maneuver up with strength. Get hands to the two lower dualtex holds and stand on hold 2. Then, on my first clear, I just dynoed right hand to the finish, went totally flying, and miraculously managed to slap it with my left and and stabilize. On my second clear a week or so later, I managed to get the last hold statically by carefully grabbing to the lowest portion of it so that it can support you better in the downward direction."
+    ]
+  },
+  {
+    "id": 119,
+    "category": "black",
+    "indexInCategory": 88,
+    "date": "2023-08-06",
+    "location": "fremont",
+    "notes": []
+  },
+  {
+    "id": 120,
+    "category": "black",
+    "indexInCategory": 89,
+    "date": "2023-08-06",
+    "location": "fremont",
+    "notes": []
+  },
+  {
+    "id": 121,
+    "category": "black",
+    "indexInCategory": 90,
+    "date": "2023-08-06",
+    "location": "fremont",
+    "notes": []
+  },
+  {
     "id": 122,
     "category": "blue",
     "indexInCategory": 18,
