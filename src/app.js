@@ -1,3 +1,6 @@
+import { useEffect, useMemo, useState } from "react";
+import { thumbHashToAverageRGBA, thumbHashToDataURL } from "thumbhash";
+
 import data from "./data.json";
 
 function App() {
@@ -30,6 +33,18 @@ function Route({ route }) {
   }`;
   const location = LOCATION_NAMES[route.location] ?? null;
   const categoryColor = CATEGORY_COLORS[route.category] ?? null;
+
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => void setMounted(true), []);
+  const thumbhashData = useMemo(() => {
+    const thumbHash = decodeThumbHashBase64(route.thumbhash);
+    const averageRgba = rgbaObjectToColor(thumbHashToAverageRGBA(thumbHash));
+    // The data URL is never used on the server, so don't bother computing it.
+    const isServer = typeof document === "undefined";
+    const dataUrl = isServer ? null : thumbHashToDataURL(thumbHash);
+    return { averageRgba, dataUrl };
+  }, [route.thumbhash]);
+
   return (
     <a
       href={imageUrl(route.id, "full")}
@@ -37,7 +52,12 @@ function Route({ route }) {
     >
       <figure
         className="relative border-4 rounded-sm"
-        style={{ borderColor: categoryColor }}
+        style={{
+          background: mounted
+            ? `center / cover no-repeat url("${thumbhashData.dataUrl}")`
+            : thumbhashData.averageRgba,
+          borderColor: categoryColor,
+        }}
       >
         <img
           src={imageUrl(route.id, "400")}
@@ -61,6 +81,20 @@ function Route({ route }) {
 function imageUrl(id, size) {
   const imageId = String(id).padStart(4, "0");
   return `https://storage.googleapis.com/wchargin-climbing-public/${size}/${imageId}.jpg`;
+}
+
+function decodeThumbHashBase64(hash) {
+  const buf = atob(hash);
+  const result = new Uint8Array(buf.length);
+  for (let i = 0; i < buf.length; i++) {
+    result[i] = buf.charCodeAt(i);
+  }
+  return result;
+}
+
+function rgbaObjectToColor({ r, g, b, a }) {
+  const u2b = (z) => Math.floor(z * 255);
+  return `rgba(${u2b(r)}, ${u2b(g)}, ${u2b(b)}, ${a})`;
 }
 
 export default App;
