@@ -19,11 +19,16 @@ const CATEGORY_COLORS = {
   blue: "#82a5d6",
   pink: "#f0b5ad",
 };
+const LOCATION_NAMES = {
+  poplar: "SBP Poplar",
+  fremont: "SBP Fremont",
+};
 
 function Route({ route }) {
   const title = `${route.category.replace(/\b./g, (c) => c.toUpperCase())} #${
     route.indexInCategory
   }`;
+  const location = LOCATION_NAMES[route.location] ?? null;
   const categoryColor = CATEGORY_COLORS[route.category] ?? null;
   return (
     <a
@@ -41,7 +46,12 @@ function Route({ route }) {
           style={{ aspectRatio: "3 / 4" }}
         />
         <figcaption className="absolute bottom-0 w-full p-2 text-center bg-black/25 backdrop-blur-sm">
-          #{route.id} ({title})
+          <p className="text-sm">
+            #{route.id} ({title})
+          </p>
+          <p className="text-xs">
+            {route.date} &middot; {location}
+          </p>
         </figcaption>
       </figure>
     </a>
