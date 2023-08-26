@@ -61,6 +61,7 @@ function Route({ route }) {
       >
         <img
           src={imageUrl(route.id, "400")}
+          loading="lazy"
           alt={`Photo of ${title}`}
           className="w-full h-full object-contain flex items-center justify-evenly italic"
           style={{ aspectRatio: "3 / 4" }}
