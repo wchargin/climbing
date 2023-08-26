@@ -4,8 +4,8 @@ function App() {
   const dataDesc = data.slice().reverse();
   return (
     <main>
-      <h1>Routes climbed</h1>
-      <div className="routes">
+      <h1 className="text-xl font-bold pt-4">Routes climbed</h1>
+      <div className="routes-grid grid gap-4 p-2">
         {dataDesc.map((route) => (
           <Route key={route.id} route={route} />
         ))}
@@ -19,11 +19,15 @@ function Route({ route }) {
     route.indexInCategory
   }`;
   return (
-    <figure className="route">
+    <figure className="flex flex-col p-2 gap-4 flex-grow justify-between bg-brand-700">
       <a href={imageUrl(route.id, "full")}>
-        <img src={imageUrl(route.id, "400")} alt={`Photo of ${title}`} />
+        <img
+          src={imageUrl(route.id, "400")}
+          className="w-full"
+          alt={`Photo of ${title}`}
+        />
       </a>
-      <figcaption>
+      <figcaption className="text-center">
         #{route.id} ({title})
       </figcaption>
     </figure>
