@@ -28,23 +28,19 @@ function Route({ route }) {
   return (
     <a
       href={imageUrl(route.id, "full")}
-      className="flex flex-col flex-grow justify-between border border-1 border-brand-600 rounded-sm"
+      className="flex flex-col flex-grow justify-between border border-brand-600 rounded-sm"
     >
-      <figure>
-        <div
-          className="flex-grow rounded-t-sm border-4"
-          style={{ borderColor: categoryColor }}
-        >
-          <img
-            src={imageUrl(route.id, "400")}
-            alt={`Photo of ${title}`}
-            className="w-full h-full object-contain"
-            style={{
-              aspectRatio: "3 / 4",
-            }}
-          />
-        </div>
-        <figcaption className="py-2 text-center border-t border-brand-600">
+      <figure
+        className="relative border-4 rounded-sm"
+        style={{ borderColor: categoryColor }}
+      >
+        <img
+          src={imageUrl(route.id, "400")}
+          alt={`Photo of ${title}`}
+          className="w-full h-full object-contain flex items-center justify-evenly italic"
+          style={{ aspectRatio: "3 / 4" }}
+        />
+        <figcaption className="absolute bottom-0 w-full p-2 text-center bg-black/25 backdrop-blur-sm">
           #{route.id} ({title})
         </figcaption>
       </figure>
