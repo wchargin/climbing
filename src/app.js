@@ -14,23 +14,41 @@ function App() {
   );
 }
 
+const CATEGORY_COLORS = {
+  black: "#111111",
+  blue: "#82a5d6",
+  pink: "#f0b5ad",
+};
+
 function Route({ route }) {
   const title = `${route.category.replace(/\b./g, (c) => c.toUpperCase())} #${
     route.indexInCategory
   }`;
+  const categoryColor = CATEGORY_COLORS[route.category] ?? null;
   return (
-    <figure className="flex flex-col p-2 gap-4 flex-grow justify-between bg-brand-700">
-      <a href={imageUrl(route.id, "full")}>
-        <img
-          src={imageUrl(route.id, "400")}
-          className="w-full"
-          alt={`Photo of ${title}`}
-        />
-      </a>
-      <figcaption className="text-center">
-        #{route.id} ({title})
-      </figcaption>
-    </figure>
+    <a
+      href={imageUrl(route.id, "full")}
+      className="flex flex-col flex-grow justify-between border border-1 border-brand-600 rounded-sm"
+    >
+      <figure>
+        <div
+          className="flex-grow rounded-t-sm border-4"
+          style={{ borderColor: categoryColor }}
+        >
+          <img
+            src={imageUrl(route.id, "400")}
+            alt={`Photo of ${title}`}
+            className="w-full h-full object-contain"
+            style={{
+              aspectRatio: "3 / 4",
+            }}
+          />
+        </div>
+        <figcaption className="py-2 text-center border-t border-brand-600">
+          #{route.id} ({title})
+        </figcaption>
+      </figure>
+    </a>
   );
 }
 
