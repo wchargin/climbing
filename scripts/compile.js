@@ -15,7 +15,7 @@ async function main() {
     define: {
       "process.env.NODE_ENV": JSON.stringify(env),
     },
-    minify: true,
+    minify: env === "production",
   };
 
   const [server, client] = await Promise.all([
