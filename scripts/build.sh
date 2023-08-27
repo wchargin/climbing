@@ -24,7 +24,7 @@ main() {
     rm -rf build dist.new
     mkdir build dist.new
     node ./scripts/compile.js
-    node ./build/server.js >dist.new/index.html
+    node ./build/server.js / dist.new/index.html
     node ./node_modules/.bin/tailwindcss ${prod:+--minify} -i src/main.css -o dist.new/styles.css
     cp ./build/client.js dist.new/client.js
     # cp -r ./static/* dist.new/  # no statics right now
