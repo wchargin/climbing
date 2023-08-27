@@ -3,11 +3,12 @@ import { thumbHashToAverageRGBA, thumbHashToDataURL } from "thumbhash";
 
 import data from "./data.json";
 
-function App() {
+function App({ path }) {
   const dataDesc = data.slice().reverse();
   return (
     <main>
       <h1 className="text-4xl font-bold pt-8 pb-4 mx-2">Routes climbed</h1>
+      <p>path: {path}</p>
       <div className="routes-grid grid gap-4 p-2">
         {dataDesc.map((route) => (
           <Route key={route.id} route={route} />

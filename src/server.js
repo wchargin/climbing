@@ -11,7 +11,7 @@ async function main() {
   }
   const [path, outfile] = args;
 
-  const rendered = Server.renderToString(<App />);
+  const rendered = Server.renderToString(<App path={path} />);
   const page = `\
 <!DOCTYPE html>
 <html lang="en">
