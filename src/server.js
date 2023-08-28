@@ -15,8 +15,7 @@ async function main() {
   }
   const [outdir] = args;
 
-  const fullStore = new ClimbingDataStore();
-  fullStore.addData(data);
+  const fullStore = ClimbingDataStore.fromData(data);
 
   const pages = [];
   pages.push({
@@ -44,8 +43,7 @@ async function main() {
 async function renderPage(path, storeSubset, outdir, filename) {
   console.warn("rendering %s -> %s/%s", path, outdir, filename);
 
-  const store = new ClimbingDataStore();
-  store.addData(storeSubset);
+  const store = ClimbingDataStore.fromData(storeSubset);
   const storeDataJson = JSON.stringify(storeSubset);
 
   const rendered = Server.renderToString(

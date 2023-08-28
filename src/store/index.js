@@ -5,15 +5,17 @@ export default class ClimbingDataStore {
   }
 
   // `data: {routes?: Route[], routeHeaders?: RouteHeader[]}`
-  addData(data) {
+  static fromData(data) {
+    const store = new ClimbingDataStore();
     for (const header of data.routeHeaders || []) {
-      this.routeHeaders.set(header.id, header);
+      store.routeHeaders.set(header.id, header);
     }
     for (const route of data.routes || []) {
-      this.routes.set(route.id, route);
+      store.routes.set(route.id, route);
       const header = routeToHeader(route);
-      this.routeHeaders.set(header.id, header);
+      store.routeHeaders.set(header.id, header);
     }
+    return store;
   }
 
   routeByCategoryAndIndex(category, index) {

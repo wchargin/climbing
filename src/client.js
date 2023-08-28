@@ -14,8 +14,7 @@ function Root({ initialStore, children }) {
   });
   useEffect(() => {
     function listener(storeData) {
-      const store = new ClimbingDataStore();
-      store.addData(storeData);
+      const store = ClimbingDataStore.fromData(storeData);
       setStoreCtx({ store, loaded: true });
     }
     globalStore.addListener(listener);
@@ -35,8 +34,8 @@ function main() {
   const storeScript = document.getElementById("store-data");
   if (storeScript == null)
     throw new Error("Couldn't find script with store data");
-  const initialStore = new ClimbingDataStore();
-  initialStore.addData(JSON.parse(storeScript.textContent));
+  const initialStoreData = JSON.parse(storeScript.textContent);
+  const initialStore = ClimbingDataStore.fromData(initialStoreData);
 
   const app = (
     <Root initialStore={initialStore}>
