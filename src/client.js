@@ -13,7 +13,9 @@ function Root({ initialStore, children }) {
     loaded: false,
   });
   useEffect(() => {
-    function listener(store) {
+    function listener(storeData) {
+      const store = new ClimbingDataStore();
+      store.addData(storeData);
       setStoreCtx({ store, loaded: true });
     }
     globalStore.addListener(listener);

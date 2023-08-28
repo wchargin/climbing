@@ -4,19 +4,7 @@ export default class ClimbingDataStore {
     this.routeHeaders = new Map();
   }
 
-  // `spec: {routes?: int[], routeHeaders?: int[]}`
-  toSubset(spec) {
-    const result = {};
-    if (spec.routes != null)
-      result.routes = spec.routes.map((k) => this.routes.get(k));
-    if (spec.routeHeaders != null)
-      result.routeHeaders = spec.routeHeaders.map((k) =>
-        this.routeHeaders.get(k),
-      );
-    return result;
-  }
-
-  // `subset: {routes?: Route[], routeHeaders?: RouteHeader[]}`
+  // `data: {routes?: Route[], routeHeaders?: RouteHeader[]}`
   addData(data) {
     for (const header of data.routeHeaders || []) {
       this.routeHeaders.set(header.id, header);
@@ -36,6 +24,18 @@ export default class ClimbingDataStore {
     }
     return null;
   }
+}
+
+// `spec: {routes?: int[], routeHeaders?: int[]}`
+export function toSubset(store, spec) {
+  const result = {};
+  if (spec.routes != null)
+    result.routes = spec.routes.map((k) => store.routes.get(k));
+  if (spec.routeHeaders != null)
+    result.routeHeaders = spec.routeHeaders.map((k) =>
+      store.routeHeaders.get(k),
+    );
+  return result;
 }
 
 function routeToHeader(route) {

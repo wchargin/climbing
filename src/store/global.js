@@ -1,16 +1,16 @@
-const KEY_STORE = "climbingDataStore";
-const KEY_LISTENERS = "climbingDataStoreListeners";
+const KEY_STORE_DATA = "climbingStoreData";
+const KEY_LISTENERS = "climbingStoreDataListeners";
 
 export function get() {
-  return window[KEY_STORE];
+  return window[KEY_STORE_DATA];
 }
 
-export function set(store) {
-  window[KEY_STORE] = store;
+export function set(storeData) {
+  window[KEY_STORE_DATA] = storeData;
   const listeners = window[KEY_LISTENERS];
   if (listeners != null) {
     for (const listener of listeners) {
-      listener(store);
+      listener(storeData);
     }
   }
 }
@@ -18,8 +18,8 @@ export function set(store) {
 export function addListener(listener) {
   if (window[KEY_LISTENERS] == null) window[KEY_LISTENERS] = [];
   window[KEY_LISTENERS].push(listener);
-  const store = window[KEY_STORE];
-  if (store != null) listener(store);
+  const storeData = window[KEY_STORE_DATA];
+  if (storeData != null) listener(storeData);
 }
 
 export function removeListener(listener) {

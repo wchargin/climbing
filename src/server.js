@@ -5,7 +5,7 @@ import * as Server from "react-dom/server";
 
 import App from "./app";
 import data from "./data";
-import ClimbingDataStore from "./store";
+import ClimbingDataStore, { toSubset } from "./store";
 import StoreContext from "./store/context";
 
 async function main() {
@@ -34,7 +34,7 @@ async function main() {
 
   await Promise.all(
     pages.map(({ path, storeSpec }) => {
-      const subset = fullStore.toSubset(storeSpec);
+      const subset = toSubset(fullStore, storeSpec);
       const fsPath = pathLib.join(outdir, ...path.split("/"));
       return renderPage(path, subset, fsPath, "index.html");
     }),
