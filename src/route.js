@@ -41,7 +41,7 @@ function Route({ id }) {
           />
         </figure>
       </div>
-      <div className="mt-12 lg:max-w-[600px] px-6 lg:px-0">
+      <div className="mt-12 w-full lg:max-w-[600px] px-6 lg:px-0">
         <h1 className="text-4xl mb-2 outline-l-4">
           {categoryCaps} #{route.indexInCategory}
         </h1>
