@@ -38,10 +38,10 @@ async function renderPage(path, outdir, filename) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="${toRoot}styles.css">
+<script src="${toRoot}client.js" async defer></script>
 </head>
 <body data-path="${escapeAttr(path)}">
 <div id="root">${rendered}</div>
-<script src="${toRoot}client.js"></script>
 </body>
 </html>
 `;
