@@ -1,19 +1,37 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+
+import { useHydrated } from "./hydrated";
 
 function FadingImage({ src, className, ...rest }) {
-  const [loaded, setLoaded] = useState(false);
+  const [loadedState, setLoadedState] = useState({});
+  const hydrated = useHydrated();
   const ref = useRef();
 
+  const loaded = useMemo(() => {
+    if (loadedState[src]) return true;
+    if (hydrated) {
+      const img = new Image();
+      img.src = src;
+      const complete = img.complete;
+      img.src = "";
+      if (complete) return true;
+    }
+    return false;
+  }, [loadedState, src, hydrated]);
+
+  function markLoaded() {
+    setLoadedState({ ...loadedState, [src]: true });
+  }
   useEffect(() => {
     if (ref.current == null) return;
-    if (ref.current.complete) setLoaded(true);
+    if (ref.current.complete) markLoaded();
   }, [src]);
   function onLoad(e) {
-    setLoaded(true);
+    markLoaded();
     if (rest.onLoad) rest.onLoad.call(this, e);
   }
   function onError(e) {
-    setLoaded(true);
+    markLoaded();
     if (rest.onError) rest.onError.call(this, e);
   }
 

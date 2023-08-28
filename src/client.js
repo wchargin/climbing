@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import * as Client from "react-dom/client";
 
 import App from "./app";
+import { HydratedProvider } from "./hydrated";
 import { pathToRoot } from "./path";
 import Router from "./router";
 
@@ -9,7 +10,7 @@ import ClimbingDataStore from "./store";
 import StoreContext from "./store/context";
 import * as globalStore from "./store/global";
 
-function Root({ initialStore, children }) {
+function StoreProvider({ initialStore, children }) {
   const [storeCtx, setStoreCtx] = useState({
     store: initialStore,
     loaded: false,
@@ -43,11 +44,13 @@ function main() {
   const gateway = String(gatewayUrl).replace(/\/*$/, "");
 
   const app = (
-    <Root initialStore={initialStore}>
-      <Router initialPath={path} gateway={gateway}>
-        <App />
-      </Router>
-    </Root>
+    <StoreProvider initialStore={initialStore}>
+      <HydratedProvider>
+        <Router initialPath={path} gateway={gateway}>
+          <App />
+        </Router>
+      </HydratedProvider>
+    </StoreProvider>
   );
   Client.hydrateRoot(root, app);
 }
