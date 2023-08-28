@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 
 import { imageUrl } from "./img";
+import { useRouter } from "./router";
 
 import { useStore } from "./store/context";
 
@@ -10,9 +11,12 @@ const LOCATION_NAMES = {
 };
 
 function Route({ id }) {
-  const { store } = useStore();
+  const { store, loaded } = useStore();
+  const { navigate, href } = useRouter();
+
   const route = store.routes.get(id);
   if (route == null) throw new Error("No such route: " + id);
+
   const categoryCaps = route.category.replace(/\b./g, (c) => c.toUpperCase());
   return (
     <main className="flex flex-col items-center md:grid md:grid-cols-2 md:gap-6 md:p-[2rem] md:h-screen">
@@ -34,6 +38,22 @@ function Route({ id }) {
           {route.date} &middot; {LOCATION_NAMES[route.location]}
         </h2>
         <Notes className="mb-6" notes={route.notes} />
+        <p className="text-brand-300 mb-6">
+          <a
+            className="hover:underline focus:underline active:text-red-600"
+            href={href("/")}
+            onClick={
+              !loaded
+                ? undefined
+                : (e) => {
+                    e.preventDefault();
+                    navigate("/");
+                  }
+            }
+          >
+            &laquo; Back to route gallery
+          </a>
+        </p>
       </div>
     </main>
   );

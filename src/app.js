@@ -1,12 +1,14 @@
 import Gallery from "./gallery";
 import Route from "./route";
+import { useRouter } from "./router";
 
 import { useStore } from "./store/context";
 
 const ROUTE_BY_ID = /^\/routes\/([1-9][0-9]*)\/$/;
 const ROUTE_BY_CATEGORY_INDEX = /^\/routes\/([^/]+)\/([1-9][0-9]*)\/$/;
 
-function App({ path }) {
+function App() {
+  const { path } = useRouter();
   if (!path.startsWith("/")) throw new Error("Missing leading slash: " + path);
   const { store } = useStore();
 

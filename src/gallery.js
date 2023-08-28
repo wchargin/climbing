@@ -2,11 +2,14 @@ import { useEffect, useMemo, useState } from "react";
 import { thumbHashToAverageRGBA, thumbHashToDataURL } from "thumbhash";
 
 import { imageUrl } from "./img";
+import { useRouter } from "./router";
 
 import { useStore } from "./store/context";
 
-function Gallery({ path }) {
-  const { store } = useStore();
+function Gallery() {
+  const { store, loaded } = useStore();
+  const { navigate } = useRouter();
+
   const dataDesc = Array.from(store.routeHeaders.values()).sort(
     (a, b) => b.id - a.id,
   );
@@ -15,7 +18,18 @@ function Gallery({ path }) {
       <h1 className="text-4xl font-bold pt-8 pb-4 mx-2">Routes climbed</h1>
       <div className="routes-grid grid gap-4 p-2">
         {dataDesc.map((route) => (
-          <Route key={route.id} route={route} />
+          <Route
+            key={route.id}
+            route={route}
+            onClick={
+              !loaded
+                ? undefined
+                : (e) => {
+                    e.preventDefault();
+                    navigate(`/routes/${route.id}/`);
+                  }
+            }
+          />
         ))}
       </div>
     </main>
@@ -32,7 +46,7 @@ const LOCATION_NAMES = {
   fremont: "SBP Fremont",
 };
 
-function Route({ route }) {
+function Route({ route, onClick }) {
   const title = `${route.category.replace(/\b./g, (c) => c.toUpperCase())} #${
     route.indexInCategory
   }`;
@@ -54,6 +68,7 @@ function Route({ route }) {
     <a
       href={imageUrl(route.id, "full")}
       className="flex flex-col flex-grow justify-between border border-brand-600 rounded-sm"
+      onClick={onClick}
     >
       <figure
         className="relative border-4 rounded-sm"

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import * as Client from "react-dom/client";
 
 import App from "./app";
+import { pathToRoot } from "./path";
+import Router from "./router";
 
 import ClimbingDataStore from "./store";
 import StoreContext from "./store/context";
@@ -37,9 +39,14 @@ function main() {
   const initialStoreData = JSON.parse(storeScript.textContent);
   const initialStore = ClimbingDataStore.fromData(initialStoreData);
 
+  const gatewayUrl = new URL(pathToRoot(path), window.location);
+  const gateway = String(gatewayUrl).replace(/\/*$/, "");
+
   const app = (
     <Root initialStore={initialStore}>
-      <App path={path} />
+      <Router initialPath={path} gateway={gateway}>
+        <App />
+      </Router>
     </Root>
   );
   Client.hydrateRoot(root, app);

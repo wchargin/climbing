@@ -5,6 +5,9 @@ import * as Server from "react-dom/server";
 
 import App from "./app";
 import data from "./data";
+import { pathToRoot } from "./path";
+import Router from "./router";
+
 import ClimbingDataStore, { toSubset } from "./store";
 import StoreContext from "./store/context";
 
@@ -48,7 +51,9 @@ async function renderPage(path, storeSubset, outdir, filename) {
 
   const rendered = Server.renderToString(
     <StoreContext.Provider value={{ store, loaded: false }}>
-      <App path={path} />
+      <Router initialPath={path} gateway={null}>
+        <App />
+      </Router>
     </StoreContext.Provider>,
   );
 
@@ -74,12 +79,6 @@ ${escapeJsonScript(storeDataJson)}\
 
   await fs.promises.mkdir(outdir, { recursive: true });
   await fs.promises.writeFile(pathLib.join(outdir, filename), page);
-}
-
-function pathToRoot(path) {
-  if (!path.startsWith("/")) throw new Error("Missing leading slash: " + path);
-  path = path.slice(1);
-  return path.replace(/[^/]*\//g, "../").replace(/[^/]*$/, "");
 }
 
 function escapeAttr(text) {
