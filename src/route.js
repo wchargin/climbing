@@ -4,25 +4,42 @@ import { imageUrl } from "./img";
 
 import { useStore } from "./store/context";
 
+const LOCATION_NAMES = {
+  poplar: "SBP Poplar",
+  fremont: "SBP Fremont",
+};
+
 function Route({ id }) {
   const { store } = useStore();
   const route = store.routes.get(id);
   if (route == null) throw new Error("No such route: " + id);
+  const categoryCaps = route.category.replace(/\b./g, (c) => c.toUpperCase());
   return (
-    <main>
-      <img
-        src={imageUrl(route.id, "1200")}
-        style={{ width: 100, aspectRatio: "3 / 4" }}
-      />
-      <p>
-        #{route.id} ({route.category} #{route.indexInCategory})
-      </p>
-      <Notes notes={route.notes} />
+    <main className="flex flex-col items-center md:grid md:grid-cols-2 md:gap-6 md:p-[2rem] md:h-screen">
+      <div className="relative">
+        <figure className="route-image-holder flex justify-center md:justify-end md:absolute md:right-0 md:top-0 md:bottom-0">
+          <img
+            className="object-contain md:object-right md:fixed md:top-0 md:bottom-0 md:h-screen md:max-w-[50vw]"
+            src={imageUrl(route.id, "1200")}
+            style={{ aspectRatio: "3 / 4" }}
+          />
+        </figure>
+      </div>
+      <div className="mt-12 lg:max-w-[600px] px-6 lg:px-0">
+        <h1 className="text-4xl mb-2 outline-l-4">
+          {categoryCaps} #{route.indexInCategory}
+        </h1>
+        <h2 className="text-brand-300 mb-2">Route #{route.id}</h2>
+        <h2 className="text-brand-300 mb-2">
+          {route.date} &middot; {LOCATION_NAMES[route.location]}
+        </h2>
+        <Notes className="mb-6" notes={route.notes} />
+      </div>
     </main>
   );
 }
 
-function Notes({ notes }) {
+function Notes({ notes, className }) {
   const paragraphs = [];
 
   let currentP = [];
@@ -47,9 +64,11 @@ function Notes({ notes }) {
   if (currentP.length > 0) paragraphs.push(currentP);
 
   return (
-    <div>
+    <div className={className}>
       {paragraphs.map((children, i) => (
-        <p key={i}>{children}</p>
+        <p key={i} className="mt-3">
+          {children}
+        </p>
       ))}
     </div>
   );

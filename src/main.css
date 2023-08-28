@@ -31,3 +31,12 @@ body {
     grid-template-columns: repeat(6, 1fr);
   }
 }
+
+.route-image-holder {
+  max-height: 80vh;
+}
+@media screen(md) {
+  .route-image-holder {
+    max-height: calc(100vh - 4rem);
+  }
+}
