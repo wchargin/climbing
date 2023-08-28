@@ -30,7 +30,12 @@ function main() {
   const path = document.body.dataset.path;
   if (path == null) throw new Error("No application path specified");
 
+  const storeScript = document.getElementById("store-data");
+  if (storeScript == null)
+    throw new Error("Couldn't find script with store data");
   const initialStore = new ClimbingDataStore();
+  initialStore.addData(JSON.parse(storeScript.textContent));
+
   const app = (
     <Root initialStore={initialStore}>
       <App path={path} />

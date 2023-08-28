@@ -5,6 +5,8 @@ import * as Server from "react-dom/server";
 
 import App from "./app";
 import data from "./data";
+import ClimbingDataStore from "./store";
+import StoreContext from "./store/context";
 
 async function main() {
   const args = process.argv.slice(2);
@@ -13,23 +15,45 @@ async function main() {
   }
   const [outdir] = args;
 
-  const paths = ["/"];
+  const fullStore = new ClimbingDataStore();
+  fullStore.addData(data);
+
+  const pages = [];
+  pages.push({
+    path: "/",
+    storeSpec: { routeHeaders: data.routes.map((route) => route.id) },
+  });
   for (const route of data.routes) {
-    paths.push(`/routes/${route.id}/`);
-    paths.push(`/routes/${route.category}/${route.indexInCategory}/`);
+    const storeSpec = { routes: [route.id] };
+    pages.push({ path: `/routes/${route.id}/`, storeSpec });
+    pages.push({
+      path: `/routes/${route.category}/${route.indexInCategory}/`,
+      storeSpec,
+    });
   }
 
   await Promise.all(
-    paths.map((path) => {
+    pages.map(({ path, storeSpec }) => {
+      const subset = fullStore.toSubset(storeSpec);
       const fsPath = pathLib.join(outdir, ...path.split("/"));
-      return renderPage(path, fsPath, "index.html");
+      return renderPage(path, subset, fsPath, "index.html");
     }),
   );
 }
 
-async function renderPage(path, outdir, filename) {
+async function renderPage(path, storeSubset, outdir, filename) {
   console.warn("rendering %s -> %s/%s", path, outdir, filename);
-  const rendered = Server.renderToString(<App path={path} />);
+
+  const store = new ClimbingDataStore();
+  store.addData(storeSubset);
+  const storeDataJson = JSON.stringify(storeSubset);
+
+  const rendered = Server.renderToString(
+    <StoreContext.Provider value={{ store, loaded: false }}>
+      <App path={path} />
+    </StoreContext.Provider>,
+  );
+
   const toRoot = pathToRoot(path);
   const page = `\
 <!DOCTYPE html>
@@ -43,6 +67,9 @@ async function renderPage(path, outdir, filename) {
 </head>
 <body data-path="${escapeAttr(path)}">
 <div id="root">${rendered}</div>
+<script type="application/json" id="store-data">\
+${escapeJsonScript(storeDataJson)}\
+</script>
 </body>
 </html>
 `;
@@ -59,6 +86,14 @@ function pathToRoot(path) {
 
 function escapeAttr(text) {
   return text.replace(/[<>"'&]/g, (c) => `&#${c.charCodeAt(0)};`);
+}
+
+function escapeJsonScript(text) {
+  // Avoid "</script>" literals inside JSON that goes in a <script> element.
+  return text.replace(
+    /[<>&]/g,
+    (c) => `\\u${c.charCodeAt(0).toString(16).padStart(4, "0")}`,
+  );
 }
 
 main();

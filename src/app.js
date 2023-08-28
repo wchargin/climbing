@@ -1,10 +1,13 @@
 import { useEffect, useMemo, useState } from "react";
 import { thumbHashToAverageRGBA, thumbHashToDataURL } from "thumbhash";
 
-import data from "./data.json";
+import { useStore } from "./store/context";
 
 function App({ path }) {
-  const dataDesc = data.routes.slice().reverse();
+  const { store } = useStore();
+  const dataDesc = Array.from(store.routeHeaders.values()).sort(
+    (a, b) => b.id - a.id,
+  );
   return (
     <main>
       <h1 className="text-4xl font-bold pt-8 pb-4 mx-2">Routes climbed</h1>
