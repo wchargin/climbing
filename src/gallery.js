@@ -3,7 +3,7 @@ import { thumbHashToAverageRGBA, thumbHashToDataURL } from "thumbhash";
 
 import { useStore } from "./store/context";
 
-function App({ path }) {
+function Gallery({ path }) {
   const { store } = useStore();
   const dataDesc = Array.from(store.routeHeaders.values()).sort(
     (a, b) => b.id - a.id,
@@ -102,4 +102,4 @@ function rgbaObjectToColor({ r, g, b, a }) {
   return `rgba(${u2b(r)}, ${u2b(g)}, ${u2b(b)}, ${a})`;
 }
 
-export default App;
+export default Gallery;
