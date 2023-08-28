@@ -27,6 +27,7 @@ main() {
     node ./build/server.js dist.new/
     node ./node_modules/.bin/tailwindcss ${prod:+--minify} -i src/main.css -o dist.new/styles.css
     cp ./build/client.js dist.new/client.js
+    cp ./build/loader.js dist.new/store-loader.js
     # cp -r ./static/* dist.new/  # no statics right now
 
     if [ -e dist ]; then

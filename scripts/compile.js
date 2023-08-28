@@ -2,6 +2,8 @@ const fs = require("fs");
 
 const esbuild = require("esbuild");
 
+const data = require("../src/data.json");
+
 async function main() {
   const env = process.env.NODE_ENV ?? "production";
 
@@ -18,7 +20,7 @@ async function main() {
     minify: env === "production",
   };
 
-  const [server, client] = await Promise.all([
+  const [server, client, storeLoader] = await Promise.all([
     esbuild.build({
       ...opts,
       entryPoints: ["src/server.js"],
@@ -29,6 +31,17 @@ async function main() {
       entryPoints: ["src/client.js"],
       platform: "browser",
     }),
+    esbuild.build({
+      ...opts,
+      entryPoints: ["src/store/loader.js"],
+      platform: "browser",
+      define: {
+        ...opts.define,
+        "process.env.CLIMBING_DATA_JSON_STRING": JSON.stringify(
+          JSON.stringify(data),
+        ),
+      },
+    }),
   ]);
 
   await fs.promises.writeFile(
@@ -38,6 +51,10 @@ async function main() {
   await fs.promises.writeFile(
     "build/client-meta.json",
     JSON.stringify(client.metafile),
+  );
+  await fs.promises.writeFile(
+    "build/store-loader-meta.json",
+    JSON.stringify(storeLoader.metafile),
   );
 }
 
