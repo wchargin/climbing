@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { thumbHashToAverageRGBA, thumbHashToDataURL } from "thumbhash";
 
+import { imageUrl } from "./img";
+
 import { useStore } from "./store/context";
 
 function Gallery({ path }) {
@@ -80,11 +82,6 @@ function Route({ route }) {
       </figure>
     </a>
   );
-}
-
-function imageUrl(id, size) {
-  const imageId = String(id).padStart(4, "0");
-  return `https://storage.googleapis.com/wchargin-climbing-public/${size}/${imageId}.jpg`;
 }
 
 function decodeThumbHashBase64(hash) {

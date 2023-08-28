@@ -27,6 +27,15 @@ export default class ClimbingDataStore {
       this.routeHeaders.set(header.id, header);
     }
   }
+
+  routeByCategoryAndIndex(category, index) {
+    for (const route of this.routes.values()) {
+      if (route.category === category && route.indexInCategory === index) {
+        return route;
+      }
+    }
+    return null;
+  }
 }
 
 function routeToHeader(route) {
