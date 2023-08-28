@@ -1,3 +1,4 @@
+import FadingImage from "./fadingImage";
 import { imageUrl } from "./img";
 import { useRouter } from "./router";
 import useThumbhash from "./thumbhash";
@@ -70,7 +71,7 @@ function Route({ route, onClick }) {
           borderColor: categoryColor,
         }}
       >
-        <img
+        <FadingImage
           src={imageUrl(route.id, "400")}
           loading="lazy"
           alt={`Photo of ${title}`}

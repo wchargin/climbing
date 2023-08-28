@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 
+import FadingImage from "./fadingImage";
 import { imageUrl } from "./img";
 import { useRouter } from "./router";
 import useThumbhash from "./thumbhash";
@@ -33,7 +34,7 @@ function Route({ id }) {
             backgroundImage: thumbhash.image?.cssUrl,
           }}
         >
-          <img
+          <FadingImage
             className="object-contain md:object-right md:fixed md:top-0 md:bottom-0 md:h-screen md:max-w-[50vw]"
             src={imageUrl(route.id, "1200")}
             style={{ aspectRatio: "3 / 4" }}
