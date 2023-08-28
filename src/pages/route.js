@@ -1,11 +1,11 @@
 import { Fragment } from "react";
 
-import FadingImage from "./fadingImage";
-import { imageUrl } from "./img";
-import Link from "./link";
-import useThumbhash from "./thumbhash";
+import FadingImage from "../fadingImage";
+import { imageUrl } from "../img";
+import Link from "../link";
+import useThumbhash from "../thumbhash";
 
-import { useStore } from "./store/context";
+import { useStore } from "../store/context";
 
 const LOCATION_NAMES = {
   poplar: "SBP Poplar",

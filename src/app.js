@@ -1,8 +1,8 @@
-import Gallery from "./gallery";
-import Route from "./route";
 import { useRouter } from "./router";
-
 import { useStore } from "./store/context";
+
+import Gallery from "./pages/gallery";
+import Route from "./pages/route";
 
 const ROUTE_BY_ID = /^\/routes\/([1-9][0-9]*)\/$/;
 const ROUTE_BY_CATEGORY_INDEX = /^\/routes\/([^/]+)\/([1-9][0-9]*)\/$/;
