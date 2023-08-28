@@ -7,7 +7,7 @@ import { useStore } from "./store/context";
 
 function Gallery() {
   const { store, loaded } = useStore();
-  const { navigate } = useRouter();
+  const { navigate, href } = useRouter();
 
   const dataDesc = Array.from(store.routeHeaders.values()).sort(
     (a, b) => b.id - a.id,
@@ -20,6 +20,7 @@ function Gallery() {
           <Route
             key={route.id}
             route={route}
+            href={href(`/routes/${route.id}/`)}
             onClick={
               !loaded
                 ? undefined
@@ -45,7 +46,7 @@ const LOCATION_NAMES = {
   fremont: "SBP Fremont",
 };
 
-function Route({ route, onClick }) {
+function Route({ route, href, onClick }) {
   const title = `${route.category.replace(/\b./g, (c) => c.toUpperCase())} #${
     route.indexInCategory
   }`;
@@ -56,7 +57,7 @@ function Route({ route, onClick }) {
 
   return (
     <a
-      href={imageUrl(route.id, "full")}
+      href={href}
       className="flex flex-col flex-grow justify-between border border-brand-600 rounded-sm"
       onClick={onClick}
     >
