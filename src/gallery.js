@@ -1,8 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
-import { thumbHashToAverageRGBA, thumbHashToDataURL } from "thumbhash";
-
 import { imageUrl } from "./img";
 import { useRouter } from "./router";
+import useThumbhash from "./thumbhash";
 
 import { useStore } from "./store/context";
 
@@ -53,16 +51,7 @@ function Route({ route, onClick }) {
   const location = LOCATION_NAMES[route.location] ?? null;
   const categoryColor = CATEGORY_COLORS[route.category] ?? null;
 
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => void setMounted(true), []);
-  const thumbhashData = useMemo(() => {
-    const thumbHash = decodeThumbHashBase64(route.thumbhash);
-    const averageRgba = rgbaObjectToColor(thumbHashToAverageRGBA(thumbHash));
-    // The data URL is never used on the server, so don't bother computing it.
-    const isServer = typeof document === "undefined";
-    const dataUrl = isServer ? null : thumbHashToDataURL(thumbHash);
-    return { averageRgba, dataUrl };
-  }, [route.thumbhash]);
+  const thumbhash = useThumbhash(route.thumbhash);
 
   return (
     <a
@@ -73,9 +62,11 @@ function Route({ route, onClick }) {
       <figure
         className="relative border-4 rounded-sm"
         style={{
-          background: mounted
-            ? `center / cover no-repeat url("${thumbhashData.dataUrl}")`
-            : thumbhashData.averageRgba,
+          background:
+            thumbhash.image != null
+              ? "center / cover no-repeat"
+              : thumbhash.averageColor,
+          backgroundImage: thumbhash.image?.cssUrl,
           borderColor: categoryColor,
         }}
       >
@@ -97,20 +88,6 @@ function Route({ route, onClick }) {
       </figure>
     </a>
   );
-}
-
-function decodeThumbHashBase64(hash) {
-  const buf = atob(hash);
-  const result = new Uint8Array(buf.length);
-  for (let i = 0; i < buf.length; i++) {
-    result[i] = buf.charCodeAt(i);
-  }
-  return result;
-}
-
-function rgbaObjectToColor({ r, g, b, a }) {
-  const u2b = (z) => Math.floor(z * 255);
-  return `rgba(${u2b(r)}, ${u2b(g)}, ${u2b(b)}, ${a})`;
 }
 
 export default Gallery;

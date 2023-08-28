@@ -2,6 +2,7 @@ import { Fragment } from "react";
 
 import { imageUrl } from "./img";
 import { useRouter } from "./router";
+import useThumbhash from "./thumbhash";
 
 import { useStore } from "./store/context";
 
@@ -16,12 +17,22 @@ function Route({ id }) {
 
   const route = store.routes.get(id);
   if (route == null) throw new Error("No such route: " + id);
+  const thumbhash = useThumbhash(route.thumbhash);
 
   const categoryCaps = route.category.replace(/\b./g, (c) => c.toUpperCase());
   return (
     <main className="flex flex-col items-center md:grid md:grid-cols-2 md:gap-6 md:p-[2rem] md:h-screen">
-      <div className="relative">
-        <figure className="route-image-holder flex justify-center md:justify-end md:absolute md:right-0 md:top-0 md:bottom-0">
+      <div className="relative w-full h-full">
+        <figure
+          className="route-image-holder flex justify-center md:justify-end md:absolute md:right-0 md:top-0 md:bottom-0 md:h-full"
+          style={{
+            background:
+              thumbhash.image != null
+                ? "center / cover no-repeat"
+                : thumbhash.averageColor,
+            backgroundImage: thumbhash.image?.cssUrl,
+          }}
+        >
           <img
             className="object-contain md:object-right md:fixed md:top-0 md:bottom-0 md:h-screen md:max-w-[50vw]"
             src={imageUrl(route.id, "1200")}
