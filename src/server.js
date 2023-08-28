@@ -3,8 +3,8 @@ import pathLib from "path";
 
 import * as Server from "react-dom/server";
 
+import App from "./app";
 import data from "./data";
-import Gallery from "./gallery";
 import ClimbingDataStore from "./store";
 import StoreContext from "./store/context";
 
@@ -50,7 +50,7 @@ async function renderPage(path, storeSubset, outdir, filename) {
 
   const rendered = Server.renderToString(
     <StoreContext.Provider value={{ store, loaded: false }}>
-      <Gallery path={path} />
+      <App path={path} />
     </StoreContext.Provider>,
   );
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import * as Client from "react-dom/client";
 
-import Gallery from "./gallery";
+import App from "./app";
 
 import ClimbingDataStore from "./store";
 import StoreContext from "./store/context";
@@ -38,7 +38,7 @@ function main() {
 
   const app = (
     <Root initialStore={initialStore}>
-      <Gallery path={path} />
+      <App path={path} />
     </Root>
   );
   Client.hydrateRoot(root, app);
