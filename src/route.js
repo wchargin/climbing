@@ -34,11 +34,16 @@ function Route({ id }) {
             backgroundImage: thumbhash.image?.cssUrl,
           }}
         >
-          <FadingImage
-            className="object-contain md:object-right md:fixed md:top-0 md:bottom-0 md:h-screen md:max-w-[50vw]"
-            src={imageUrl(route.id, "1200")}
-            style={{ aspectRatio: "3 / 4" }}
-          />
+          <a
+            className="block md:fixed md:top-0 md:bottom-0 md:h-screen md:max-w-[50vw]"
+            href={imageUrl(route.id, "full")}
+          >
+            <FadingImage
+              className="object-contain max-h-full mx-auto md:object-right md:top-0 md:bottom-0 md:h-screen md:max-w-[50vw]"
+              src={imageUrl(route.id, "1200")}
+              style={{ aspectRatio: "3 / 4" }}
+            />
+          </a>
         </figure>
       </div>
       <div className="mt-12 w-full lg:max-w-[600px] px-6 lg:px-0">
