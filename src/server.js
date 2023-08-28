@@ -14,7 +14,7 @@ async function main() {
   const [outdir] = args;
 
   const paths = ["/"];
-  for (const route of data) {
+  for (const route of data.routes) {
     paths.push(`/routes/${route.id}/`);
     paths.push(`/routes/${route.category}/${route.indexInCategory}/`);
   }

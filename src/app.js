@@ -4,7 +4,7 @@ import { thumbHashToAverageRGBA, thumbHashToDataURL } from "thumbhash";
 import data from "./data.json";
 
 function App({ path }) {
-  const dataDesc = data.slice().reverse();
+  const dataDesc = data.routes.slice().reverse();
   return (
     <main>
       <h1 className="text-4xl font-bold pt-8 pb-4 mx-2">Routes climbed</h1>
