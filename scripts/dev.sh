@@ -8,7 +8,7 @@ main() {
     trap cleanup INT TERM EXIT
     python3 -m http.server "${PORT}" --directory ./dist &
     serverpid=$!
-    nodemon -V \
+    nodemon \
         -i 'build/**/*' -i 'dist/**/*' -i 'dist.new/**/*' -i 'dist.old/**/*' \
         -e js,json,sh,css \
         -x './scripts/build.sh --dev'
