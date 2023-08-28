@@ -1,13 +1,12 @@
 import FadingImage from "./fadingImage";
 import { imageUrl } from "./img";
-import { useRouter } from "./router";
+import Link from "./link";
 import useThumbhash from "./thumbhash";
 
 import { useStore } from "./store/context";
 
 function Gallery() {
-  const { store, loaded } = useStore();
-  const { navigate, href } = useRouter();
+  const { store } = useStore();
 
   const dataDesc = Array.from(store.routeHeaders.values()).sort(
     (a, b) => b.id - a.id,
@@ -17,19 +16,7 @@ function Gallery() {
       <h1 className="text-4xl font-bold pt-8 pb-4 mx-2">Routes climbed</h1>
       <div className="routes-grid grid gap-4 p-2">
         {dataDesc.map((route) => (
-          <Route
-            key={route.id}
-            route={route}
-            href={href(`/routes/${route.id}/`)}
-            onClick={
-              !loaded
-                ? undefined
-                : (e) => {
-                    e.preventDefault();
-                    navigate(`/routes/${route.id}/`);
-                  }
-            }
-          />
+          <Route key={route.id} route={route} />
         ))}
       </div>
     </main>
@@ -46,7 +33,7 @@ const LOCATION_NAMES = {
   fremont: "SBP Fremont",
 };
 
-function Route({ route, href, onClick }) {
+function Route({ route }) {
   const title = `${route.category.replace(/\b./g, (c) => c.toUpperCase())} #${
     route.indexInCategory
   }`;
@@ -56,10 +43,9 @@ function Route({ route, href, onClick }) {
   const thumbhash = useThumbhash(route.thumbhash);
 
   return (
-    <a
-      href={href}
+    <Link
+      to={`/routes/${route.id}/`}
       className="flex flex-col flex-grow justify-between border border-brand-600 rounded-sm"
-      onClick={onClick}
     >
       <figure
         className="relative border-4 rounded-sm"
@@ -88,7 +74,7 @@ function Route({ route, href, onClick }) {
           </p>
         </figcaption>
       </figure>
-    </a>
+    </Link>
   );
 }
 

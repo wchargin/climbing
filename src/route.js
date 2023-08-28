@@ -2,7 +2,7 @@ import { Fragment } from "react";
 
 import FadingImage from "./fadingImage";
 import { imageUrl } from "./img";
-import { useRouter } from "./router";
+import Link from "./link";
 import useThumbhash from "./thumbhash";
 
 import { useStore } from "./store/context";
@@ -13,8 +13,7 @@ const LOCATION_NAMES = {
 };
 
 function Route({ id }) {
-  const { store, loaded } = useStore();
-  const { navigate, href } = useRouter();
+  const { store } = useStore();
 
   const route = store.routes.get(id);
   if (route == null) throw new Error("No such route: " + id);
@@ -56,20 +55,12 @@ function Route({ id }) {
         </h2>
         <Notes className="mb-6" notes={route.notes} />
         <p className="text-brand-300 mb-6">
-          <a
+          <Link
+            to="/"
             className="hover:underline focus:underline active:text-red-600"
-            href={href("/")}
-            onClick={
-              !loaded
-                ? undefined
-                : (e) => {
-                    e.preventDefault();
-                    navigate("/");
-                  }
-            }
           >
             &laquo; Back to route gallery
-          </a>
+          </Link>
         </p>
       </div>
     </main>
