@@ -2,6 +2,7 @@ import { Fragment } from "react";
 
 import classNames from "../classNames";
 import FadingImage from "../fadingImage";
+import Holds from "../holds";
 import { imageUrl } from "../img";
 import Link from "../link";
 import useThumbhash from "../thumbhash";
@@ -36,27 +37,40 @@ function Route({ id }) {
   return (
     <main className="flex flex-col items-center md:grid md:grid-cols-2 md:gap-6 md:p-[2rem] md:h-screen">
       <div className="relative w-full h-full">
-        <figure
-          className="route-image-holder flex justify-center md:justify-end md:absolute md:right-0 md:top-0 md:bottom-0 md:h-full"
-          style={{
-            background:
-              thumbhash.image != null
-                ? "center / cover no-repeat"
-                : thumbhash.averageColor,
-            backgroundImage: thumbhash.image?.cssUrl,
-          }}
-        >
-          <a
-            className="block md:fixed md:top-0 md:bottom-0 md:h-screen md:max-w-[50vw]"
-            href={imageUrl(route.id, "full")}
+        {!route.holds && (
+          <figure
+            className="route-image-holder flex justify-center md:justify-end md:absolute md:right-0 md:top-0 md:bottom-0 md:h-full"
+            style={{
+              background:
+                thumbhash.image != null
+                  ? "center / cover no-repeat"
+                  : thumbhash.averageColor,
+              backgroundImage: thumbhash.image?.cssUrl,
+            }}
           >
-            <FadingImage
-              className="object-contain max-h-full mx-auto md:object-right md:top-0 md:bottom-0 md:h-screen md:max-w-[50vw]"
-              src={imageUrl(route.id, "1200")}
-              style={{ aspectRatio: "3 / 4" }}
-            />
-          </a>
-        </figure>
+            <a
+              className="block md:fixed md:top-0 md:bottom-0 md:h-screen md:max-w-[50vw]"
+              href={imageUrl(route.id, "full")}
+            >
+              <FadingImage
+                className="object-contain max-h-full mx-auto md:object-right md:top-0 md:bottom-0 md:h-screen md:max-w-[50vw]"
+                src={imageUrl(route.id, "1200")}
+                style={{ aspectRatio: "3 / 4" }}
+              />
+            </a>
+          </figure>
+        )}
+        {route.holds && (
+          <Holds
+            imgSrc={imageUrl(route.id, "1200")}
+            placeholder={{
+              color: thumbhash.averageColor,
+              src: thumbhash.image?.url,
+            }}
+            viewBox={route.holds.viewBox}
+            holds={route.holds.annotations}
+          />
+        )}
       </div>
       <div className="mt-12 md:mt-12 w-full h-full lg:max-w-[600px] px-6 lg:px-0">
         <div className="flex items-center">

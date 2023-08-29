@@ -186,7 +186,60 @@
           "type": "p"
         },
         "My first clear was technically not a legit start; I started with right hand on the right start hold and left hand in the air as I pushed off to grab back with left hand onto the hyperboloid. But I'd done that part legitimately multiple times before, and on a subsequent attempt I legitimately did the start and up through being established turned around on the hyperboloid."
-      ]
+      ],
+      "holds": {
+        "viewBox": [3024, 4032],
+        "annotations": [
+          {
+            "id": "1",
+            "box": [1892, 3434, 144, 138],
+            "color": "#c7dfff"
+          },
+          {
+            "id": "2",
+            "box": [1601, 2834, 126, 134],
+            "extra": "M1664 2968v50",
+            "color": "#a7bfe2"
+          },
+          {
+            "id": "3",
+            "box": [1815, 2679, 149, 157],
+            "extra": "M1889 2836v50",
+            "color": "#a7bfe2"
+          },
+          {
+            "id": "4",
+            "box": [2244, 2549, 129, 132],
+            "color": "#a7bfe2"
+          },
+          {
+            "id": "5",
+            "box": [736, 1750, 914, 878],
+            "maskOut": ["6"],
+            "color": "#a7bfe2"
+          },
+          {
+            "id": "6",
+            "box": [1182, 1648, 248, 240],
+            "color": "#a7bfe2"
+          },
+          {
+            "id": "7",
+            "box": [924, 1032, 767, 489],
+            "color": "#80a4d5"
+          },
+          {
+            "id": "8",
+            "box": [1007, 797, 213, 202],
+            "color": "#5a88c9"
+          },
+          {
+            "id": "9",
+            "box": [875, 540, 169, 170],
+            "color": "#5a88c9"
+          }
+        ]
+      }
     },
     {
       "id": 123,
