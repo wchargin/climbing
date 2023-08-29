@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+
 import FadingImage from "../fadingImage";
 import { imageUrl } from "../img";
 import Link from "../link";
@@ -11,15 +13,62 @@ function Gallery() {
   const dataDesc = Array.from(store.routeHeaders.values()).sort(
     (a, b) => b.id - a.id,
   );
+
+  const bySeason = groupBySeason(dataDesc);
   return (
-    <main>
-      <h1 className="text-4xl font-bold pt-8 pb-4 mx-2">Routes climbed</h1>
+    <main className="flex flex-col max-w-[1200px] px-4 mx-auto">
+      <h1 className="text-4xl mt-12 mx-2">Routes climbed</h1>
+      {bySeason.map(({ season, routes }) => (
+        <Season key={season} season={season} routes={routes} />
+      ))}
+    </main>
+  );
+}
+
+function Season({ season, routes }) {
+  const colorCounts = new Map();
+  for (const route of routes) {
+    const k = route.category;
+    colorCounts.set(k, (colorCounts.get(k) || 0) + 1);
+  }
+  const colorLabels = [];
+  for (const category of Object.keys(CATEGORY_COLORS)) {
+    const n = colorCounts.get(category);
+    if (n == null) continue;
+    colorLabels.push(
+      <CategoryCountChip key={category} category={category} count={n} />,
+    );
+  }
+
+  return (
+    <>
+      <div className="flex flex-row flex-wrap justify-between md:justify-start items-end mx-2 mt-8">
+        <h2 className="text-2xl">{season}</h2>
+        <div className="inline-flex text-xs md:ml-8 gap-2">
+          {...colorLabels}
+        </div>
+      </div>
       <div className="routes-grid grid gap-4 p-2">
-        {dataDesc.map((route) => (
+        {routes.map((route) => (
           <Route key={route.id} route={route} />
         ))}
       </div>
-    </main>
+    </>
+  );
+}
+
+function CategoryCountChip({ category, count }) {
+  const color = CATEGORY_COLORS[category];
+  const bg = category === "black" ? "bg-brand-500" : "bg-transparent";
+  return (
+    <span key={category} className={"block p-[1px] rounded-sm " + bg}>
+      <span
+        className="block px-2 py-1 border-2 rounded-sm"
+        style={{ borderColor: color }}
+      >
+        {count} {category}
+      </span>
+    </span>
   );
 }
 
@@ -45,7 +94,7 @@ function Route({ route }) {
   return (
     <Link
       to={`/routes/${route.id}/`}
-      className="flex flex-col flex-grow justify-between border border-brand-600 rounded-sm"
+      className="flex flex-col flex-grow justify-between border border-brand-500 rounded-sm"
     >
       <figure
         className="relative border-4 rounded-sm"
@@ -76,6 +125,51 @@ function Route({ route }) {
       </figure>
     </Link>
   );
+}
+
+function groupBySeason(routes) {
+  const seasons = [];
+  let current = null;
+  for (const route of routes) {
+    const thisSeason = seasonName(route.date);
+    if (current == null || current.season !== thisSeason) {
+      current = { season: thisSeason, routes: [] };
+      seasons.push(current);
+    }
+    current.routes.push(route);
+  }
+  return seasons;
+}
+
+const DATE_RE = /^([0-9]{4})-([0-9]{2})-([0-9]{2})$/;
+function seasonName(dateStr) {
+  const match = dateStr.match(DATE_RE);
+  if (match == null) throw new Error("Invalid date: " + dateStr);
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+
+  // Use months for now for richer data.
+  return (
+    [
+      "December",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "November",
+    ][month % 12] +
+    " " +
+    year
+  );
+
+  const seasonIdx = Math.floor((month % 12) / 3);
+  const season = ["Winter", "Spring", "Summer", "Fall"][seasonIdx];
+  return `${season} ${year}`;
 }
 
 export default Gallery;
