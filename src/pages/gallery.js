@@ -59,12 +59,12 @@ function Season({ season, routes }) {
 
 function CategoryCountChip({ category, count }) {
   const color = CATEGORY_COLORS[category];
-  const bg = category === "black" ? "bg-brand-500" : "bg-transparent";
+  const bg = color.dark ? "bg-brand-500" : "bg-transparent";
   return (
     <span key={category} className={"block p-[1px] rounded-sm " + bg}>
       <span
         className="block px-2 py-1 border-2 rounded-sm"
-        style={{ borderColor: color }}
+        style={{ borderColor: color.hex }}
       >
         {count} {category}
       </span>
@@ -73,9 +73,9 @@ function CategoryCountChip({ category, count }) {
 }
 
 const CATEGORY_COLORS = {
-  black: "#111111",
-  blue: "#82a5d6",
-  pink: "#f0b5ad",
+  black: { hex: "#111111", dark: true },
+  blue: { hex: "#82a5d6", dark: false },
+  pink: { hex: "#f0b5ad", dark: false },
 };
 const LOCATION_NAMES = {
   poplar: "SBP Poplar",
@@ -87,14 +87,18 @@ function Route({ route }) {
     route.indexInCategory
   }`;
   const location = LOCATION_NAMES[route.location] ?? null;
+
   const categoryColor = CATEGORY_COLORS[route.category] ?? null;
+  const border = categoryColor.dark ? "border-brand-500" : "border-transparent";
 
   const thumbhash = useThumbhash(route.thumbhash);
 
   return (
     <Link
       to={`/routes/${route.id}/`}
-      className="flex flex-col flex-grow justify-between border border-brand-500 rounded-sm"
+      className={
+        "flex flex-col flex-grow justify-between rounded-sm border " + border
+      }
     >
       <figure
         className="relative border-4 rounded-sm"
@@ -104,7 +108,7 @@ function Route({ route }) {
               ? "center / cover no-repeat"
               : thumbhash.averageColor,
           backgroundImage: thumbhash.image?.cssUrl,
-          borderColor: categoryColor,
+          borderColor: categoryColor.hex,
         }}
       >
         <FadingImage
