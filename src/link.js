@@ -11,6 +11,7 @@ function Link({ to, children, ...rest }) {
   function onClick(e) {
     e.preventDefault();
     navigate(to);
+    window.scrollTo(0, 0);
     if (rest.onClick) rest.onClick.call(this, e);
   }
 
