@@ -41,7 +41,10 @@ function main() {
   const initialStoreData = JSON.parse(storeScript.textContent);
   const initialStore = ClimbingDataStore.fromData(initialStoreData);
 
-  const gatewayUrl = new URL(pathToRoot(path), window.location);
+  const here = new URL(window.location);
+  here.search = "";
+  here.hash = "";
+  const gatewayUrl = new URL(pathToRoot(path), here);
   const gateway = String(gatewayUrl).replace(/\/*$/, "");
 
   const app = (
