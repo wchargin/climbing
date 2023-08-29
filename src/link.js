@@ -16,7 +16,11 @@ function Link({ to, children, ...rest }) {
   }
 
   return (
-    <a href={href(to)} onClick={loaded ? onClick : rest.onClick} {...rest}>
+    <a
+      href={to != null ? href(to) : null}
+      onClick={to != null && loaded ? onClick : rest.onClick}
+      {...rest}
+    >
       {children}
     </a>
   );

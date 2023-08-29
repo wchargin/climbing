@@ -26,7 +26,22 @@ async function main() {
     storeSpec: { routeHeaders: data.routes.map((route) => route.id) },
   });
   for (const route of data.routes) {
-    const storeSpec = { routes: [route.id] };
+    const neededHeaders = [];
+    const storeSpec = {
+      routes: [route.id],
+      routeHeaders: [
+        route.id - 1,
+        route.id + 1,
+        fullStore.resolveCategoryAndIndex(
+          route.category,
+          route.indexInCategory - 1,
+        ),
+        fullStore.resolveCategoryAndIndex(
+          route.category,
+          route.indexInCategory + 1,
+        ),
+      ].filter((x) => x != null && fullStore.routeHeaders.has(x)),
+    };
     pages.push({ path: `/routes/${route.id}/`, storeSpec });
     pages.push({
       path: `/routes/${route.category}/${route.indexInCategory}/`,
