@@ -5,7 +5,7 @@ export default function useThumbhash(base64) {
   // `averageColor` is always available.
   const averageColor = useMemo(() => {
     const thumbHash = decodeThumbHashBase64(base64);
-    return rgbaObjectToColor(thumbHashToAverageRGBA(thumbHash));
+    return rgbaObjectToHex(thumbHashToAverageRGBA(thumbHash));
   }, [base64]);
 
   // `image` is only available on the client (and after initial render) because
@@ -30,7 +30,12 @@ function decodeThumbHashBase64(hash) {
   return result;
 }
 
-function rgbaObjectToColor({ r, g, b, a }) {
-  const u2b = (z) => Math.floor(z * 255);
-  return `rgba(${u2b(r)}, ${u2b(g)}, ${u2b(b)}, ${a})`;
+// Convert unit-interval floats to hex bytes.
+function u2b(z) {
+  return Math.floor(z * 255)
+    .toString(16)
+    .padStart(2, "0");
+}
+function rgbaObjectToHex({ r, g, b, a }) {
+  return `#${u2b(r)}${u2b(g)}${u2b(b)}${u2b(a)}`;
 }
