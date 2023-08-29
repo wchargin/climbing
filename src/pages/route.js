@@ -54,7 +54,7 @@ function Route({ id }) {
           {route.date} &middot; {LOCATION_NAMES[route.location]}
         </h2>
         <Notes className="mb-6" notes={route.notes} />
-        <p className="text-brand-300 mb-6">
+        <p className="text-brand-300 mb-8">
           <Link
             to="/"
             className="hover:underline focus:underline active:text-red-600"
