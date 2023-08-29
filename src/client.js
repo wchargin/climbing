@@ -5,6 +5,7 @@ import App from "./app";
 import { HydratedProvider } from "./hydrated";
 import { pathToRoot } from "./path";
 import Router from "./router";
+import { TelescrollProvider } from "./telescroll";
 
 import ClimbingDataStore from "./store";
 import StoreContext from "./store/context";
@@ -47,7 +48,9 @@ function main() {
     <StoreProvider initialStore={initialStore}>
       <HydratedProvider>
         <Router initialPath={path} gateway={gateway}>
-          <App />
+          <TelescrollProvider>
+            <App />
+          </TelescrollProvider>
         </Router>
       </HydratedProvider>
     </StoreProvider>

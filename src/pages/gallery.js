@@ -4,6 +4,7 @@ import classNames from "../classNames";
 import FadingImage from "../fadingImage";
 import { imageUrl } from "../img";
 import Link from "../link";
+import { useTelescroll } from "../telescroll";
 import useThumbhash from "../thumbhash";
 
 import { useStore } from "../store/context";
@@ -92,6 +93,8 @@ const LOCATION_NAMES = {
 };
 
 function Route({ route }) {
+  const { provideScroll } = useTelescroll();
+
   const title = `${route.category.replace(/\b./g, (c) => c.toUpperCase())} #${
     route.indexInCategory
   }`;
@@ -104,6 +107,7 @@ function Route({ route }) {
 
   return (
     <Link
+      ref={provideScroll(`route#${route.id}`)}
       to={`/routes/${route.id}/`}
       className={classNames(
         "flex flex-col flex-grow justify-between rounded-sm border",

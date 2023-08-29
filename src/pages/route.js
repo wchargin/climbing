@@ -99,6 +99,7 @@ function Route({ id }) {
           <Link
             to="/"
             className="hover:underline focus:underline active:text-red-600"
+            scrollTo={`route#${id}`}
           >
             &laquo; Back to route gallery
           </Link>
