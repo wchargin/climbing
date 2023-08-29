@@ -1,6 +1,7 @@
 import { useState } from "react";
+import classNames from "./classNames";
 
-function Holds({ imgSrc, placeholder, viewBox, holds, ...rest }) {
+function Holds({ imgSrc, placeholder, viewBox, holds, className, ...rest }) {
   const [hoveredId, setHoveredId] = useState(null);
 
   const [w, h] = viewBox;
@@ -27,7 +28,11 @@ function Holds({ imgSrc, placeholder, viewBox, holds, ...rest }) {
   }
 
   return (
-    <svg viewBox={`0 0 ${w} ${h}`} {...rest}>
+    <svg
+      viewBox={`0 0 ${w} ${h}`}
+      className={classNames("select-none", className)}
+      {...rest}
+    >
       {/**/}
       {/* background stuff */}
       {placeholder.color && (
