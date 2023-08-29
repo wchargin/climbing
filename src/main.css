@@ -27,7 +27,9 @@ body {
   }
 }
 
-.routes-grid a figure {
+.routes-grid a:hover figure,
+.routes-grid a:focus figure,
+.routes-grid a:active figure {
   @apply bg-brand-200;
 }
 .routes-grid a .hover-fader {
