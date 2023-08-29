@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 
+import classNames from "../classNames";
 import FadingImage from "../fadingImage";
 import { imageUrl } from "../img";
 import Link from "../link";
@@ -61,7 +62,7 @@ function CategoryCountChip({ category, count }) {
   const color = CATEGORY_COLORS[category];
   const bg = color.dark ? "bg-brand-500" : "bg-transparent";
   return (
-    <span key={category} className={"block p-[1px] rounded-sm " + bg}>
+    <span key={category} className={classNames("block p-[1px] rounded-sm", bg)}>
       <span
         className="block px-2 py-1 border-2 rounded-sm"
         style={{ borderColor: color.hex }}
@@ -96,9 +97,10 @@ function Route({ route }) {
   return (
     <Link
       to={`/routes/${route.id}/`}
-      className={
-        "flex flex-col flex-grow justify-between rounded-sm border " + border
-      }
+      className={classNames(
+        "flex flex-col flex-grow justify-between rounded-sm border",
+        border,
+      )}
     >
       <figure
         className="relative border-4 rounded-sm"

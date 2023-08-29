@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
+import classNames from "./classNames";
 import { useHydrated } from "./hydrated";
 
 function FadingImage({ src, className, ...rest }) {
@@ -35,11 +36,6 @@ function FadingImage({ src, className, ...rest }) {
     if (rest.onError) rest.onError.call(this, e);
   }
 
-  const classNames = [
-    className,
-    "transition-opacity duration-300",
-    loaded || "js-opacity-0",
-  ];
   return (
     <img
       {...rest}
@@ -47,7 +43,11 @@ function FadingImage({ src, className, ...rest }) {
       onError={onError}
       ref={ref}
       src={src}
-      className={classNames.filter(Boolean).join(" ")}
+      className={classNames(
+        className,
+        "transition-opacity duration-300",
+        loaded || "js-opacity-0",
+      )}
     />
   );
 }
