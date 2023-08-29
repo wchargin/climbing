@@ -27,10 +27,10 @@ function App() {
     if (match != null) {
       const category = match[1];
       const index = Number(match[2]);
-      const route = store.routeByCategoryAndIndex(category, index);
-      if (route == null)
+      const routeId = store.resolveCategoryAndIndex(category, index);
+      if (routeId == null)
         throw new Error(`No such route: ${category} #${index}`);
-      return <Route id={route.id} />;
+      return <Route id={routeId} />;
     }
   }
 
