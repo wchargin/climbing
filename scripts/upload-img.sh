@@ -18,7 +18,10 @@ main() {
 }
 
 upload() {
-    gsutil -h 'content-type: image/jpeg' cp - "gs://${BUCKET}/$1"
+    gsutil \
+        -h 'cache-control: public, max-age=60' \
+        -h 'content-type: image/jpeg' \
+        cp - "gs://${BUCKET}/$1"
 }
 
 main "$@"
