@@ -12,6 +12,10 @@ function Holds({ imgSrc, placeholder, viewBox, holds, className, ...rest }) {
   for (const hold of holds) holdsById.set(hold.id, hold);
   const hoveredHold = hoveredId && holdsById.get(hoveredId);
 
+  // Exactly aligning rectangles leads to some subpixel inaccuracies on mobile
+  // at some zoom levels. Pad by some amount.
+  const oversized = { x: -w / 2, y: -h / 2, width: 2 * w, height: 2 * h };
+
   function holdRect(hold, props) {
     return (
       <rect
@@ -53,7 +57,7 @@ function Holds({ imgSrc, placeholder, viewBox, holds, className, ...rest }) {
         .filter((h) => h.maskOut)
         .map((hold) => (
           <mask key={hold.id} id={`mask-${hold.id}`}>
-            <rect width={w} height={h} stroke="none" fill="white" />
+            <rect {...oversized} stroke="none" fill="white" />
             {hold.maskOut.map((otherId) =>
               holdRect(holdsById.get(otherId), {
                 key: otherId,
@@ -83,7 +87,7 @@ function Holds({ imgSrc, placeholder, viewBox, holds, className, ...rest }) {
       {/**/}
       {/* shade */}
       <mask id="mask-shade">
-        <rect width={w} height={h} fill="white" />
+        <rect {...oversized} fill="white" />
         {hoveredHold &&
           holdRect(hoveredHold, {
             fill: "black",
@@ -92,8 +96,7 @@ function Holds({ imgSrc, placeholder, viewBox, holds, className, ...rest }) {
           })}
       </mask>
       <rect
-        width={w}
-        height={h}
+        {...oversized}
         fill="black"
         fillOpacity={hoveredHold ? 0.75 : 0}
         mask="url(#mask-shade)"
