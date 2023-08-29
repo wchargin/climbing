@@ -65,19 +65,31 @@ function Route({ id }) {
           </h1>
           <NavAdjacentLink
             id={prevInCategory}
+            current={route}
             isNext={false}
             byCategoryIndex={true}
           />
           <NavAdjacentLink
             id={nextInCategory}
+            current={route}
             isNext={true}
             byCategoryIndex={true}
           />
         </div>
         <div className="flex items-center">
           <h2 className="text-brand-300 mt-2 flex-grow">Route #{route.id}</h2>
-          <NavAdjacentLink id={id - 1} isNext={false} byCategoryIndex={false} />
-          <NavAdjacentLink id={id + 1} isNext={true} byCategoryIndex={false} />
+          <NavAdjacentLink
+            id={id - 1}
+            current={route}
+            isNext={false}
+            byCategoryIndex={false}
+          />
+          <NavAdjacentLink
+            id={id + 1}
+            current={route}
+            isNext={true}
+            byCategoryIndex={false}
+          />
         </div>
         <h2 className="text-brand-300 mt-2">
           {route.date} &middot; {LOCATION_NAMES[route.location]}
@@ -96,7 +108,7 @@ function Route({ id }) {
   );
 }
 
-function NavAdjacentLink({ id, isNext, byCategoryIndex }) {
+function NavAdjacentLink({ id, current, isNext, byCategoryIndex }) {
   const { store } = useStore();
   const header = store.routeHeaders.get(id);
   const enabled = header != null;
@@ -118,21 +130,17 @@ function NavAdjacentLink({ id, isNext, byCategoryIndex }) {
   }
 
   let title;
+  const preposition = isNext ? "next" : "previous";
+  const relativity = byCategoryIndex ? `${current.category} ` : "";
   if (enabled) {
+    title = `${capitalize(preposition)} ${relativity}route`;
     if (byCategoryIndex) {
-      title = `Go to ${capitalize(header.category)} #${header.indexInCategory}`;
+      title += ` (${capitalize(header.category)} #${header.indexInCategory})`;
     } else {
-      title = `Go to route #${header.id}`;
+      title += ` (#${header.id})`;
     }
   } else {
-    if (isNext) {
-      title = "No next route";
-    } else {
-      title = "No previous route";
-    }
-    if (byCategoryIndex) {
-      title += " in this category";
-    }
+    title = `No ${preposition} ${relativity}route`;
   }
 
   return (
