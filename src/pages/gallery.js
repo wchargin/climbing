@@ -102,22 +102,26 @@ function Route({ route }) {
     >
       <figure
         className="relative border-4 rounded-sm"
-        style={{
-          background:
-            thumbhash.image != null
-              ? "center / cover no-repeat"
-              : thumbhash.averageColor,
-          backgroundImage: thumbhash.image?.cssUrl,
-          borderColor: categoryColor.hex,
-        }}
+        style={{ borderColor: categoryColor.hex }}
       >
-        <FadingImage
-          src={imageUrl(route.id, "400")}
-          loading="lazy"
-          alt={`Photo of ${title}`}
-          className="w-full h-full object-contain flex items-center justify-evenly italic"
-          style={{ aspectRatio: "3 / 4" }}
-        />
+        <div
+          className="hover-fader"
+          style={{
+            background:
+              thumbhash.image != null
+                ? "center / cover no-repeat"
+                : thumbhash.averageColor,
+            backgroundImage: thumbhash.image?.cssUrl,
+          }}
+        >
+          <FadingImage
+            src={imageUrl(route.id, "400")}
+            loading="lazy"
+            alt={`Photo of ${title}`}
+            className="w-full h-full object-contain flex items-center justify-evenly italic"
+            style={{ aspectRatio: "3 / 4" }}
+          />
+        </div>
         <figcaption className="absolute bottom-0 w-full p-2 text-center bg-black/50 backdrop-blur-sm">
           <p className="text-sm">
             #{route.id} ({title})

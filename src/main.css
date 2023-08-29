@@ -27,6 +27,20 @@ body {
   }
 }
 
+.routes-grid a figure {
+  @apply bg-brand-200;
+}
+.routes-grid a .hover-fader {
+  @apply transition-opacity;
+}
+.routes-grid a:hover .hover-fader,
+.routes-grid a:focus .hover-fader {
+  opacity: 0.7;
+}
+.routes-grid a:active .hover-fader {
+  opacity: 0.85;
+}
+
 .route-image-holder {
   max-height: 80vh;
 }
