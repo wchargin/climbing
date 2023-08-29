@@ -48,7 +48,7 @@ function Season({ season, routes }) {
           {...colorLabels}
         </div>
       </div>
-      <div className="routes-grid grid gap-4 p-2">
+      <div className="routes-grid grid gap-2 p-2">
         {routes.map((route) => (
           <Route key={route.id} route={route} />
         ))}
@@ -118,13 +118,11 @@ function Route({ route }) {
           className="w-full h-full object-contain flex items-center justify-evenly italic"
           style={{ aspectRatio: "3 / 4" }}
         />
-        <figcaption className="absolute bottom-0 w-full p-2 text-center bg-black/25 backdrop-blur-sm">
+        <figcaption className="absolute bottom-0 w-full p-2 text-center bg-black/50 backdrop-blur-sm">
           <p className="text-sm">
             #{route.id} ({title})
           </p>
-          <p className="text-xs">
-            {route.date} &middot; {location}
-          </p>
+          <p className="text-xs">{route.date}</p>
         </figcaption>
       </figure>
     </Link>
