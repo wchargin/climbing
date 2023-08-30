@@ -60,6 +60,7 @@ function Holds({
     <svg
       viewBox={`0 0 ${w} ${h}`}
       className={classNames("select-none", className)}
+      strokeWidth={strokeWidth}
       {...rest}
     >
       {/**/}
@@ -88,7 +89,6 @@ function Holds({
                 key: otherId,
                 fill: "black",
                 // Only mask out the *interior* of masked holds.
-                strokeWidth,
                 stroke: "white",
               }),
             )}
@@ -96,7 +96,7 @@ function Holds({
         ))}
       {/**/}
       {/* holds */}
-      <g fill="transparent" strokeWidth={strokeWidth}>
+      <g fill="transparent">
         {holds.map((hold) => (
           <g
             key={hold.id}
@@ -120,7 +120,7 @@ function Holds({
           className="transition-[fill-opacity] duration-300"
         />
         {hoveredHold && (
-          <g fill="black" stroke="black" strokeWidth={strokeWidth}>
+          <g fill="black" stroke="black">
             {holdRect(hoveredHold)}
             {hoveredHold.extra && <path fill="none" d={hoveredHold.extra} />}
           </g>
