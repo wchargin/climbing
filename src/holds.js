@@ -1,11 +1,20 @@
 import { useState } from "react";
 import classNames from "./classNames";
 
-export function useHoldsState() {
+export function useHoldsState(routeId) {
   const [hoveredId, setHoveredId] = useState(null);
   // Keep track of which hold we just moused-out of so that we can keep it in
   // the mask as the shade fades out.
   const [lastHoveredId, setLastHoveredId] = useState(null);
+
+  // Reset holds state when route changes, using the pattern suggested in React
+  // docs to avoid effects.
+  const [lastRouteId, setLastRouteId] = useState(routeId);
+  if (routeId !== lastRouteId) {
+    setLastRouteId(routeId);
+    setHoveredId(null);
+    setLastHoveredId(null);
+  }
 
   function onFocus(id) {
     setHoveredId(id);

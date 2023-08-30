@@ -20,7 +20,7 @@ function capitalize(s) {
 
 function Route({ id }) {
   const { store } = useStore();
-  const holdsState = useHoldsState();
+  const holdsState = useHoldsState(id);
 
   const route = store.routes.get(id);
   if (route == null) throw new Error("No such route: " + id);
