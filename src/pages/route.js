@@ -2,7 +2,7 @@ import { Fragment } from "react";
 
 import classNames from "../classNames";
 import FadingImage from "../fadingImage";
-import Holds from "../holds";
+import Holds, { useHoldsState } from "../holds";
 import { imageUrl } from "../img";
 import Link from "../link";
 import useThumbhash from "../thumbhash";
@@ -20,6 +20,7 @@ function capitalize(s) {
 
 function Route({ id }) {
   const { store } = useStore();
+  const holdsState = useHoldsState();
 
   const route = store.routes.get(id);
   if (route == null) throw new Error("No such route: " + id);
@@ -69,6 +70,7 @@ function Route({ id }) {
             }}
             viewBox={route.holds.viewBox}
             holds={route.holds.annotations}
+            state={holdsState}
           />
         )}
       </div>
@@ -108,7 +110,7 @@ function Route({ id }) {
         <h2 className="text-brand-300 mt-2">
           {route.date} &middot; {LOCATION_NAMES[route.location]}
         </h2>
-        <Notes className="mt-6" notes={route.notes} />
+        <Notes className="mt-6" notes={route.notes} holdsState={holdsState} />
         <p className="text-brand-300 mt-6">
           <Link
             to="/"
@@ -185,7 +187,7 @@ function NavAdjacentLink({ id, current, isNext, byCategoryIndex }) {
   );
 }
 
-function Notes({ notes, className }) {
+function Notes({ notes, holdsState, className }) {
   const paragraphs = [];
 
   let currentP = [];
@@ -203,6 +205,13 @@ function Notes({ notes, className }) {
       case "em":
         currentP.push(<em key={i}>{node.text}</em>);
         break;
+      case "hold":
+        currentP.push(
+          <HoldRef key={i} id={node.id} holdsState={holdsState}>
+            {node.text}
+          </HoldRef>,
+        );
+        break;
       default:
         throw new Error("Unknown node type: " + node.type);
     }
@@ -217,6 +226,27 @@ function Notes({ notes, className }) {
         </p>
       ))}
     </div>
+  );
+}
+
+function HoldRef({ id, holdsState, children }) {
+  return (
+    <a
+      className={classNames(
+        "border-b-2 px-1 py-[1px] pt-[2px] transition-colors",
+        holdsState.hoveredId === id
+          ? "border-b-slate-400 bg-slate-500"
+          : "border-b-slate-500 bg-slate-700",
+      )}
+      onMouseEnter={() => holdsState.onFocus(id)}
+      onMouseLeave={() => holdsState.onBlur()}
+      onFocus={() => holdsState.onFocus(id)}
+      onBlur={() => holdsState.onBlur()}
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    >
+      {children}
+    </a>
   );
 }
 

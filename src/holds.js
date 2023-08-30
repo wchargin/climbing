@@ -1,11 +1,33 @@
 import { useState } from "react";
 import classNames from "./classNames";
 
-function Holds({ imgSrc, placeholder, viewBox, holds, className, ...rest }) {
+export function useHoldsState() {
   const [hoveredId, setHoveredId] = useState(null);
   // Keep track of which hold we just moused-out of so that we can keep it in
   // the mask as the shade fades out.
   const [lastHoveredId, setLastHoveredId] = useState(null);
+
+  function onFocus(id) {
+    setHoveredId(id);
+    setLastHoveredId(id);
+  }
+  function onBlur() {
+    setHoveredId(null);
+  }
+
+  return { onFocus, onBlur, hoveredId, lastHoveredId };
+}
+
+function Holds({
+  imgSrc,
+  placeholder,
+  viewBox,
+  holds,
+  state,
+  className,
+  ...rest
+}) {
+  const { hoveredId, lastHoveredId } = state;
 
   const [w, h] = viewBox;
   const round = h / 100;
@@ -78,10 +100,8 @@ function Holds({ imgSrc, placeholder, viewBox, holds, className, ...rest }) {
         {holds.map((hold) => (
           <g
             key={hold.id}
-            onMouseEnter={() => void setHoveredId(hold.id)}
-            onMouseLeave={() =>
-              void (setHoveredId(null), setLastHoveredId(hold.id))
-            }
+            onMouseEnter={() => state.onFocus(hold.id)}
+            onMouseLeave={() => state.onBlur()}
             stroke={hold.color}
           >
             {holdRect(hold)}
