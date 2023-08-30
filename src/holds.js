@@ -3,6 +3,9 @@ import classNames from "./classNames";
 
 function Holds({ imgSrc, placeholder, viewBox, holds, className, ...rest }) {
   const [hoveredId, setHoveredId] = useState(null);
+  // Keep track of which hold we just moused-out of so that we can keep it in
+  // the mask as the shade fades out.
+  const [lastHoveredId, setLastHoveredId] = useState(null);
 
   const [w, h] = viewBox;
   const round = h / 100;
@@ -10,7 +13,7 @@ function Holds({ imgSrc, placeholder, viewBox, holds, className, ...rest }) {
 
   const holdsById = new Map();
   for (const hold of holds) holdsById.set(hold.id, hold);
-  const hoveredHold = hoveredId && holdsById.get(hoveredId);
+  const hoveredHold = holdsById.get(hoveredId ?? lastHoveredId) ?? null;
 
   // Exactly aligning rectangles leads to some subpixel inaccuracies on mobile
   // at some zoom levels. Pad by some amount.
@@ -76,7 +79,9 @@ function Holds({ imgSrc, placeholder, viewBox, holds, className, ...rest }) {
           <g
             key={hold.id}
             onMouseEnter={() => void setHoveredId(hold.id)}
-            onMouseLeave={() => void setHoveredId(null)}
+            onMouseLeave={() =>
+              void (setHoveredId(null), setLastHoveredId(hold.id))
+            }
             stroke={hold.color}
           >
             {holdRect(hold)}
@@ -87,34 +92,26 @@ function Holds({ imgSrc, placeholder, viewBox, holds, className, ...rest }) {
       {/**/}
       {/* shade */}
       <mask id="mask-shade">
-        <rect {...oversized} fill="white" />
-        {hoveredHold &&
-          holdRect(hoveredHold, {
-            fill: "black",
-            stroke: "black",
-            strokeWidth,
-          })}
+        <rect {...oversized} fill="black" />
+        <rect
+          {...oversized}
+          fill="white"
+          fillOpacity={hoveredId != null ? 0.75 : 0}
+          className="transition-[fill-opacity] duration-300"
+        />
+        {hoveredHold && (
+          <g fill="black" stroke="black" strokeWidth={strokeWidth}>
+            {holdRect(hoveredHold)}
+            {hoveredHold.extra && <path fill="none" d={hoveredHold.extra} />}
+          </g>
+        )}
       </mask>
       <rect
         {...oversized}
         fill="black"
-        fillOpacity={hoveredHold ? 0.75 : 0}
         mask="url(#mask-shade)"
-        className="pointer-events-none transition-[fill-opacity] duration-300"
+        className="pointer-events-none"
       />
-      {/**/}
-      {/* hovered holds, re-drawn on top of shade */}
-      {hoveredHold && (
-        <g
-          fill="none"
-          strokeWidth={strokeWidth}
-          stroke={hoveredHold.color}
-          className="pointer-events-none"
-        >
-          {holdRect(hoveredHold)}
-          {hoveredHold.extra && <path d={hoveredHold.extra} />}
-        </g>
-      )}
     </svg>
   );
 }
