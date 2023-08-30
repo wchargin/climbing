@@ -18,7 +18,7 @@ function App() {
     const match = path.match(ROUTE_BY_ID);
     if (match != null) {
       const id = Number(match[1]);
-      return <Route id={id} />;
+      return <Route key={id} id={id} />;
     }
   }
 
@@ -30,7 +30,7 @@ function App() {
       const routeId = store.resolveCategoryAndIndex(category, index);
       if (routeId == null)
         throw new Error(`No such route: ${category} #${index}`);
-      return <Route id={routeId} />;
+      return <Route key={routeId} id={routeId} />;
     }
   }
 
