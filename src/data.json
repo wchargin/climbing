@@ -351,8 +351,48 @@
       "location": "poplar",
       "thumbhash": "IPgNDYKZeIh/h4eEeJiId1+oz4X6",
       "notes": [
-        "Poked at the start: the angle on the big volume directly beneath the start hold is very shallow, and it's easy to slide off, and I didn't attempt it. Then I flashed it when I saw someone trying it out by pointing the toe of their left foot right into the volume, along the top edge maybe 60% of the way to the right. The end hold is very good in the way that it needs to be; you can grab behind it and hold on easily."
-      ]
+        "Poked at the start: the angle on the ",
+        {
+          "type": "hold",
+          "id": "v",
+          "text": "big volume"
+        },
+        " directly beneath the ",
+        {
+          "type": "hold",
+          "id": "1",
+          "text": "start hold"
+        },
+        " is very shallow, and it's easy to slide off, and I didn't attempt it. Then I flashed it when I saw someone trying it out by pointing the toe of their left foot right into the volume, along the top edge maybe 60% of the way to the right. The ",
+        {
+          "type": "hold",
+          "id": "2",
+          "text": "end hold"
+        },
+        " is very good in the way that it needs to be; you can grab behind it and hold on easily."
+      ],
+      "holds": {
+        "viewBox": [3024, 4032],
+        "annotations": [
+          {
+            "id": "v",
+            "box": [81, 2904, 939, 552],
+            "color": "#a7bfe2"
+          },
+          {
+            "id": "1",
+            "box": [750, 2157, 309, 252],
+            "extra": "M884 2409v75 M925 2409v75",
+            "color": "#a7bfe2"
+          },
+          {
+            "id": "2",
+            "box": [2598, 1845, 351, 330],
+            "extra": "M2773 2175v75",
+            "color": "#c7dfff"
+          }
+        ]
+      }
     }
   ]
 }
