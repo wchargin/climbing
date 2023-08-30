@@ -57,12 +57,20 @@
       "thumbhash": "GwgGFQRpmF93V3e2eZaIaPqLx7+J",
       "notes": [
         "Cool route. Worked on it with a stranger, sharing ideas and leapfrogging progress. The big central hold with a hole in it is fully untenable as a handhold. Bring chalk.",
+        {
+          "type": "p"
+        },
         "From the start position, move to grab the ",
         {
           "type": "em",
           "text": "left edge"
         },
-        "of the square volume above the right start hold with both hands, matching right hand below left hand. Then, left toe up on the left volume, and *press* up through the hands until stable. Right foot to the start hold; the kneebar on the volume is great. Adjust hands to grab the small holds above the central hold and maneuver up. Grab the point (apical vertex) of the big top-right volume. Left toe on the topmost left hold. Move left hand to the finish hold and, terrified, follow it with the right."
+        " of the square volume above the right start hold with both hands, matching right hand below left hand. Then, left toe up on the left volume, and ",
+        {
+          "type": "em",
+          "text": "press"
+        },
+        " up through the hands until stable. Right foot to the start hold; the kneebar on the volume is great. Adjust hands to grab the small holds above the central hold and maneuver up. Grab the point (apical vertex) of the big top-right volume. Left toe on the topmost left hold. Move left hand to the finish hold and, terrified, follow it with the right."
       ]
     },
     {
