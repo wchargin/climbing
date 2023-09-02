@@ -12,13 +12,126 @@
         {
           "type": "p"
         },
-        "Establish using left foot on the bottom hold. Grab quickly to the big hold at middle left. Then establish right foot and ",
+        "Establish using left foot on the ",
+        {
+          "type": "hold",
+          "id": "1",
+          "text": "bottom hold"
+        },
+        ". Grab quickly to the ",
+        {
+          "type": "hold",
+          "id": "6",
+          "text": "big hold at middle left"
+        },
+        ". Then establish right foot and ",
         {
           "type": "em",
           "text": "flag left foot"
         },
-        " to get more height pushing up through right foot, grabbing RH to the tiny hold between the volumes. Pull up further and grab RH again to the first pinch. Pull into the wall and grab to the second pinch, still RH. Then two moves: move LH from the big hold to the left pinch, and move LF from dangling to that same hold that LH was on. The foot move will barn-door you. Be ready to stabilize on those pinches. Big RH grab to the paraboloid. Then you can two-hand grab it and just scramble and muscle up. (\"Just\" as in simple, not easy.)"
-      ]
+        " to get more height pushing up through right foot, grabbing RH to the ",
+        {
+          "type": "hold",
+          "id": "7",
+          "text": "tiny hold between the volumes"
+        },
+        ". Pull up further and grab RH again to the ",
+        {
+          "type": "hold",
+          "id": "8+9",
+          "text": "first pinch"
+        },
+        ". Pull into the wall and grab to the ",
+        {
+          "type": "hold",
+          "id": "8+9",
+          "text": "second pinch"
+        },
+        ", still RH. Then two moves: move LH from the ",
+        {
+          "type": "hold",
+          "id": "6",
+          "text": "big hold"
+        },
+        " to the ",
+        {
+          "type": "hold",
+          "id": "8+9",
+          "text": "left pinch"
+        },
+        ", and move LF from dangling to ",
+        {
+          "type": "hold",
+          "id": "6",
+          "text": "that same hold that LH was on"
+        },
+        ". The foot move will barn-door you. Be ready to stabilize on those ",
+        {
+          "type": "hold",
+          "id": "8+9",
+          "text": "pinches"
+        },
+        ". Big RH grab to ",
+        {
+          "type": "hold",
+          "id": "10",
+          "text": "the paraboloid"
+        },
+        ". Then you can two-hand grab it and just scramble and muscle up. (\"Just\" as in simple, not easy.)"
+      ],
+      "holds": {
+        "viewBox": [3024, 4032],
+        "annotations": [
+          {
+            "id": "1",
+            "box": [936, 3188, 152, 178],
+            "color": "#c7dfff"
+          },
+          {
+            "id": "2",
+            "box": [161, 2604, 188, 203],
+            "extra": "M255 2807v50",
+            "color": "#c7dfff"
+          },
+          {
+            "id": "3",
+            "box": [1218, 2582, 129, 139],
+            "color": "#cee3ff"
+          },
+          {
+            "id": "4",
+            "box": [1071, 2441, 192, 202],
+            "extra": "M1135 2643v50",
+            "maskOut": ["3"],
+            "color": "#cee3ff"
+          },
+          {
+            "id": "5",
+            "box": [1495, 2153, 157, 164],
+            "color": "#c7dfff"
+          },
+          {
+            "id": "6",
+            "box": [678, 1570, 264, 295],
+            "color": "#c7dfff"
+          },
+          {
+            "id": "7",
+            "box": [1180, 1110, 154, 168],
+            "color": "#c7dfff"
+          },
+          {
+            "id": "8+9",
+            "box": [1452, 802, 330, 356],
+            "color": "#c7dfff"
+          },
+          {
+            "id": "10",
+            "box": [1986, 848, 284, 292],
+            "color": "#c7dfff"
+          }
+        ]
+      }
     },
     {
       "id": 100,
