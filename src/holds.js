@@ -125,7 +125,7 @@ function Holds({
         <rect
           {...oversized}
           fill="white"
-          fillOpacity={hoveredId != null ? 0.75 : 0}
+          fillOpacity={hoveredId != null ? 0.5 : 0}
           className="transition-[fill-opacity] duration-300"
         />
         {hoveredHold && (
