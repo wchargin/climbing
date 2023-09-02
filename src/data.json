@@ -1,6 +1,103 @@
 {
   "routes": [
     {
+      "id": 99,
+      "category": "blue",
+      "indexInCategory": 12,
+      "date": "2023-06-11",
+      "location": "poplar",
+      "thumbhash": "3PcJJQRkeHSJCIh4iYaXmZiPe/u4",
+      "notes": [
+        "Holy moly. Been working on this one for weeks. Definitely at least five sessions. Not an easy blue. Two potential starts: you can go left and use the arête or go straight up. For a while I was using the arête because it's locally easier, but I ended up going directly.",
+        {
+          "type": "p"
+        },
+        "Establish using left foot on the bottom hold. Grab quickly to the big hold at middle left. Then establish right foot and ",
+        {
+          "type": "em",
+          "text": "flag left foot"
+        },
+        " to get more height pushing up through right foot, grabbing RH to the tiny hold between the volumes. Pull up further and grab RH again to the first pinch. Pull into the wall and grab to the second pinch, still RH. Then two moves: move LH from the big hold to the left pinch, and move LF from dangling to that same hold that LH was on. The foot move will barn-door you. Be ready to stabilize on those pinches. Big RH grab to the paraboloid. Then you can two-hand grab it and just scramble and muscle up. (\"Just\" as in simple, not easy.)"
+      ]
+    },
+    {
+      "id": 100,
+      "category": "black",
+      "indexInCategory": 75,
+      "date": "2023-06-11",
+      "location": "poplar",
+      "thumbhash": "GggODQJ4iI93p4iXeHmHeNB+Ca3X",
+      "notes": [
+        "💯❗ Start with left foot, grab RH, jam RF into that starting hold, and really push through it to grab to that lower pinch with LH. Scramble up is standard but not easy, especially going over the top. There's one small black hold just above the pinches (just visible in photo), which you can't see from ground level (occlusion)."
+      ]
+    },
+    {
+      "id": 101,
+      "category": "black",
+      "indexInCategory": 76,
+      "date": "2023-06-16",
+      "location": "poplar",
+      "thumbhash": "GwgKDQKdiY+HWIaomXeIeCFvefaV",
+      "notes": [
+        "Flashed after watching someone do most of it. Was really notable to me how trivial the last move was for me compared to her, just due to wingspan."
+      ]
+    },
+    {
+      "id": 102,
+      "category": "black",
+      "indexInCategory": 77,
+      "date": "2023-07-08",
+      "location": "poplar",
+      "thumbhash": "HPgNHQZaiH+HZ4d3mHmYh4OPW/rJ",
+      "notes": ["Use cross grip on the two holds just before the finish."]
+    },
+    {
+      "id": 103,
+      "category": "black",
+      "indexInCategory": 78,
+      "date": "2023-07-08",
+      "location": "poplar",
+      "thumbhash": "HwgODQKoeI+HSHend4eneJyPafnY",
+      "notes": []
+    },
+    {
+      "id": 104,
+      "category": "black",
+      "indexInCategory": 79,
+      "date": "2023-07-08",
+      "location": "poplar",
+      "thumbhash": "VxgKDQLol4t3CFeIpoVnio+P+Pl4",
+      "notes": [
+        "Difficult! Especially not being able to see around the arête. Took a few tries to clear, including isolating the end: it helps to swing center of mass right around the arête before grabbing to the final hold. Would be easier as a top-out for sure. Need to remember my initial strategy for the middle; on my clear, I used a very intense right-legged hinge motion and didn't manage stabilizers well immediately after that."
+      ]
+    },
+    {
+      "id": 105,
+      "category": "black",
+      "indexInCategory": 80,
+      "date": "2023-07-10",
+      "location": "poplar",
+      "thumbhash": "G/gJFQKPiH6HSIeoiHinqHKPWuf4",
+      "notes": [
+        "Weird how this shares holds with Black #79: the end hold most obviously, but also the rightmost black hold partially visible in this photo is a good foothold to finish. I didn't try this route on Sunday because I couldn't find the start tape, but there's one piece of tape on the small black (yep) hold on the leftmost volume.",
+        {
+          "type": "p"
+        },
+        "Repeated on 2023-07-13, somewhat cleaner. Still definitely a dyno from the middle to having my right hand on the penultimate hold. Don't know if there's a way around that, though?"
+      ]
+    },
+    {
+      "id": 106,
+      "category": "black",
+      "indexInCategory": 81,
+      "date": "2023-07-10",
+      "location": "poplar",
+      "thumbhash": "HQgGFQSGd1+ImHd3eIR3d4xvuveX",
+      "notes": [
+        "Used a bit of cheeky bolt hole on the penultimate hold. Key to the first half (or middle third maybe) is to keep your center of mass left so that you can make use of the stippled hold. For the last bit it helps to note the small chip before the big slot hold. Also used some wingspan to dyno to the final hold. Would like to refine this whole route…"
+      ]
+    },
+    {
       "id": 107,
       "category": "black",
       "indexInCategory": 82,
