@@ -112,14 +112,14 @@ function Holds({
         width={w}
         height={h}
         className={classNames(
-          "transition-opacity duration-300",
+          "transition-opacity",
           imgLoaded || "js-opacity-0",
         )}
       />
       <g
         key={`holds-${state.routeId}`}
         className={classNames(
-          "transition-opacity duration-300",
+          "transition-opacity",
           (imgLoaded && showHolds) || "js-opacity-0",
         )}
       >
@@ -163,7 +163,7 @@ function Holds({
             {...oversized}
             fill="white"
             fillOpacity={hoveredId != null ? 0.5 : 0}
-            className="transition-[fill-opacity] duration-300"
+            className="transition-[fill-opacity]"
           />
           {hoveredHold && (
             <g fill="black" stroke="black">

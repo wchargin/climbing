@@ -45,7 +45,7 @@ function FadingImage({ src, className, ...rest }) {
       src={src}
       className={classNames(
         className,
-        "transition-opacity duration-300",
+        "transition-opacity",
         loaded || "js-opacity-0",
       )}
     />

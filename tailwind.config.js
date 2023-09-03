@@ -11,6 +11,9 @@ module.exports = {
       screens: {
         tall: { raw: "(min-height: 640px)" },
       },
+      transitionDuration: {
+        DEFAULT: "300ms",
+      },
     },
   },
   plugins: [],
