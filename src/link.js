@@ -13,6 +13,9 @@ function Link({ to, children, scrollTo, ...rest }, ref) {
   const { requestScroll } = useTelescroll();
 
   function onClick(e) {
+    // Let ctrl-click (to open in new tab), etc. pass through unchanged.
+    if (isModifiedEvent(e)) return;
+
     e.preventDefault();
     navigate(to);
     if (scrollTo == null) {
@@ -32,6 +35,21 @@ function Link({ to, children, scrollTo, ...rest }, ref) {
     >
       {children}
     </a>
+  );
+}
+
+/*! `isModifiedEvent`: adapted from the function of the same name in
+ * `next/link`, which is provided under the MIT License by Vercel, Inc.
+ */
+function isModifiedEvent(e) {
+  const anchorTarget = e.currentTarget.getAttribute("target");
+  if (anchorTarget && anchorTarget !== "self") return true;
+  return (
+    e.metaKey ||
+    e.ctrlKey ||
+    e.shiftKey ||
+    e.altKey ||
+    e.nativeEvent?.which === 2
   );
 }
 
