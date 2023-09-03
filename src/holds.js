@@ -1,7 +1,9 @@
 import { useState } from "react";
 import classNames from "./classNames";
 
-export function useHoldsState(routeId) {
+import { useImageSpy } from "./imageSpy";
+
+export function useHoldsState(routeId, imgSrc) {
   const [hoveredId, setHoveredId] = useState(null);
   // Keep track of which hold we just moused-out of so that we can keep it in
   // the mask as the shade fades out.
@@ -16,6 +18,8 @@ export function useHoldsState(routeId) {
     setLastHoveredId(null);
   }
 
+  const imgLoaded = useImageSpy(imgSrc);
+
   function onFocus(id) {
     setHoveredId(id);
     setLastHoveredId(id);
@@ -24,19 +28,27 @@ export function useHoldsState(routeId) {
     setHoveredId(null);
   }
 
-  return { onFocus, onBlur, hoveredId, lastHoveredId };
+  return {
+    routeId,
+    onFocus,
+    onBlur,
+    hoveredId,
+    lastHoveredId,
+    imgSrc,
+    imgLoaded,
+  };
 }
 
 function Holds({
-  imgSrc,
   placeholder,
   viewBox,
   holds,
+  showHolds,
   state,
   className,
   ...rest
 }) {
-  const { hoveredId, lastHoveredId } = state;
+  const { hoveredId, lastHoveredId, imgSrc, imgLoaded } = state;
 
   const [w, h] = viewBox;
   const round = h / 100;
@@ -48,7 +60,16 @@ function Holds({
 
   // Exactly aligning rectangles leads to some subpixel inaccuracies on mobile
   // at some zoom levels. Pad by some amount.
-  const oversized = { x: -w / 2, y: -h / 2, width: 2 * w, height: 2 * h };
+  // TODO: Currently this is a hack because the oversized shade can be seen on
+  // some layout sizes, namely "md" size when the space for the SVG is wider
+  // than it is tall :-(
+  const dOversize = Math.round(h / 1000);
+  const oversized = {
+    x: -dOversize,
+    y: -dOversize,
+    width: w + 2 * dOversize,
+    height: h + 2 * dOversize,
+  };
 
   function holdRect(hold, props) {
     return (
@@ -85,62 +106,79 @@ function Holds({
           preserveAspectRatio="none"
         />
       )}
-      <image href={imgSrc} width={w} height={h} />
-      {/**/}
-      {/* masks for holds */}
-      {holds
-        .filter((h) => h.maskOut)
-        .map((hold) => (
-          <mask key={hold.id} id={`mask-${hold.id}`}>
-            <rect {...oversized} stroke="none" fill="white" />
-            {hold.maskOut.map((otherId) =>
-              holdRect(holdsById.get(otherId), {
-                key: otherId,
-                fill: "black",
-                // Only mask out the *interior* of masked holds.
-                stroke: "white",
-              }),
-            )}
-          </mask>
-        ))}
-      {/**/}
-      {/* holds */}
-      <g fill="transparent">
-        {holds.map((hold) => (
-          <g
-            key={hold.id}
-            onMouseEnter={() => state.onFocus(hold.id)}
-            onMouseLeave={() => state.onBlur()}
-            stroke={hold.color}
-          >
-            {holdRect(hold)}
-            {hold.extra && <path d={hold.extra} />}
-          </g>
-        ))}
-      </g>
-      {/**/}
-      {/* shade */}
-      <mask id="mask-shade">
-        <rect {...oversized} fill="black" />
+      <image
+        key={`img-${state.routeId}`}
+        href={imgSrc}
+        width={w}
+        height={h}
+        className={classNames(
+          "transition-opacity duration-300",
+          imgLoaded || "js-opacity-0",
+        )}
+      />
+      <g
+        key={`holds-${state.routeId}`}
+        className={classNames(
+          "transition-opacity duration-300",
+          (imgLoaded && showHolds) || "js-opacity-0",
+        )}
+      >
+        {/**/}
+        {/* masks for holds */}
+        {holds
+          .filter((h) => h.maskOut)
+          .map((hold) => (
+            <mask key={hold.id} id={`mask-${hold.id}`}>
+              <rect {...oversized} stroke="none" fill="white" />
+              {hold.maskOut.map((otherId) =>
+                holdRect(holdsById.get(otherId), {
+                  key: otherId,
+                  fill: "black",
+                  // Only mask out the *interior* of masked holds.
+                  stroke: "white",
+                }),
+              )}
+            </mask>
+          ))}
+        {/**/}
+        {/* holds */}
+        <g fill="transparent">
+          {holds.map((hold) => (
+            <g
+              key={hold.id}
+              onMouseEnter={() => state.onFocus(hold.id)}
+              onMouseLeave={() => state.onBlur()}
+              stroke={hold.color}
+            >
+              {holdRect(hold)}
+              {hold.extra && <path d={hold.extra} />}
+            </g>
+          ))}
+        </g>
+        {/**/}
+        {/* shade */}
+        <mask id="mask-shade">
+          <rect {...oversized} fill="black" />
+          <rect
+            {...oversized}
+            fill="white"
+            fillOpacity={hoveredId != null ? 0.5 : 0}
+            className="transition-[fill-opacity] duration-300"
+          />
+          {hoveredHold && (
+            <g fill="black" stroke="black">
+              {holdRect(hoveredHold)}
+              {hoveredHold.extra && <path fill="none" d={hoveredHold.extra} />}
+            </g>
+          )}
+        </mask>
         <rect
           {...oversized}
-          fill="white"
-          fillOpacity={hoveredId != null ? 0.5 : 0}
-          className="transition-[fill-opacity] duration-300"
+          fill="black"
+          mask="url(#mask-shade)"
+          className="pointer-events-none"
         />
-        {hoveredHold && (
-          <g fill="black" stroke="black">
-            {holdRect(hoveredHold)}
-            {hoveredHold.extra && <path fill="none" d={hoveredHold.extra} />}
-          </g>
-        )}
-      </mask>
-      <rect
-        {...oversized}
-        fill="black"
-        mask="url(#mask-shade)"
-        className="pointer-events-none"
-      />
+      </g>
     </svg>
   );
 }

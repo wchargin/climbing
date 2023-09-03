@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 
 import classNames from "../classNames";
 import FadingImage from "../fadingImage";
@@ -20,11 +20,13 @@ function capitalize(s) {
 
 function Route({ id }) {
   const { store } = useStore();
-  const holdsState = useHoldsState(id);
+  const [showHolds, setShowHolds] = useState(true);
 
   const route = store.routes.get(id);
   if (route == null) throw new Error("No such route: " + id);
   const thumbhash = useThumbhash(route.thumbhash);
+
+  const holdsState = useHoldsState(id, imageUrl(route.id, "1200"));
 
   const prevInCategory = store.resolveCategoryAndIndex(
     route.category,
@@ -36,43 +38,42 @@ function Route({ id }) {
   );
 
   return (
-    <main className="flex flex-col items-center md:grid md:grid-cols-2 md:gap-6 md:p-[2rem] md:h-screen">
+    <main className="w-full flex flex-col items-start md:grid md:grid-cols-2 md:gap-[2rem] md:p-[2rem]">
       <div className="relative w-full h-full">
-        {!route.holds && (
-          <figure
-            className="route-image-holder flex justify-center md:justify-end md:absolute md:right-0 md:top-0 md:bottom-0 md:h-full"
-            style={{
-              background:
-                thumbhash.image != null
-                  ? "center / cover no-repeat"
-                  : thumbhash.averageColor,
-              backgroundImage: thumbhash.image?.cssUrl,
-            }}
-          >
-            <a
-              className="block md:fixed md:top-0 md:bottom-0 md:h-screen md:max-w-[50vw]"
-              href={imageUrl(route.id, "full")}
-            >
-              <FadingImage
-                className="object-contain max-h-full mx-auto md:object-right md:top-0 md:bottom-0 md:h-screen md:max-w-[50vw]"
-                src={imageUrl(route.id, "1200")}
-                style={{ aspectRatio: "3 / 4" }}
-              />
-            </a>
-          </figure>
-        )}
-        {route.holds && (
-          <Holds
-            imgSrc={imageUrl(route.id, "1200")}
-            placeholder={{
-              color: thumbhash.averageColor,
-              src: thumbhash.image?.url,
-            }}
-            viewBox={route.holds.viewBox}
-            holds={route.holds.annotations}
-            state={holdsState}
-          />
-        )}
+        <div className="md:max-h-auto flex justify-center md:justify-end md:absolute md:right-0 md:top-0 md:bottom-0 md:h-full">
+          <div className="route-image-holder flex flex-col justify-start items-center">
+            <Holds
+              placeholder={{
+                color: thumbhash.averageColor,
+                src: thumbhash.image?.url,
+              }}
+              viewBox={route.holds?.viewBox ?? [3024, 4032]}
+              holds={route.holds?.annotations ?? []}
+              showHolds={showHolds}
+              state={holdsState}
+              className="max-w-full max-h-full md:h-auto md:w-full"
+              style={{ aspectRatio: "3 / 4" }}
+            />
+            <div className="text-center text-sm md:text-xs py-1 text-brand-300 bg-transparent">
+              {
+                // ^ want bg-black/25 but can't figure out layout to make that
+                // only extend to SVG width, not screen width
+              }
+              <a
+                href={imageUrl(route.id, "full")}
+                className="hover:underline focus:underline active:text-red-600"
+              >
+                see full image
+              </a>
+              {route.holds && (
+                <>
+                  <span className="mx-2">&middot;</span>
+                  <ShowHideHolds value={showHolds} set={setShowHolds} />
+                </>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
       <div className="mt-12 md:mt-12 w-full h-full lg:max-w-[600px] px-6 lg:px-0">
         <div className="flex items-center">
@@ -184,6 +185,25 @@ function NavAdjacentLink({ id, current, isNext, byCategoryIndex }) {
         />
       </svg>
     </Link>
+  );
+}
+
+function ShowHideHolds({ value, set }) {
+  function btn(state, children) {
+    const active = value === state;
+    return (
+      <button
+        onClick={() => void set(state)}
+        className={classNames(active && "underline")}
+      >
+        {children}
+      </button>
+    );
+  }
+  return (
+    <>
+      holds: {btn(false, "hide")} / {btn(true, "show")}
+    </>
   );
 }
 

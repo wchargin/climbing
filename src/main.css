@@ -44,10 +44,18 @@ body {
 }
 
 .route-image-holder {
-  max-height: 80vh;
+  width: 100vw;
+  max-height: calc(100vh - 12rem);
 }
 @media screen(md) {
   .route-image-holder {
+    position: fixed;
+    top: 2rem;
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
+    height: unset;
     max-height: calc(100vh - 4rem);
+    max-width: calc(50vw - 4rem);
   }
 }
