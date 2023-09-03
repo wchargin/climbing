@@ -8,20 +8,20 @@ main() {
         printf >&2 'usage: upload-img <filename> <image-id>\n'
         return 1
     fi
+    tmpdir="$(mktemp -d)"
+    trap 'rm -f "${tmpdir}"/*/*.jpg && rmdir "${tmpdir}"/* && rmdir "${tmpdir}"' EXIT
+    mkdir "${tmpdir}"/full "${tmpdir}"/1200 "${tmpdir}"/400
     filename="$1"
     image_id="$2"
-    cat "${filename}" | upload "full/${image_id}.jpg"
-    for size in 1200 400; do
-        convert "${filename}" -resize "${size}x${size}" jpg:- \
-            | upload "${size}/${image_id}.jpg"
-    done
-}
-
-upload() {
-    gsutil \
+    convert "${filename}" \
+        -strip -write "${tmpdir}/full/${image_id}.jpg" \
+        -resize 1200x1200 -write "${tmpdir}/1200/${image_id}.jpg" \
+        -resize 400x400 -write "${tmpdir}/400/${image_id}.jpg" \
+        null:
+    gsutil -m \
         -h 'cache-control: public, max-age=60' \
         -h 'content-type: image/jpeg' \
-        cp - "gs://${BUCKET}/$1"
+        cp -r "${tmpdir}"/* "gs://${BUCKET}"
 }
 
 main "$@"
