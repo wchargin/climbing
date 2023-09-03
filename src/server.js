@@ -7,6 +7,7 @@ import App from "./app";
 import data from "./data";
 import { pathToRoot } from "./path";
 import Router from "./router";
+import { ThumbhashCacheProvider } from "./thumbhash";
 
 import ClimbingDataStore, { toSubset } from "./store";
 import StoreContext from "./store/context";
@@ -66,9 +67,11 @@ async function renderPage(path, storeSubset, outdir, filename) {
 
   const rendered = Server.renderToString(
     <StoreContext.Provider value={{ store, loaded: false }}>
-      <Router initialPath={path} gateway={null}>
-        <App />
-      </Router>
+      <ThumbhashCacheProvider>
+        <Router initialPath={path} gateway={null}>
+          <App />
+        </Router>
+      </ThumbhashCacheProvider>
     </StoreContext.Provider>,
   );
 

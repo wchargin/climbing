@@ -1,24 +1,44 @@
-import { useEffect, useMemo, useState } from "react";
+import { createContext, useContext, useRef } from "react";
 import { thumbHashToAverageRGBA, thumbHashToDataURL } from "thumbhash";
 
+import { useHydrated } from "./hydrated";
+
+const ThumbhashCacheContext = createContext(null);
+
+export function ThumbhashCacheProvider({ children }) {
+  const cacheRef = useRef(null);
+  if (cacheRef.current == null) cacheRef.current = new Map();
+  return (
+    <ThumbhashCacheContext.Provider value={cacheRef.current}>
+      {children}
+    </ThumbhashCacheContext.Provider>
+  );
+}
+
 export default function useThumbhash(base64) {
+  const cache = useContext(ThumbhashCacheContext);
+  const hydrated = useHydrated();
+
+  let entry = cache.get(base64);
+  if (entry != null) return entry;
+  entry = { averageColor: null, image: null };
+
   // `averageColor` is always available.
-  const averageColor = useMemo(() => {
-    const thumbHash = decodeThumbHashBase64(base64);
-    return rgbaObjectToHex(thumbHashToAverageRGBA(thumbHash));
-  }, [base64]);
+  const thumbHash = decodeThumbHashBase64(base64);
+  entry.averageColor = rgbaObjectToHex(thumbHashToAverageRGBA(thumbHash));
 
   // `image` is only available on the client (and after initial render) because
   // the data URL is large so we don't want it to be in the document payload.
-  const [image, setImage] = useState(null);
-  useEffect(() => {
-    const thumbHash = decodeThumbHashBase64(base64);
+  if (hydrated) {
     const url = thumbHashToDataURL(thumbHash);
     const cssUrl = `url("${url}")`;
-    setImage({ url, cssUrl });
-  }, [base64]);
+    entry.image = { url, cssUrl };
+    cache.set(base64, entry);
+  } else {
+    entry.image = null;
+  }
 
-  return { averageColor, image };
+  return entry;
 }
 
 function decodeThumbHashBase64(hash) {

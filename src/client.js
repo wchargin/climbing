@@ -6,6 +6,7 @@ import { HydratedProvider } from "./hydrated";
 import { pathToRoot } from "./path";
 import Router from "./router";
 import { TelescrollProvider } from "./telescroll";
+import { ThumbhashCacheProvider } from "./thumbhash";
 
 import ClimbingDataStore from "./store";
 import StoreContext from "./store/context";
@@ -50,11 +51,13 @@ function main() {
   const app = (
     <StoreProvider initialStore={initialStore}>
       <HydratedProvider>
-        <Router initialPath={path} gateway={gateway}>
-          <TelescrollProvider>
-            <App />
-          </TelescrollProvider>
-        </Router>
+        <ThumbhashCacheProvider>
+          <Router initialPath={path} gateway={gateway}>
+            <TelescrollProvider>
+              <App />
+            </TelescrollProvider>
+          </Router>
+        </ThumbhashCacheProvider>
       </HydratedProvider>
     </StoreProvider>
   );
