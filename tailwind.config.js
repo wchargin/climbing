@@ -8,6 +8,9 @@ module.exports = {
       colors: {
         brand: brandPalette(),
       },
+      screens: {
+        tall: { raw: "(min-height: 640px)" },
+      },
     },
   },
   plugins: [],

@@ -75,7 +75,7 @@ function Route({ id }) {
           </div>
         </div>
       </div>
-      <div className="mt-12 md:mt-12 w-full h-full lg:max-w-[600px] px-6 lg:px-0">
+      <div className="mt-12 md:mt-0 tall:mt-12 w-full h-full lg:max-w-[600px] px-6 lg:px-0">
         <div className="flex items-center">
           <h1 className="text-4xl outline-l-4 flex-grow">
             {capitalize(route.category)} #{route.indexInCategory}
