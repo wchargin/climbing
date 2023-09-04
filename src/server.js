@@ -57,11 +57,10 @@ async function main() {
       return renderPage(path, subset, fsPath, "index.html");
     }),
   );
+  console.log("rendered %s pages to %s", pages.length, outdir);
 }
 
 async function renderPage(path, storeSubset, outdir, filename) {
-  console.warn("rendering %s -> %s/%s", path, outdir, filename);
-
   const store = ClimbingDataStore.fromData(storeSubset);
   const storeDataJson = JSON.stringify(storeSubset);
 
