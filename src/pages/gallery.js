@@ -53,8 +53,11 @@ function Season({ season, routes }) {
           {...colorLabels}
         </div>
       </div>
-      {season.description && (
-        <p className="m-2 mt-4 max-w-[600px]">{season.description}</p>
+      {season.description.length > 0 && (
+        <SeasonDescription
+          className="m-2 mt-4 max-w-[600px]"
+          description={season.description}
+        />
       )}
       <div className="routes-grid grid gap-2 p-2">
         {routes.map((route) => (
@@ -86,6 +89,33 @@ function CategoryCountChip({ category, count }) {
       </span>
     </span>
   );
+}
+
+function SeasonDescription({ description, className }) {
+  const p = [];
+  for (let i = 0; i < description.length; i++) {
+    const node = description[i];
+    if (typeof node === "string") {
+      p.push(<Fragment key={i}>{node}</Fragment>);
+      continue;
+    }
+    switch (node.type) {
+      case "route":
+        p.push(
+          <Link
+            key={i}
+            to={`/routes/${node.id}/`}
+            className="text-brand-300 hover:underline focus:underline active:text-red-600"
+          >
+            {node.text}
+          </Link>,
+        );
+        break;
+      default:
+        throw new Error("Unknown node type: " + node.type);
+    }
+  }
+  return <p className={className}>{...p}</p>;
 }
 
 const CATEGORY_COLORS = {

@@ -4,13 +4,27 @@
       "id": "2023q2",
       "name": "Summer 2023",
       "fromRouteId": 99,
-      "description": "Out of town for the back half of June and ramped back up slowly in July, with a fairly absent August due to illness. Highlights: extremely proud of multi-week blue project in #99; passed 100 black+ climbs; second pink (#117); nearly doubled blue count from 11 to 20."
+      "description": [
+        "Out of town for the back half of June and ramped back up slowly in July, with a fairly absent August due to illness. Highlights: extremely proud of ",
+        {
+          "type": "route",
+          "id": 99,
+          "text": "multi-week blue project in #99"
+        },
+        "; passed 100 black+ climbs; ",
+        {
+          "type": "route",
+          "id": 117,
+          "text": "second pink (#117)"
+        },
+        "; nearly doubled blue count from 11 to 20."
+      ]
     },
     {
       "id": "2023q3",
       "name": "Fall 2023",
       "fromRouteId": 131,
-      "description": ""
+      "description": []
     }
   ],
   "routes": [
