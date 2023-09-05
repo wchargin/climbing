@@ -10,7 +10,20 @@ function Router({ initialPath, gateway, children }) {
 
   useEffect(() => {
     function onPop(e) {
-      setPath(e.state ?? initialPath);
+      const currentPathname = window.location.pathname;
+      const gatewayPathname = new URL(gateway).pathname.replace(/\/*$/, "");
+      if (!currentPathname.startsWith(gatewayPathname)) {
+        console.warn(
+          "Lost track of navigation: gateway %s, pathname %s",
+          gatewayPathname,
+          currentPathname,
+        );
+        // We can't recover, so fall back to browser defaults to make sure not
+        // to break the back button.
+        window.location = window.location;
+        return;
+      }
+      setPath(currentPathname.slice(gatewayPathname.length));
     }
     window.addEventListener("popstate", onPop);
     return () => void window.removeEventListener("popstate", onPop);
@@ -18,7 +31,7 @@ function Router({ initialPath, gateway, children }) {
 
   function navigate(newPath) {
     if (gateway == null) throw new Error("Cannot navigate without gateway");
-    history.pushState(newPath, "", gateway + newPath);
+    history.pushState(null, "", gateway + newPath);
     setPath(newPath);
   }
 
