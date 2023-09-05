@@ -53,6 +53,9 @@ function Season({ season, routes }) {
           {...colorLabels}
         </div>
       </div>
+      {season.description && (
+        <p className="m-2 mt-4 max-w-[600px]">{season.description}</p>
+      )}
       <div className="routes-grid grid gap-2 p-2">
         {routes.map((route) => (
           <Route key={route.id} route={route} />
