@@ -95,7 +95,7 @@ function Holds({
         rx={round}
         ry={round}
         strokeWidth={dashed && strokeWidth / 2}
-        strokeDasharray={dashed && round / 2}
+        strokeDasharray={dashed && strokeWidth}
         mask={hold.maskOut ? `url(#mask-${hold.id})` : null}
         {...props}
       />
