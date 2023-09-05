@@ -208,9 +208,15 @@ function ShowHideHolds({ value, set }) {
 }
 
 function Notes({ notes, holdsState, className }) {
-  const paragraphs = [];
-
+  const children = [];
   let currentP = [];
+  function clearP(key) {
+    if (currentP.length > 0) {
+      children.push(<p key={key}>{...currentP}</p>);
+      currentP = [];
+    }
+  }
+
   for (let i = 0; i < notes.length; i++) {
     const node = notes[i];
     if (typeof node === "string") {
@@ -219,8 +225,11 @@ function Notes({ notes, holdsState, className }) {
     }
     switch (node.type) {
       case "p":
-        paragraphs.push(currentP);
-        currentP = [];
+        clearP(i);
+        break;
+      case "hr":
+        clearP(`${i}-p`);
+        children.push(<hr key={`${i}-hr`} className="w-[30%] mx-auto my-4" />);
         break;
       case "em":
         currentP.push(<em key={i}>{node.text}</em>);
@@ -236,15 +245,11 @@ function Notes({ notes, holdsState, className }) {
         throw new Error("Unknown node type: " + node.type);
     }
   }
-  if (currentP.length > 0) paragraphs.push(currentP);
+  clearP(notes.length);
 
   return (
-    <div className={className}>
-      {paragraphs.map((children, i) => (
-        <p key={i} className="mt-3">
-          {children}
-        </p>
-      ))}
+    <div className={classNames("flex flex-col gap-3", className)}>
+      {children}
     </div>
   );
 }
