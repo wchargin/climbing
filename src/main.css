@@ -9,7 +9,12 @@ body {
 
 .routes-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
+}
+@media only screen and (min-width: 400px) {
+  .routes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media only screen and (min-width: 600px) {
   .routes-grid {
