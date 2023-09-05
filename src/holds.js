@@ -5,8 +5,7 @@ import { useImageSpy } from "./imageSpy";
 
 const COLORS = {
   // h-blu: blue hold colors
-  "h-blu-200": "#cee3ff",
-  "h-blu-250": "#c7dfff",
+  "h-blu-200": "#c7dfff",
   "h-blu-400": "#a7bfe2",
   "h-blu-500": "#80a4d5",
   "h-blu-600": "#5a88c9",
