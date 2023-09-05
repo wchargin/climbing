@@ -85,7 +85,7 @@ async function renderPage(path, storeSubset, outdir, filename) {
 <script src="${toRoot}store-loader.js" async></script>
 <script src="${toRoot}client.js" async defer></script>
 <style>.js-opacity-0{opacity:0;}</style>
-<noscript><style>.js-opacity-0{opacity:unset;}</style></noscript>
+<noscript><style>.js-opacity-0{opacity:unset;}.nojs-hidden{display:none;}</style></noscript>
 </head>
 <body data-path="${escapeAttr(path)}">
 <div id="root">${rendered}</div>

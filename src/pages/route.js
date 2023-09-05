@@ -66,10 +66,10 @@ function Route({ id }) {
                 see full image
               </a>
               {route.annotations && (
-                <>
+                <span className="nojs-hidden">
                   <span className="mx-2">&middot;</span>
                   <ShowHideHolds value={showHolds} set={setShowHolds} />
-                </>
+                </span>
               )}
             </div>
           </div>
