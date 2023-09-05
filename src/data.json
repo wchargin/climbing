@@ -79,9 +79,9 @@
         },
         ". Then you can two-hand grab it and just scramble and muscle up. (\"Just\" as in simple, not easy.)"
       ],
-      "holds": {
+      "annotations": {
         "viewBox": [3024, 4032],
-        "annotations": [
+        "holds": [
           {
             "id": "1",
             "box": [936, 3188, 152, 178],
@@ -453,9 +453,9 @@
         },
         "."
       ],
-      "holds": {
+      "annotations": {
         "viewBox": [3024, 4032],
-        "annotations": [
+        "holds": [
           {
             "id": "1",
             "box": [1892, 3434, 144, 138],
@@ -581,9 +581,9 @@
         },
         " is very good in the way that it needs to be; you can grab behind it and hold on easily."
       ],
-      "holds": {
+      "annotations": {
         "viewBox": [3024, 4032],
-        "annotations": [
+        "holds": [
           {
             "id": "v",
             "box": [81, 2904, 939, 552],
@@ -718,9 +718,9 @@
         },
         ", lean right so that you can point LF into the bottom of the volume. Then reach up to finish with left then right."
       ],
-      "holds": {
+      "annotations": {
         "viewBox": [3024, 4032],
-        "annotations": [
+        "holds": [
           {
             "id": "v-bottom",
             "box": [1264, 3032, 844, 892],
@@ -864,9 +864,9 @@
         },
         "(Also, colorblind beware: the hold just below-right of the three final holds is purple, not blue! That looks pretty clear in this photo but it's hard for me to tell in real life.)"
       ],
-      "holds": {
+      "annotations": {
         "viewBox": [3024, 4032],
-        "annotations": [
+        "holds": [
           {
             "id": "v-start",
             "box": [2139, 2514, 237, 249],

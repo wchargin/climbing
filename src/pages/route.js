@@ -47,8 +47,8 @@ function Route({ id }) {
                 color: thumbhash.averageColor,
                 src: thumbhash.image?.url,
               }}
-              viewBox={route.holds?.viewBox ?? [3024, 4032]}
-              holds={route.holds?.annotations ?? []}
+              viewBox={route.annotations?.viewBox ?? [3024, 4032]}
+              holds={route.annotations?.holds ?? []}
               showHolds={showHolds}
               state={holdsState}
               className="max-w-full max-h-full md:h-auto md:w-full"
@@ -65,7 +65,7 @@ function Route({ id }) {
               >
                 see full image
               </a>
-              {route.holds && (
+              {route.annotations && (
                 <>
                   <span className="mx-2">&middot;</span>
                   <ShowHideHolds value={showHolds} set={setShowHolds} />
