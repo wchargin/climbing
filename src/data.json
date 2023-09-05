@@ -85,50 +85,50 @@
           {
             "id": "1",
             "box": [936, 3188, 152, 178],
-            "color": "#c7dfff"
+            "color": "h-blu-250"
           },
           {
             "id": "2",
             "box": [161, 2604, 188, 203],
             "extra": "M255 2807v50",
-            "color": "#c7dfff"
+            "color": "h-blu-250"
           },
           {
             "id": "4",
             "box": [1071, 2441, 192, 202],
             "extra": "M1135 2643v50",
             "maskOut": ["3"],
-            "color": "#cee3ff"
+            "color": "h-blu-200"
           },
           {
             "id": "3",
             "box": [1218, 2582, 129, 139],
-            "color": "#cee3ff"
+            "color": "h-blu-200"
           },
           {
             "id": "5",
             "box": [1495, 2153, 157, 164],
-            "color": "#c7dfff"
+            "color": "h-blu-250"
           },
           {
             "id": "6",
             "box": [678, 1570, 264, 295],
-            "color": "#c7dfff"
+            "color": "h-blu-250"
           },
           {
             "id": "7",
             "box": [1180, 1110, 154, 168],
-            "color": "#c7dfff"
+            "color": "h-blu-250"
           },
           {
             "id": "8+9",
             "box": [1452, 802, 330, 356],
-            "color": "#c7dfff"
+            "color": "h-blu-250"
           },
           {
             "id": "10",
             "box": [1986, 848, 284, 292],
-            "color": "#c7dfff"
+            "color": "h-blu-250"
           }
         ]
       }
@@ -459,50 +459,50 @@
           {
             "id": "1",
             "box": [1892, 3434, 144, 138],
-            "color": "#c7dfff"
+            "color": "h-blu-250"
           },
           {
             "id": "2",
             "box": [1601, 2834, 126, 134],
             "extra": "M1664 2968v50",
-            "color": "#a7bfe2"
+            "color": "h-blu-400"
           },
           {
             "id": "3",
             "box": [1815, 2679, 149, 157],
             "extra": "M1889 2836v50",
-            "color": "#a7bfe2"
+            "color": "h-blu-400"
           },
           {
             "id": "4",
             "box": [2244, 2549, 129, 132],
-            "color": "#a7bfe2"
+            "color": "h-blu-400"
           },
           {
             "id": "5",
             "box": [736, 1750, 914, 878],
             "maskOut": ["6"],
-            "color": "#a7bfe2"
+            "color": "h-blu-400"
           },
           {
             "id": "6",
             "box": [1182, 1648, 248, 240],
-            "color": "#a7bfe2"
+            "color": "h-blu-400"
           },
           {
             "id": "7",
             "box": [924, 1032, 767, 489],
-            "color": "#80a4d5"
+            "color": "h-blu-500"
           },
           {
             "id": "8",
             "box": [1007, 797, 213, 202],
-            "color": "#5a88c9"
+            "color": "h-blu-600"
           },
           {
             "id": "9",
             "box": [875, 540, 169, 170],
-            "color": "#5a88c9"
+            "color": "h-blu-600"
           }
         ]
       }
@@ -588,19 +588,19 @@
             "id": "v",
             "box": [81, 2904, 939, 552],
             "style": "dashed",
-            "color": "#a7bfe2"
+            "color": "h-blu-400"
           },
           {
             "id": "1",
             "box": [750, 2157, 309, 252],
             "extra": "M884 2409v75 M925 2409v75",
-            "color": "#a7bfe2"
+            "color": "h-blu-400"
           },
           {
             "id": "2",
             "box": [2598, 1845, 351, 330],
             "extra": "M2773 2175v75",
-            "color": "#c7dfff"
+            "color": "h-blu-250"
           }
         ]
       }
@@ -726,62 +726,62 @@
             "box": [1264, 3032, 844, 892],
             "extra": "M1580 3032v-75",
             "style": "dashed",
-            "color": "#111111"
+            "color": "h-blk-900"
           },
           {
             "id": "v-right",
             "box": [1724, 2036, 1132, 936],
             "extra": "M1724 2708h-75",
             "style": "dashed",
-            "color": "#111111"
+            "color": "h-blk-900"
           },
           {
             "id": "v-left",
             "box": [48, 2744, 520, 504],
             "style": "dashed",
-            "color": "#111111"
+            "color": "h-blk-900"
           },
           {
             "id": "1",
             "box": [518, 2112, 152, 153],
-            "color": "#111111"
+            "color": "h-blk-900"
           },
           {
             "id": "2",
             "box": [1458, 2087, 162, 164],
-            "color": "#111111"
+            "color": "h-blk-900"
           },
           {
             "id": "4+5",
             "box": [1215, 1676, 324, 280],
-            "color": "#111111"
+            "color": "h-blk-900"
           },
           {
             "id": "3",
             "box": [1467, 1907, 155, 153],
             "maskOut": ["4+5"],
-            "color": "#111111"
+            "color": "h-blk-900"
           },
           {
             "id": "6",
             "box": [927, 1255, 219, 260],
-            "color": "#111111"
+            "color": "h-blk-900"
           },
           {
             "id": "7",
             "box": [1476, 981, 188, 194],
-            "color": "#111111"
+            "color": "h-blk-900"
           },
           {
             "id": "8",
             "box": [986, 790, 256, 274],
-            "color": "#111111"
+            "color": "h-blk-900"
           },
           {
             "id": "9",
             "box": [1440, 456, 348, 340],
             "extra": "M1672 796v75",
-            "color": "#111111"
+            "color": "h-blk-900"
           }
         ]
       }
@@ -872,47 +872,47 @@
             "box": [2139, 2514, 237, 249],
             "style": "dashed",
             "extra": "M2237 2763v75 M2277 2763v75",
-            "color": "#a7bfe2"
+            "color": "h-blu-400"
           },
           {
             "id": "v-left-foot",
             "box": [552, 2908, 340, 364],
             "style": "dashed",
-            "color": "#a7bfe2"
+            "color": "h-blu-400"
           },
           {
             "id": "v-top-left",
             "box": [912, 952, 500, 316],
             "style": "dashed",
-            "color": "#cee3ff"
+            "color": "h-blu-200"
           },
           {
             "id": "1",
             "box": [1974, 2178, 189, 195],
-            "color": "#a7bfe2"
+            "color": "h-blu-400"
           },
           {
             "id": "2",
             "box": [1816, 1816, 232, 240],
-            "color": "#a7bfe2"
+            "color": "h-blu-400"
           },
           {
             "id": "3",
             "box": [1824, 1200, 300, 556],
             "maskOut": ["4"],
-            "color": "#a7bfe2"
+            "color": "h-blu-400"
           },
           {
             "id": "4",
             "box": [2028, 692, 356, 700],
             "maskOut": ["5"],
-            "color": "#a7bfe2"
+            "color": "h-blu-400"
           },
           {
             "id": "5",
             "box": [2292, 560, 224, 220],
             "extra": "M2471 780v75",
-            "color": "#a7bfe2"
+            "color": "h-blu-400"
           }
         ]
       }

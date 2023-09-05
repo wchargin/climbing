@@ -3,6 +3,20 @@ import classNames from "./classNames";
 
 import { useImageSpy } from "./imageSpy";
 
+const COLORS = {
+  // h-blu: blue hold colors
+  "h-blu-200": "#cee3ff",
+  "h-blu-250": "#c7dfff",
+  "h-blu-400": "#a7bfe2",
+  "h-blu-500": "#80a4d5",
+  "h-blu-600": "#5a88c9",
+  // h-blk: black hold colors
+  "h-blk-900": "#111111",
+};
+function getColor(c) {
+  return COLORS[c] ?? c;
+}
+
 export function useHoldsState(routeId, imgSrc) {
   const [hoveredId, setHoveredId] = useState(null);
   // Keep track of which hold we just moused-out of so that we can keep it in
@@ -151,7 +165,7 @@ function Holds({
               key={hold.id}
               onMouseEnter={() => state.onFocus(hold.id)}
               onMouseLeave={() => state.onBlur()}
-              stroke={hold.color}
+              stroke={getColor(hold.color)}
             >
               {holdRect(hold)}
               {hold.extra && <path d={hold.extra} />}
