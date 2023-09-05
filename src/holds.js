@@ -67,6 +67,9 @@ function Holds({
   const round = h / 100;
   const strokeWidth = h / 150;
 
+  const tagLength = h / 60;
+  const tagGap = strokeWidth * 1.5;
+
   const holdsById = new Map();
   for (const hold of holds) holdsById.set(hold.id, hold);
   const hoveredHold = holdsById.get(hoveredId ?? lastHoveredId) ?? null;
@@ -100,6 +103,26 @@ function Holds({
         {...props}
       />
     );
+  }
+  function holdTags(hold, props) {
+    if (hold.tags) {
+      let [n, dir, rx, ry] = hold.tags;
+      const row = dir[0] === "v";
+      const offset = tagGap * (-(n - 1) / 2);
+      const x0 = hold.box[0] + hold.box[2] * rx + (row ? offset : 0);
+      const y0 = hold.box[1] + hold.box[3] * ry + (row ? 0 : offset);
+      const parts = Array(n);
+      for (let i = 0; i < n; i++) {
+        const x = x0 + (row ? i * tagGap : 0);
+        const y = y0 + (row ? 0 : i * tagGap);
+        parts[i] = `M${x} ${y}${dir}${tagLength}`;
+      }
+      return <path d={parts.join("")} {...props} />;
+    }
+    if (hold.extra) {
+      return <path d={hold.extra} {...props} />;
+    }
+    return null;
   }
 
   return (
@@ -167,7 +190,7 @@ function Holds({
               stroke={getColor(hold.color)}
             >
               {holdRect(hold)}
-              {hold.extra && <path d={hold.extra} />}
+              {holdTags(hold)}
             </g>
           ))}
         </g>
@@ -184,7 +207,7 @@ function Holds({
           {hoveredHold && (
             <g fill="black" stroke="black">
               {holdRect(hoveredHold)}
-              {hoveredHold.extra && <path fill="none" d={hoveredHold.extra} />}
+              {holdTags(hoveredHold, { fill: "none" })}
             </g>
           )}
         </mask>
