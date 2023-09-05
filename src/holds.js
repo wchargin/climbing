@@ -72,6 +72,7 @@ function Holds({
   };
 
   function holdRect(hold, props) {
+    const dashed = hold.style === "dashed" || undefined;
     return (
       <rect
         x={hold.box[0]}
@@ -80,6 +81,8 @@ function Holds({
         height={hold.box[3]}
         rx={round}
         ry={round}
+        strokeWidth={dashed && strokeWidth / 2}
+        strokeDasharray={dashed && round / 2}
         mask={hold.maskOut ? `url(#mask-${hold.id})` : null}
         {...props}
       />

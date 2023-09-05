@@ -587,6 +587,7 @@
           {
             "id": "v",
             "box": [81, 2904, 939, 552],
+            "style": "dashed",
             "color": "#a7bfe2"
           },
           {
@@ -742,18 +743,21 @@
           {
             "id": "v-start",
             "box": [2139, 2514, 237, 249],
+            "style": "dashed",
             "extra": "M2237 2763v75 M2277 2763v75",
             "color": "#a7bfe2"
           },
           {
             "id": "v-left-foot",
             "box": [552, 2908, 340, 364],
+            "style": "dashed",
             "color": "#a7bfe2"
           },
           {
             "id": "v-top-left",
             "box": [912, 952, 500, 316],
-            "color": "#a7bfe2"
+            "style": "dashed",
+            "color": "#cee3ff"
           },
           {
             "id": "1",
