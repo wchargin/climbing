@@ -24,7 +24,10 @@ async function main() {
   const pages = [];
   pages.push({
     path: "/",
-    storeSpec: { routeHeaders: data.routes.map((route) => route.id) },
+    storeSpec: {
+      seasons: true,
+      routeHeaders: data.routes.map((route) => route.id),
+    },
   });
   for (const route of data.routes) {
     const neededHeaders = [];

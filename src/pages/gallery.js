@@ -12,16 +12,19 @@ import { useStore } from "../store/context";
 function Gallery() {
   const { store } = useStore();
 
-  const dataDesc = Array.from(store.routeHeaders.values()).sort(
+  const routesDesc = Array.from(store.routeHeaders.values()).sort(
     (a, b) => b.id - a.id,
   );
+  const seasonsDesc = Array.from(store.seasons.values()).sort(
+    (a, b) => b.fromRouteId - a.fromRouteId,
+  );
 
-  const bySeason = groupBySeason(dataDesc);
+  const bySeason = groupBySeason(routesDesc, seasonsDesc);
   return (
     <main className="flex flex-col max-w-[1200px] px-4 mx-auto">
       <h1 className="text-4xl mt-12 mx-2">Completed routes</h1>
       {bySeason.map(({ season, routes }) => (
-        <Season key={season} season={season} routes={routes} />
+        <Season key={season.id} season={season} routes={routes} />
       ))}
     </main>
   );
@@ -45,7 +48,7 @@ function Season({ season, routes }) {
   return (
     <>
       <div className="flex flex-row flex-wrap justify-between md:justify-start items-end mx-2 mt-8">
-        <h2 className="text-2xl">{season}</h2>
+        <h2 className="text-2xl">{season.name}</h2>
         <div className="inline-flex text-xs md:ml-8 gap-2">
           {...colorLabels}
         </div>
@@ -147,49 +150,18 @@ function Route({ route }) {
   );
 }
 
-function groupBySeason(routes) {
-  const seasons = [];
+function groupBySeason(routes, seasons) {
+  const result = [];
+  let nextSeasonIdx = 0;
   let current = null;
   for (const route of routes) {
-    const thisSeason = seasonName(route.date);
-    if (current == null || current.season !== thisSeason) {
-      current = { season: thisSeason, routes: [] };
-      seasons.push(current);
+    if (current == null || route.id < current.season.fromRouteId) {
+      current = { season: seasons[nextSeasonIdx++], routes: [] };
+      result.push(current);
     }
     current.routes.push(route);
   }
-  return seasons;
-}
-
-const DATE_RE = /^([0-9]{4})-([0-9]{2})-([0-9]{2})$/;
-function seasonName(dateStr) {
-  const match = dateStr.match(DATE_RE);
-  if (match == null) throw new Error("Invalid date: " + dateStr);
-  const year = Number(match[1]);
-  const month = Number(match[2]);
-
-  // Use months for now for richer data.
-  return (
-    [
-      "December",
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "November",
-    ][month % 12] +
-    " " +
-    year
-  );
-
-  const seasonIdx = Math.floor((month % 12) / 3);
-  const season = ["Winter", "Spring", "Summer", "Fall"][seasonIdx];
-  return `${season} ${year}`;
+  return result;
 }
 
 export default Gallery;

@@ -1,5 +1,6 @@
 export default class ClimbingDataStore {
   constructor() {
+    this.seasons = new Map();
     this.routes = new Map();
     this.routeHeaders = new Map();
     // Two-layered map from `category: string` to `indexInCategory: number` to
@@ -8,9 +9,12 @@ export default class ClimbingDataStore {
     this._categoryIndexLookup = new Map();
   }
 
-  // `data: {routes?: Route[], routeHeaders?: RouteHeader[]}`
+  // `data: {seasons?: Season[], routes?: Route[], routeHeaders?: RouteHeader[]}`
   static fromData(data) {
     const store = new ClimbingDataStore();
+    for (const season of data.seasons || []) {
+      store.seasons.set(season.id, season);
+    }
     for (const header of data.routeHeaders || []) {
       store.routeHeaders.set(header.id, header);
       addCategoryIndexMapping(store, header);
@@ -40,9 +44,10 @@ function addCategoryIndexMapping(store, { category, indexInCategory, id }) {
   categoryLookup.set(indexInCategory, id);
 }
 
-// `spec: {routes?: int[], routeHeaders?: int[]}`
+// `spec: {seasons?: boolean, routes?: int[], routeHeaders?: int[]}`
 export function toSubset(store, spec) {
   const result = {};
+  if (spec.seasons) result.seasons = Array.from(store.seasons.values());
   if (spec.routes != null)
     result.routes = spec.routes.map((k) => store.routes.get(k));
   if (spec.routeHeaders != null)

@@ -1,4 +1,16 @@
 {
+  "seasons": [
+    {
+      "id": "2023q2",
+      "name": "Summer 2023",
+      "fromRouteId": 99
+    },
+    {
+      "id": "2023q3",
+      "name": "Fall 2023",
+      "fromRouteId": 131
+    }
+  ],
   "routes": [
     {
       "id": 99,
