@@ -648,16 +648,143 @@
       "location": "poplar",
       "thumbhash": "GggKFQK3mY+JaHeYZWmHd7V/GfqU",
       "notes": [
-        "Crazy difficult start, which feels like the crux. (Each volume has one piece of start tape.) It's really hard to not slide off. Some people successfully used a frog kind of stance with both feet on opposite faces of the lower volume, with left foot heel hooking. Some people tried doing it dynamically with a running start. I do a kinda cursed thing where I press my cheekbone and jaw into the top volume??? It's weird, but it works, grab with right hand across left to the crimp (second lowest in the group of four), then pivot feet left to the tiny volume that is hard to see if you are colorblind. I end up going up with an awkward double foot switch on the lower left foot hold nub. Finishing is kind of hard; it takes a lot of energy. Smearing your left foot on the top volume seems to help, first at the base of that volume and then halfway up.",
+        "Crazy difficult start, which feels like the crux. (",
+        {
+          "type": "hold",
+          "id": "v-bottom",
+          "text": "Each"
+        },
+        " ",
+        {
+          "type": "hold",
+          "id": "v-right",
+          "text": "volume"
+        },
+        " has one piece of start tape.) It's really hard to not slide off. Some people successfully used a frog kind of stance with both feet on opposite faces of the lower volume, with left foot heel hooking. Some people tried doing it dynamically with a running start. I do a kinda cursed thing where I press my cheekbone and jaw into the ",
+        {
+          "type": "hold",
+          "id": "v-right",
+          "text": "top volume"
+        },
+        "??? It's weird, but it works, grab with right hand across left to ",
+        {
+          "type": "hold",
+          "id": "3",
+          "text": "the crimp"
+        },
+        " (second lowest in the group of four), then pivot feet left to the ",
+        {
+          "type": "hold",
+          "id": "v-left",
+          "text": "tiny volume that is hard to see if you are colorblind"
+        },
+        ". (Thank you, stranger, for shouting at me that this exists!) I end up going up with an awkward double foot switch on the ",
+        {
+          "type": "hold",
+          "id": "1",
+          "text": "lower left foot hold nub"
+        },
+        ". Finishing is kind of hard; it takes a lot of energy. Smearing your left foot on the top volume seems to help, first at the base of that volume and then halfway up.",
         {
           "type": "p"
         },
-        "On my first clear, I got both hands on the finish hold, but not stably, and only for maybe half a second. The jury is out on legitimacy for that one. The end is hard. I successfully isolated it later, so hope to get a fully legit clear soon.",
+        "On my first clear, I got both hands on the ",
+        {
+          "type": "hold",
+          "id": "9",
+          "text": "finish hold"
+        },
+        ", but not stably, and only for maybe half a second. The jury is out on legitimacy for that one. The end is hard. I successfully isolated it later, so hope to get a fully legit clear soon.",
         {
           "type": "p"
         },
-        "Spent about an hour on attempts at 2023-09-04 before getting a fully legit clear with a different start, just feet on either side of volume, toes pointed. Used a teeny bit of momentum but feels okay. End trick: with LF on middle bar and RF on crimp, lean right so that you can point LF into the bottom of the volume. Then reach up to finish with left then right."
-      ]
+        "Spent about an hour on attempts at 2023-09-04 before getting a fully legit clear with a different start, just feet on either side of ",
+        {
+          "type": "hold",
+          "id": "v-bottom",
+          "text": "volume"
+        },
+        ", toes pointed. Used a teeny bit of momentum but feels okay. End trick: with LF on ",
+        {
+          "type": "hold",
+          "id": "4+5",
+          "text": "middle bar"
+        },
+        " and RF on ",
+        {
+          "type": "hold",
+          "id": "3",
+          "text": "crimp"
+        },
+        ", lean right so that you can point LF into the bottom of the volume. Then reach up to finish with left then right."
+      ],
+      "holds": {
+        "viewBox": [3024, 4032],
+        "annotations": [
+          {
+            "id": "v-bottom",
+            "box": [1264, 3032, 844, 892],
+            "extra": "M1580 3032v-75",
+            "style": "dashed",
+            "color": "#111111"
+          },
+          {
+            "id": "v-right",
+            "box": [1724, 2036, 1132, 936],
+            "extra": "M1724 2708h-75",
+            "style": "dashed",
+            "color": "#111111"
+          },
+          {
+            "id": "v-left",
+            "box": [48, 2744, 520, 504],
+            "style": "dashed",
+            "color": "#111111"
+          },
+          {
+            "id": "1",
+            "box": [518, 2112, 152, 153],
+            "color": "#111111"
+          },
+          {
+            "id": "2",
+            "box": [1458, 2087, 162, 164],
+            "color": "#111111"
+          },
+          {
+            "id": "4+5",
+            "box": [1215, 1676, 324, 280],
+            "color": "#111111"
+          },
+          {
+            "id": "3",
+            "box": [1467, 1907, 155, 153],
+            "maskOut": ["4+5"],
+            "color": "#111111"
+          },
+          {
+            "id": "6",
+            "box": [927, 1255, 219, 260],
+            "color": "#111111"
+          },
+          {
+            "id": "7",
+            "box": [1476, 981, 188, 194],
+            "color": "#111111"
+          },
+          {
+            "id": "8",
+            "box": [986, 790, 256, 274],
+            "color": "#111111"
+          },
+          {
+            "id": "9",
+            "box": [1440, 456, 348, 340],
+            "extra": "M1672 796v75",
+            "color": "#111111"
+          }
+        ]
+      }
     },
     {
       "id": 132,
@@ -784,7 +911,7 @@
           {
             "id": "5",
             "box": [2292, 560, 224, 220],
-            "extra": "M2460 780v75",
+            "extra": "M2471 780v75",
             "color": "#a7bfe2"
           }
         ]
