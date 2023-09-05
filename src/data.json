@@ -666,16 +666,125 @@
       "location": "poplar",
       "thumbhash": "WhgOFQJsiI+HaIeHh3iYiH+NufjY",
       "notes": [
-        "Start with both hands on the major radius of the start volume, and at least left foot on the lower-left volume. Right foot can match or smear. Then push up to grab the crimp with left hand and jam your right foot into the start volume just above the minor radius.",
+        "Start with both hands on the major radius of the ",
+        {
+          "type": "hold",
+          "id": "v-start",
+          "text": "start volume"
+        },
+        ", and at least left foot on the ",
+        {
+          "type": "hold",
+          "id": "v-left-foot",
+          "text": "top face of the lower-left volume"
+        },
+        ". Right foot can match or smear. Then push up to grab ",
+        {
+          "type": "hold",
+          "id": "2",
+          "text": "the crimp"
+        },
+        " with left hand and jam your right foot into the start volume just above the minor radius.",
         {
           "type": "p"
         },
-        "From there, you can pull yourself up to the next set of holds. The right edge of the lowest of the three is actually quite good, so I pull up to that as I try to stand on the top-right face of the start volume, being careful not to flagpole too much. (Left hand can stabilize on the top-left volume if needed.) The penult pinch is really not very good at all. You end up needing to swivel around to the right so that you can lean back on the top of the pinch. If you're stable there, you can finish; the final hold is not excellent but it's somewhat better than it looks. I was able to still be standing on lowest hold on the start volume, I think, but shorter people might like to stand on its vertex.",
+        "From there, you can pull yourself up to the next set of holds. The right edge of ",
+        {
+          "type": "hold",
+          "id": "3",
+          "text": "the lowest of the three"
+        },
+        " is actually quite good, so I pull up to that as I try to stand on the ",
+        {
+          "type": "hold",
+          "id": "1",
+          "text": "small hold on the top-right face of the start volume"
+        },
+        ", being careful not to flagpole too much. (Left hand can stabilize on the ",
+        {
+          "type": "hold",
+          "id": "v-top-left",
+          "text": "top-left volume"
+        },
+        " if needed.) The ",
+        {
+          "type": "hold",
+          "id": "4",
+          "text": "penult pinch"
+        },
+        " is really not very good at all. It's too slopey and smooth. You end up needing to swivel around to the right so that you can lean back on the top of ",
+        {
+          "type": "hold",
+          "id": "4",
+          "text": "the pinch"
+        },
+        ". If you're stable there, you can finish; ",
+        {
+          "type": "hold",
+          "id": "5",
+          "text": "the final hold"
+        },
+        " is not excellent but it's somewhat better than it looks. I was able to still be standing on ",
+        {
+          "type": "hold",
+          "id": "1",
+          "text": "the lowest hold on the start volume"
+        },
+        ", I think, but shorter people might like to stand on its vertex.",
         {
           "type": "p"
         },
         "(Also, colorblind beware: the hold just below-right of the three final holds is purple, not blue! That looks pretty clear in this photo but it's hard for me to tell in real life.)"
-      ]
+      ],
+      "holds": {
+        "viewBox": [3024, 4032],
+        "annotations": [
+          {
+            "id": "v-start",
+            "box": [2139, 2514, 237, 249],
+            "extra": "M2237 2763v75 M2277 2763v75",
+            "color": "#a7bfe2"
+          },
+          {
+            "id": "v-left-foot",
+            "box": [552, 2908, 340, 364],
+            "color": "#a7bfe2"
+          },
+          {
+            "id": "v-top-left",
+            "box": [912, 952, 500, 316],
+            "color": "#a7bfe2"
+          },
+          {
+            "id": "1",
+            "box": [1974, 2178, 189, 195],
+            "color": "#a7bfe2"
+          },
+          {
+            "id": "2",
+            "box": [1816, 1816, 232, 240],
+            "color": "#a7bfe2"
+          },
+          {
+            "id": "3",
+            "box": [1824, 1200, 300, 556],
+            "maskOut": ["4"],
+            "color": "#a7bfe2"
+          },
+          {
+            "id": "4",
+            "box": [2028, 692, 356, 700],
+            "maskOut": ["5"],
+            "color": "#a7bfe2"
+          },
+          {
+            "id": "5",
+            "box": [2292, 560, 224, 220],
+            "extra": "M2460 780v75",
+            "color": "#a7bfe2"
+          }
+        ]
+      }
     }
   ]
 }
