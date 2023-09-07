@@ -52,6 +52,12 @@ async function main() {
       storeSpec,
     });
   }
+  if (process.env.NODE_ENV === "development") {
+    pages.push({
+      path: "/edit/",
+      storeSpec: {},
+    });
+  }
 
   await Promise.all(
     pages.map(({ path, storeSpec }) => {

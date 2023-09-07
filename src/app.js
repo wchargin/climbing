@@ -1,6 +1,7 @@
 import { useRouter } from "./router";
 import { useStore } from "./store/context";
 
+import Edit from "./pages/edit";
 import Gallery from "./pages/gallery";
 import Route from "./pages/route";
 
@@ -13,6 +14,9 @@ function App() {
   const { store } = useStore();
 
   if (path === "/") return <Gallery />;
+  if (process.env.NODE_ENV === "development") {
+    if (path === "/edit/") return <Edit />;
+  }
 
   {
     const match = path.match(ROUTE_BY_ID);
