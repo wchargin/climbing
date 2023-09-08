@@ -1,6 +1,44 @@
 {
   "seasons": [
     {
+      "id": "2023q1",
+      "name": "Spring 2023",
+      "fromRouteId": 70,
+      "description": [
+        "Packed season; visited SBP twenty times in May. Highlights: ",
+        {
+          "type": "route",
+          "id": 73,
+          "text": "fun mountain-goat traversal blue (#73)"
+        },
+        "; ",
+        {
+          "type": "route",
+          "id": 78,
+          "text": "brutally precise black project (#78)"
+        },
+        "; ",
+        {
+          "type": "route",
+          "id": 88,
+          "text": "fun and interesting black (#88)"
+        },
+        "; ",
+        {
+          "type": "route",
+          "id": 90,
+          "text": "difficult and satisfying project (#90)"
+        },
+        "; ",
+        {
+          "type": "route",
+          "id": 98,
+          "text": "heroic progression on blue with a friendly stranger (#98)"
+        },
+        "."
+      ]
+    },
+    {
       "id": "2023q2",
       "name": "Summer 2023",
       "fromRouteId": 99,
@@ -28,6 +66,323 @@
     }
   ],
   "routes": [
+    {
+      "id": 70,
+      "category": "blue",
+      "indexInCategory": 6,
+      "date": "2023-03-10",
+      "location": "poplar",
+      "thumbhash": "FggKDQJ2hp9leGiGh3dpZqqfqfip",
+      "notes": [
+        "Bit of a project since 2023-03-08. Basically but not technically cleared on 2023-03-10 (I established via the orange in a way that saves a tiny bit of energy but quickly converges). The new beta in this initial \"clear\" was to really hang down off the penult hold, which is quite the uncooperative sloper. Also used quite a bit of reach from there directly to the top hold while kind of just bracing thighs below. This clear definitely wasn't regulation but I want to count it anyway. I make the rules. Cleared legitimately on 2023-03-13!"
+      ]
+    },
+    {
+      "id": 71,
+      "category": "black",
+      "indexInCategory": 52,
+      "date": "2023-03-13",
+      "location": "poplar",
+      "thumbhash": "HAgKDQCWho+Hh3iHd4V4eEdvKPTB",
+      "notes": ["Kinda fun, not too hard."]
+    },
+    {
+      "id": 72,
+      "category": "black",
+      "indexInCategory": 53,
+      "date": "2023-03-29",
+      "location": "poplar",
+      "thumbhash": "GvgJHQKKeI+Ih3eYd3iIiKpvm/j2",
+      "notes": [
+        "The volumes are tempting and not bad, but the holds are stronger. :-)"
+      ]
+    },
+    {
+      "id": 73,
+      "category": "blue",
+      "indexInCategory": 7,
+      "date": "2023-04-03",
+      "location": "poplar",
+      "thumbhash": "HQgODQJ5iH13B4Z4iIeXeHuv6/i7",
+      "notes": [
+        "Beta from a friendly stranger: jump to the start hold and kind of lay back off it. Height on that first jump (wrt foot placement on the volume) seems important for getting the other foot up and establishing. Cleared twice pretty smoothly. To use less height, I should improve my foot placement."
+      ]
+    },
+    {
+      "id": 74,
+      "category": "black",
+      "indexInCategory": 54,
+      "date": "2023-04-03",
+      "location": "poplar",
+      "thumbhash": "HPgJDQBwaZ2IGIl3eXeXaJFvCXzU",
+      "notes": [
+        "Pretty straightforward. Much easier when you don't try to skip the fifth hold (the one left of the middle volume)."
+      ]
+    },
+    {
+      "id": 75,
+      "category": "black",
+      "indexInCategory": 55,
+      "date": "2023-04-03",
+      "location": "poplar",
+      "thumbhash": "GAgGBQKQiVx5GGhmaYaHWZSPesf8",
+      "notes": [
+        "Fun, exerting. Has a few spots where you're dangling and need to quickly reset feet while losing stamina rapidly."
+      ]
+    },
+    {
+      "id": 76,
+      "category": "blue",
+      "indexInCategory": 8,
+      "date": "2023-04-16",
+      "location": "poplar",
+      "thumbhash": "HQgODQKYiI94SHiHd4eHeLV/Bb2l",
+      "notes": [
+        "This is probably the first dyno that I've done that's non-trivial in terms of technique. Got to be part of a rotation of half a dozen people trying this route again and again, and see different people's approaches. For me, intentionally contracting my arm (\"slamming the window shut\") rather than just swinging like a pendulum made a huge difference. For the second half, lay back on the sloper to facilitate bringing your left heel up to the handhold that you dyno to, then do a kind of dynamic pistol squat to grab the finish hold with your left hand. Now I have four weeks to make it clean! (My dyno was pretty wild, got some crowd \"ohhHHH!\"s!)"
+      ]
+    },
+    {
+      "id": 77,
+      "category": "black",
+      "indexInCategory": 56,
+      "date": "2023-04-16",
+      "location": "poplar",
+      "thumbhash": "4OcJDQRviFuJJ3aIinWneZF/NvqG",
+      "notes": [
+        "Fun, balancing, requires strength and patience but not endurance (you can pause anywhere). Have to adjust foot flagging a few times at the end."
+      ]
+    },
+    {
+      "id": 78,
+      "category": "black",
+      "indexInCategory": 57,
+      "date": "2023-04-20",
+      "location": "poplar",
+      "thumbhash": "HAgOBQJGiJ13B5lXhmeHiON9ANsm",
+      "notes": [
+        "(The hold below-right of the obvious start hold also has start tape.) Projected this one from April 3 to April 20, which I'm proud of in and of itself. Got some progress while climbing with Bex on April 18: with good enough grip on the top-right volume hold, you can pull down on it and get the big hold enough to have left hand palm down, elbow up. Then, if you get really well balanced and close to the wall, you can move to the finish under good control. Otherwise, you can dyno it, which is pretty precise: it's easy to fall backward.",
+        {
+          "type": "p"
+        },
+        "Strategy (holds numbered 1–8 from bottom to top, so start holds are 3 and 4 and the chonker is 6): start with right foot on 1 and establish to left foot on 2, then match hands on 4 into grabbing for 6 with RH, then match hands on 6."
+      ]
+    },
+    {
+      "id": 79,
+      "category": "black",
+      "indexInCategory": 58,
+      "date": "2023-05-05",
+      "location": "poplar",
+      "thumbhash": "GQgGJQaZRT+aGMaLl1Bpl6h/ivqn",
+      "notes": ["First cleared 2023-05-05, re-cleared 2023-06-08."]
+    },
+    {
+      "id": 80,
+      "category": "black",
+      "indexInCategory": 59,
+      "date": "2023-05-08",
+      "location": "poplar",
+      "thumbhash": "GggKFQR3iI+IiIiZiHd3h6x/qvyn",
+      "notes": [
+        "Gotta be quick with this one for the stamina. Start with right foot on the hold, move right hand to hold above start, then match left, then dyno to the lower big hold, then match left, put right foot on the volume edge to the right, and do a pull-up motion to get up to the higher big hold. Grab left to the hold on the top volume and make your way up from there."
+      ]
+    },
+    {
+      "id": 81,
+      "category": "black",
+      "indexInCategory": 60,
+      "date": "2023-05-08",
+      "location": "poplar",
+      "thumbhash": "FggKDQK/mn5lloinmol3eN/Y95mM",
+      "notes": [
+        "Bit yikes, some of the grabs were painful on my first clear. Will try again 🙃"
+      ]
+    },
+    {
+      "id": 82,
+      "category": "black",
+      "indexInCategory": 61,
+      "date": "2023-05-12",
+      "location": "poplar",
+      "thumbhash": "HggKDQJ4eI94V2iIeHWHaNa/b8/6",
+      "notes": []
+    },
+    {
+      "id": 83,
+      "category": "black",
+      "indexInCategory": 62,
+      "date": "2023-05-12",
+      "location": "poplar",
+      "thumbhash": "GwgKDQKZd493WGh3d4RXZ7SPi5z7",
+      "notes": []
+    },
+    {
+      "id": 84,
+      "category": "black",
+      "indexInCategory": 63,
+      "date": "2023-05-15",
+      "location": "poplar",
+      "thumbhash": "HQgODQJ4eG93h4eYiIeIeMKZQK87",
+      "notes": []
+    },
+    {
+      "id": 85,
+      "category": "black",
+      "indexInCategory": 64,
+      "date": "2023-05-16",
+      "location": "poplar",
+      "thumbhash": "2vcJHQR2do94d3aXeHaIZ1lur/T2",
+      "notes": []
+    },
+    {
+      "id": 86,
+      "category": "black",
+      "indexInCategory": 65,
+      "date": "2023-05-18",
+      "location": "poplar",
+      "thumbhash": "G+gJDQJYZm+HB5aZeIeniF+717T6",
+      "notes": []
+    },
+    {
+      "id": 87,
+      "category": "black",
+      "indexInCategory": 66,
+      "date": "2023-05-19",
+      "location": "poplar",
+      "thumbhash": "IvgRBQKMd2qIB4d4iHaXeImPjKr2",
+      "notes": [
+        "Interesting route; interesting mid hold, tri-point situation. Really close to the wall. Seeking good beta for the end. There are the two footholds in the bottom-left, and I can finish with my left foot on the right hold, and dyno-ing to grab the finish hold and then stabilize. But I'd like to be able to do it more statically, and I haven't used that left-most bottom hold."
+      ]
+    },
+    {
+      "id": 88,
+      "category": "black",
+      "indexInCategory": 67,
+      "date": "2023-05-19",
+      "location": "poplar",
+      "thumbhash": "nvcJJQSTeH15CJiIiISXaZqPrvro",
+      "notes": [
+        "Took me a few days. Really liking it more. Lay back with right foot on big hold and left foot flagging left, then grab up to the sloper and its hold, the left foot onto the big hold and then the volume nub. Then, push through, grab into the gap, grab right around the top eighth-sphere, and you're smooth sailing."
+      ]
+    },
+    {
+      "id": 89,
+      "category": "black",
+      "indexInCategory": 68,
+      "date": "2023-05-20",
+      "location": "poplar",
+      "thumbhash": "GwgKDQK+iY+IWIeoiYeIiEBJCsTz",
+      "notes": [
+        "Worked together with a sweet stranger to clear this, and we both got it after a good amount of effort. Came back on 2023-05-22 and cleared again.",
+        {
+          "type": "p"
+        },
+        "After establishing and grabbing left to the fourth hold, it helps a lot to explicitly rotate LF on the lower starting hold so that your toe points right instead of left. Then putting RF on hold 3 is much easier. Grab right to 6 (wrap around), then reach left arm around to grab the right side of the smooth fella on the volume. The top-right corner of that volume is also very helpful once you get to it."
+      ]
+    },
+    {
+      "id": 90,
+      "category": "black",
+      "indexInCategory": 69,
+      "date": "2023-05-22",
+      "location": "poplar",
+      "thumbhash": "XAgKHQRtp1+KZ4VYiYaZd8+L+KyZ",
+      "notes": [
+        "Project over four days. As of 2023-05-21, had managed to get all segments individually. From bottom to top, call the holds 1, 2 (big, two-handed start), 3 (tiny star), 4 (on volume), 5 and 6 (on volume corner), 7 (big), 8 (small), 9 and 10. The penultimate position is RH grabbing 9 and 10, LH on 8, LF on 7, RF dangling. Doing a semidynamic one-legged squat (with pull-up assistance) to the finish is difficult but possible, not made mentally easier by the steel beam directly above your head. Holds 5 and 6 don't seem useful, but the edges of the volume right near them are useful.",
+        {
+          "type": "p"
+        },
+        "Start with hands on 2, RF on the wall below 1, and LF dangling. Grab left to 4, climb up feet, put LF on 4 with RH grabbing the, like, arête corner thing, and grab left to 7. Then get really close to the wall so that you can grab left to 8 and still stay stable. Hold 8 is really good! Much better than it looks, and versatile. From here, grab right to the top and bottom edges of the volume right around holds 5 and 6, giving you a bit of purchase to maneuver your balance up (pushing through LF) and dynamically grab to 9 and 10. These holds are awful individually but decent together; they can also get slippery, so chalk helps a lot. Get LF up to 7, stabilize, balance, prepare, and reach for the finish."
+      ]
+    },
+    {
+      "id": 91,
+      "category": "black",
+      "indexInCategory": 70,
+      "date": "2023-05-23",
+      "location": "poplar",
+      "thumbhash": "GwgKHQaaiX+HmGeId4eHiHRvW/em",
+      "notes": [
+        "Pretty doable; flashed it. Getting over the top at the very end is not easy because of how shallow the angle is."
+      ]
+    },
+    {
+      "id": 92,
+      "category": "black",
+      "indexInCategory": 71,
+      "date": "2023-05-24",
+      "location": "poplar",
+      "thumbhash": "HQgGDQSha3+HOId4h4WYiI+f9/uK",
+      "notes": [
+        "Not too bad; took maybe five tries. From the start, gaston on the two square-pyramidal volumes. Somewhat easier to grab right to the left volume and then switch over."
+      ]
+    },
+    {
+      "id": 93,
+      "category": "blue",
+      "indexInCategory": 9,
+      "date": "2023-05-24",
+      "location": "poplar",
+      "thumbhash": "GQgOFQJ5eH93h3eHd3eIh2WPOvWa",
+      "notes": [
+        "Third try on the first day it's open. Start with right hand on top of left hand so that you can grab to the Saturn-lookin' fella. This takes a good amount of energy to dynamically jump to the fourth and fifth holds, but all the holds are pretty solid."
+      ]
+    },
+    {
+      "id": 94,
+      "category": "black",
+      "indexInCategory": 72,
+      "date": "2023-05-25",
+      "location": "poplar",
+      "thumbhash": "HAgOFQR4iH93iIdoh3eHd4iPp/mI",
+      "notes": ["Second try. Good laybacks."]
+    },
+    {
+      "id": 95,
+      "category": "blue",
+      "indexInCategory": 10,
+      "date": "2023-05-29",
+      "location": "poplar",
+      "thumbhash": "HAgKDQKVeX+HV4ind4enh69/+9y4",
+      "notes": [
+        "Hard start, jumping to that pointy volume! You can either do both hands on the vertex or left hand on the vertex and right hand on the smaller volume atop it. Helps to lean right as you pull up so that you can better slam your foot into the right side of that volume. Once you're up on top of it, it's a precarious and surprisingly taxing balancing game to get to the finish. Difficult but fun climb."
+      ]
+    },
+    {
+      "id": 96,
+      "category": "black",
+      "indexInCategory": 73,
+      "date": "2023-05-29",
+      "location": "poplar",
+      "thumbhash": "HAgOFQR3eG94WIeIeHeXh5JvXvrY",
+      "notes": []
+    },
+    {
+      "id": 97,
+      "category": "black",
+      "indexInCategory": 74,
+      "date": "2023-05-29",
+      "location": "poplar",
+      "thumbhash": "GAgKFQJsh5+GeIiHeHZ4d3a/m/ms",
+      "notes": [
+        "On the right side of the top square pyramidal volume, the holds are one blue and two black."
+      ]
+    },
+    {
+      "id": 98,
+      "category": "blue",
+      "indexInCategory": 11,
+      "date": "2023-05-30",
+      "location": "poplar",
+      "thumbhash": "FwgKFQJ9dr93d4iHeGZpiJi/ivur",
+      "notes": [
+        "Started 2023-05-29 and got real close (piecewise cleared) but exhausted; finished 2023-05-30 first try. Beta from a friendly fellow climber: the kneebar on the big underhold is excellent.",
+        {
+          "type": "p"
+        },
+        "This is a fun route! After starting facing out from the two lowest volumes, you have to dynamically barndoor to the right wall. I then heel-hook up onto the middle-right volume so that I can grab to the pinches without flailing too wildly. Once you get to the kneebar, it's no surprises, just exerting."
+      ]
+    },
     {
       "id": 99,
       "category": "blue",
