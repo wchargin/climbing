@@ -3,16 +3,16 @@ import { useState } from "react";
 import classNames from "../classNames";
 import { parse, unparse } from "../notesGrammar";
 
-function Edit() {
-  const [truth, setTruth] = useState({ type: "raw", raw: "" });
-
-  function attempt(cb) {
-    try {
-      return { ok: true, value: cb() };
-    } catch (e) {
-      return { ok: false, value: String(e) };
-    }
+function attempt(cb) {
+  try {
+    return { ok: true, value: cb() };
+  } catch (e) {
+    return { ok: false, value: String(e) };
   }
+}
+
+function useNotesState() {
+  const [truth, setTruth] = useState({ type: "raw", raw: "" });
 
   let raw, parsed;
   switch (truth.type) {
@@ -31,6 +31,15 @@ function Edit() {
       throw new Error(truth.type);
   }
 
+  const setRaw = (raw) => setTruth({ type: "raw", raw });
+  const setParsed = (parsed) => setTruth({ type: "parsed", parsed });
+
+  return { raw, parsed, setRaw, setParsed };
+}
+
+function Edit() {
+  const notes = useNotesState();
+
   const textareaClasses = "bg-brand-900 w-full min-h-[40rem]";
 
   return (
@@ -38,16 +47,20 @@ function Edit() {
       <h1 className="text-2xl">Notes</h1>
       <div className="flex gap-3">
         <textarea
-          value={raw.value}
-          onChange={(e) => void setTruth({ type: "raw", raw: e.target.value })}
-          className={classNames(textareaClasses, raw.ok || "text-red-500")}
+          value={notes.raw.value}
+          onChange={(e) => notes.setRaw(e.target.value)}
+          className={classNames(
+            textareaClasses,
+            notes.raw.ok || "text-red-500",
+          )}
         />
         <textarea
-          value={parsed.value}
-          onChange={(e) =>
-            void setTruth({ type: "parsed", parsed: e.target.value })
-          }
-          className={classNames(textareaClasses, parsed.ok || "text-red-500")}
+          value={notes.parsed.value}
+          onChange={(e) => notes.setParsed(e.target.value)}
+          className={classNames(
+            textareaClasses,
+            notes.parsed.ok || "text-red-500",
+          )}
         />
       </div>
     </main>
