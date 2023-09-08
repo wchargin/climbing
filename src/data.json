@@ -1311,6 +1311,17 @@
           }
         ]
       }
+    },
+    {
+      "id": 133,
+      "category": "black",
+      "indexInCategory": 98,
+      "date": "2023-09-08",
+      "location": "poplar",
+      "thumbhash": "WQgOFQJ2Z394Z4hYiIaIiGZfNvKC",
+      "notes": [
+        "Pretty straightforward flash. Good practice for looking at holds and estimating in what ways they can be useful."
+      ]
     }
   ]
 }
