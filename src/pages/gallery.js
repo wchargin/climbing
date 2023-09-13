@@ -105,7 +105,7 @@ function SeasonDescription({ description, className }) {
           <Link
             key={i}
             to={`/routes/${node.id}/`}
-            className="text-brand-300 hover:underline focus:underline active:text-red-600"
+            className="text-sky-300 hover:underline focus:underline active:text-red-600"
           >
             {node.text}
           </Link>,

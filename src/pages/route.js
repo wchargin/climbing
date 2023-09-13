@@ -112,7 +112,7 @@ function Route({ id }) {
           {route.date} &middot; {LOCATION_NAMES[route.location]}
         </h2>
         <Notes className="mt-6" notes={route.notes} holdsState={holdsState} />
-        <p className="text-brand-300 mt-6">
+        <p className="text-sky-300 mt-6">
           <Link
             to="/"
             className="hover:underline focus:underline active:text-red-600"
