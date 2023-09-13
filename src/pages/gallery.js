@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 
 import classNames from "../classNames";
 import FadingImage from "../fadingImage";
@@ -11,6 +11,9 @@ import { useStore } from "../store/context";
 
 function Gallery() {
   const { store } = useStore();
+  const [categoriesVisible, setCategoriesVisible] = useState(() =>
+    Object.fromEntries(Object.keys(CATEGORY_COLORS).map((k) => [k, true])),
+  );
 
   const routesDesc = Array.from(store.routeHeaders.values()).sort(
     (a, b) => b.id - a.id,
@@ -21,27 +24,44 @@ function Gallery() {
 
   const bySeason = groupBySeason(routesDesc, seasonsDesc);
   return (
-    <main className="flex flex-col max-w-[1200px] px-4 mx-auto">
+    <main className="flex flex-col max-w-[1200px] px-4 pb-12 mx-auto">
       <h1 className="text-4xl mt-12 mx-2">Completed routes</h1>
       {bySeason.map(({ season, routes }) => (
-        <Season key={season.id} season={season} routes={routes} />
+        <Season
+          key={season.id}
+          season={season}
+          routes={routes}
+          categoriesVisible={categoriesVisible}
+          setCategoriesVisible={setCategoriesVisible}
+        />
       ))}
     </main>
   );
 }
 
-function Season({ season, routes }) {
+function Season({ season, routes, categoriesVisible, setCategoriesVisible }) {
   const colorCounts = new Map();
   for (const route of routes) {
     const k = route.category;
     colorCounts.set(k, (colorCounts.get(k) || 0) + 1);
   }
+
   const colorLabels = [];
-  for (const category of Object.keys(CATEGORY_COLORS)) {
+  let anyMatchingRoutes = false;
+  for (const [category, visible] of Object.entries(categoriesVisible)) {
     const n = colorCounts.get(category);
     if (n == null) continue;
+    if (visible) anyMatchingRoutes = true;
     colorLabels.push(
-      <CategoryCountChip key={category} category={category} count={n} />,
+      <CategoryCountChip
+        key={category}
+        category={category}
+        count={n}
+        visible={visible}
+        setVisible={(v) =>
+          setCategoriesVisible((o) => ({ ...o, [category]: v }))
+        }
+      />,
     );
   }
 
@@ -61,33 +81,56 @@ function Season({ season, routes }) {
       )}
       <div className="routes-grid grid gap-2 p-2">
         {routes.map((route) => (
-          <Route key={route.id} route={route} />
+          <Fragment key={route.id}>
+            {categoriesVisible[route.category] && <Route route={route} />}
+          </Fragment>
         ))}
       </div>
+      {!anyMatchingRoutes && (
+        <div className="p-4 text-center text-brand-300 flex flex-col gap-1">
+          <p>No routes for selected colors.</p>
+          <button
+            className="text-sky-300 hover:underline focus:underline"
+            onClick={() =>
+              setCategoriesVisible((o) => {
+                const result = {};
+                for (const k of Object.keys(o)) result[k] = true;
+                return result;
+              })
+            }
+          >
+            Show all routes?
+          </button>
+        </div>
+      )}
     </>
   );
 }
 
-function CategoryCountChip({ category, count }) {
+function CategoryCountChip({ category, count, visible, setVisible }) {
   const color = CATEGORY_COLORS[category];
   return (
-    <span
+    <button
       key={category}
+      aria-pressed={visible}
       className={classNames(
         "block p-[1px] rounded-sm",
-        color.dark && "bg-brand-500",
+        color.dark ? "bg-brand-500" : "bg-brand-600",
+        visible || "opacity-25",
       )}
+      onClick={() => setVisible(!visible)}
+      title={`${visible ? "Hide" : "Show"} ${category} routes`}
     >
       <span
         className={classNames(
           "block px-2 py-1 border-2 rounded-sm",
-          color.dark && "bg-brand-600",
+          color.dark ? "bg-brand-600" : "bg-brand-700",
         )}
         style={{ borderColor: color.hex }}
       >
         {count} {category}
       </span>
-    </span>
+    </button>
   );
 }
 
