@@ -1331,7 +1331,25 @@
       "location": "poplar",
       "thumbhash": "IvgFJQZQdo6IF4ZoiXJ5SZqPm/nI",
       "notes": [
-        "Suggested by a friend; I hadn't noticed the route, despite doing the black next to it! Cleared on the second try. It's not too bad; rotating around to the left of the volume bar can be somewhat tricky."
+        "Suggested by a friend; I hadn't noticed the route, despite doing the black next to it! Cleared on the second try. It's not too bad; rotating around to the left of the ",
+        {
+          "type": "hold",
+          "id": "v",
+          "text": "volume bar"
+        },
+        " can be somewhat tricky, but the ",
+        {
+          "type": "hold",
+          "id": "3",
+          "text": "two holds"
+        },
+        " on the ",
+        {
+          "type": "hold",
+          "id": "4",
+          "text": "top face"
+        },
+        " are plenty helpful once you're there."
       ],
       "annotations": {
         "viewBox": [3024, 4032],
@@ -1343,17 +1361,24 @@
               [1, "h-", 0, 0.7],
               [1, "h", 1, 0.35]
             ],
-            "color": "h-pnk-200"
+            "color": "h-pnk-100"
           },
           {
             "id": "3",
             "box": [686, 804, 232, 174],
-            "color": "h-pnk-800"
+            "color": "h-pnk-050"
           },
           {
             "id": "4",
-            "box": [1204, 647, 209, 150],
-            "color": "h-pnk-800"
+            "box": [1204, 637, 179, 190],
+            "color": "h-pnk-050"
+          },
+          {
+            "id": "v",
+            "box": [1244, 686, 206, 1304],
+            "rotateDeg": 17.58,
+            "style": "dashed",
+            "color": "h-pnk-050"
           }
         ]
       }

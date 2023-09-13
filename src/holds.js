@@ -12,6 +12,8 @@ const COLORS = {
   // h-blk: black hold colors
   "h-blk-900": "#111111",
   // h-pnk: pink hold colors
+  "h-pnk-050": "#ffd6d9",
+  "h-pnk-100": "#ffb1b6",
   "h-pnk-200": "#f9959b",
   "h-pnk-400": "#fb7b87",
   "h-pnk-600": "#ec4d5c",
