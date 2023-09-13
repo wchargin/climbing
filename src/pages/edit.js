@@ -62,12 +62,19 @@ function Edit() {
     thumbhash: "",
   });
   const notes = useNotesState();
+  let notesOutput = [];
+  if (notes.parsed.ok) {
+    try {
+      notesOutput = JSON.parse(notes.parsed.value);
+    } catch (e) {}
+  }
   const output = JSON.stringify(
     {
       ...headers,
       id: Number(headers.id),
       indexInCategory: Number(headers.indexInCategory),
-      notes: notes.parsed.ok ? JSON.parse(notes.parsed.value) : [],
+      notes:
+        notes.raw.ok && notes.parsed.ok ? JSON.parse(notes.parsed.value) : [],
     },
     null,
     2,
