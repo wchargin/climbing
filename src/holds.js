@@ -106,16 +106,17 @@ function Holds({
   }
   function holdTags(hold, props) {
     if (hold.tags) {
-      let [n, dir, rx, ry] = hold.tags;
-      const row = dir[0] === "v";
-      const offset = tagGap * (-(n - 1) / 2);
-      const x0 = hold.box[0] + hold.box[2] * rx + (row ? offset : 0);
-      const y0 = hold.box[1] + hold.box[3] * ry + (row ? 0 : offset);
-      const parts = Array(n);
-      for (let i = 0; i < n; i++) {
-        const x = x0 + (row ? i * tagGap : 0);
-        const y = y0 + (row ? 0 : i * tagGap);
-        parts[i] = `M${x} ${y}${dir}${tagLength}`;
+      const parts = [];
+      for (const [n, dir, rx, ry] of hold.tags) {
+        const row = dir[0] === "v";
+        const offset = tagGap * (-(n - 1) / 2);
+        const x0 = hold.box[0] + hold.box[2] * rx + (row ? offset : 0);
+        const y0 = hold.box[1] + hold.box[3] * ry + (row ? 0 : offset);
+        for (let i = 0; i < n; i++) {
+          const x = x0 + (row ? i * tagGap : 0);
+          const y = y0 + (row ? 0 : i * tagGap);
+          parts.push(`M${x} ${y}${dir}${tagLength}`);
+        }
       }
       return <path d={parts.join("")} {...props} />;
     }
