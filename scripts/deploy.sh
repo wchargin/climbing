@@ -24,7 +24,7 @@ main() {
     printf >&2 '  * %s\n' '"git push origin gh-pages"'
     printf >&2 '  * %s\n' '"git checkout main"'
     printf >&2 'OR, to roll back:\n'
-    printf >&2 '  * %s\n' '"git reset --hard gh-pages"'
+    printf >&2 '  * %s\n' '"git reset --hard HEAD~"'
     printf >&2 '  * %s\n' '"git checkout main"'
 }
 
