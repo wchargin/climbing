@@ -93,18 +93,24 @@ function Holds({
   };
 
   function holdRect(hold, props) {
+    const [x, y, w, h] = hold.box;
     const dashed = hold.style === "dashed" || undefined;
+    let transform;
+    if (hold.rotateDeg) {
+      transform = `rotate(${hold.rotateDeg} ${x + w / 2} ${y + h / 2})`;
+    }
     return (
       <rect
-        x={hold.box[0]}
-        y={hold.box[1]}
-        width={hold.box[2]}
-        height={hold.box[3]}
+        x={x}
+        y={y}
+        width={w}
+        height={h}
         rx={round}
         ry={round}
         strokeWidth={dashed && strokeWidth / 2}
         strokeDasharray={dashed && strokeWidth}
         mask={hold.maskOut ? `url(#mask-${hold.id})` : null}
+        transform={transform}
         {...props}
       />
     );
