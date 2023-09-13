@@ -1366,8 +1366,73 @@
       "location": "poplar",
       "thumbhash": "GwgGDQKum496RnjmioaYWMJviv3H",
       "notes": [
-        "Gotta really start close to the wall. Wants a moderate pistol squat in the middle. Otherwise, pretty straightforward. Don't miss the teeny hold, fifth from the top!"
-      ]
+        "Gotta really start close to the wall; I had right foot on ",
+        {
+          "type": "hold",
+          "id": "1",
+          "text": "the lowest foothold"
+        },
+        " and left foot flagging. Wants a moderate pistol squat in the middle. Otherwise, pretty straightforward. Don't miss the ",
+        {
+          "type": "hold",
+          "id": "5",
+          "text": "teeny hold"
+        },
+        ", fifth from the top!"
+      ],
+      "annotations": {
+        "viewBox": [3024, 4032],
+        "holds": [
+          {
+            "id": "1",
+            "box": [1550, 3244, 200, 210],
+            "color": "h-blk-900"
+          },
+          {
+            "id": "2",
+            "box": [1714, 2724, 200, 210],
+            "color": "h-blk-900"
+          },
+          {
+            "id": "3",
+            "box": [646, 2348, 342, 368],
+            "tags": [[2, "h-", 0, 0.5]],
+            "color": "h-blk-900"
+          },
+          {
+            "id": "4",
+            "box": [1732, 2436, 260, 220],
+            "color": "h-blk-900"
+          },
+          {
+            "id": "5",
+            "box": [2054, 1835, 152, 150],
+            "color": "h-blk-900"
+          },
+          {
+            "id": "8",
+            "box": [1154, 986, 968, 604],
+            "maskOut": ["6", "7"],
+            "color": "h-blk-900"
+          },
+          {
+            "id": "7",
+            "box": [1950, 1178, 372, 412],
+            "maskOut": ["6"],
+            "color": "h-blk-900"
+          },
+          {
+            "id": "6",
+            "box": [1901, 1531, 130, 136],
+            "color": "h-blk-900"
+          },
+          {
+            "id": "9",
+            "box": [1902, 602, 222, 194],
+            "color": "h-blk-900"
+          }
+        ]
+      }
     }
   ]
 }
