@@ -4,7 +4,7 @@ set -eu
 : "${BUCKET:=wchargin-climbing-public}"
 
 main() {
-    if [ $# -ne 2 ]; then
+    if [ $# -ne 2 ] || [ -z "$1" ] || [ -z "$2" ]; then
         printf >&2 'usage: upload-img <filename> <image-id>\n'
         return 1
     fi
