@@ -40,7 +40,7 @@ function useNotesState() {
 function Cell({ label, children }) {
   return (
     <label className="flex flex-col">
-      <span className="text-xs text-brand-300">{label}</span>
+      <span className="text-xs text-muted">{label}</span>
       {children}
     </label>
   );

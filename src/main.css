@@ -74,3 +74,19 @@ body {
     max-height: calc(100vh - 4rem);
   }
 }
+
+.text-link {
+  @apply text-sky-300;
+}
+.text-link:hover,
+.text-link:focus {
+  @apply underline;
+}
+.text-link:active {
+  @apply text-red-600;
+}
+
+.text-muted {
+  /* overrides .text-link when appropriate */
+  @apply text-brand-300;
+}

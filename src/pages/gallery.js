@@ -87,10 +87,10 @@ function Season({ season, routes, categoriesVisible, setCategoriesVisible }) {
         ))}
       </div>
       {!anyMatchingRoutes && (
-        <div className="p-4 text-center text-brand-300 flex flex-col gap-1">
+        <div className="p-4 text-center text-muted flex flex-col gap-1">
           <p>No routes for selected colors.</p>
           <button
-            className="text-sky-300 hover:underline focus:underline"
+            className="text-link"
             onClick={() =>
               setCategoriesVisible((o) => {
                 const result = {};
@@ -145,11 +145,7 @@ function SeasonDescription({ description, className }) {
     switch (node.type) {
       case "route":
         p.push(
-          <Link
-            key={i}
-            to={`/routes/${node.id}/`}
-            className="text-sky-300 hover:underline focus:underline active:text-red-600"
-          >
+          <Link key={i} to={`/routes/${node.id}/`} className="text-link">
             {node.text}
           </Link>,
         );

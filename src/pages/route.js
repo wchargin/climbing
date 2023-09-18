@@ -54,17 +54,12 @@ function Route({ id }) {
               className="max-w-full max-h-full md:h-auto md:w-full"
               style={{ aspectRatio: "3 / 4" }}
             />
-            <div className="text-center text-sm md:text-xs py-1 text-brand-300 bg-transparent">
+            <div className="text-center text-sm md:text-xs py-1 text-link text-muted bg-transparent">
               {
                 // ^ want bg-black/25 but can't figure out layout to make that
                 // only extend to SVG width, not screen width
               }
-              <a
-                href={imageUrl(route.id, "full")}
-                className="hover:underline focus:underline active:text-red-600"
-              >
-                see full image
-              </a>
+              <a href={imageUrl(route.id, "full")}>see full image</a>
               {route.annotations && (
                 <span className="nojs-hidden">
                   <span className="mx-2">&middot;</span>
@@ -94,7 +89,7 @@ function Route({ id }) {
           />
         </div>
         <div className="flex items-center">
-          <h2 className="text-brand-300 mt-2 flex-grow">Route #{route.id}</h2>
+          <h2 className="text-muted mt-2 flex-grow">Route #{route.id}</h2>
           <NavAdjacentLink
             id={id - 1}
             current={route}
@@ -108,16 +103,12 @@ function Route({ id }) {
             byCategoryIndex={false}
           />
         </div>
-        <h2 className="text-brand-300 mt-2">
+        <h2 className="text-muted mt-2">
           {route.date} &middot; {LOCATION_NAMES[route.location]}
         </h2>
         <Notes className="mt-6" notes={route.notes} holdsState={holdsState} />
-        <p className="text-sky-300 mt-6">
-          <Link
-            to="/"
-            className="hover:underline focus:underline active:text-red-600"
-            scrollTo={`route#${id}`}
-          >
+        <p className="text-link mt-6">
+          <Link to="/" scrollTo={`route#${id}`}>
             &laquo; Back to route gallery
           </Link>
         </p>
