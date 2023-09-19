@@ -61,6 +61,14 @@ function Season({ season, routes, categoriesVisible, setCategoriesVisible }) {
         setVisible={(v) =>
           setCategoriesVisible((o) => ({ ...o, [category]: v }))
         }
+        setOnlyVisible={() =>
+          setCategoriesVisible((o) => ({
+            ...Object.fromEntries(
+              Object.keys(CATEGORY_COLORS).map((k) => [k, false]),
+            ),
+            [category]: true,
+          }))
+        }
       />,
     );
   }
@@ -107,7 +115,13 @@ function Season({ season, routes, categoriesVisible, setCategoriesVisible }) {
   );
 }
 
-function CategoryCountChip({ category, count, visible, setVisible }) {
+function CategoryCountChip({
+  category,
+  count,
+  visible,
+  setVisible,
+  setOnlyVisible,
+}) {
   const color = CATEGORY_COLORS[category];
   return (
     <button
@@ -118,7 +132,10 @@ function CategoryCountChip({ category, count, visible, setVisible }) {
         color.dark ? "bg-brand-500" : "bg-brand-600",
         visible || "opacity-25",
       )}
-      onClick={() => setVisible(!visible)}
+      onClick={(e) => {
+        if (e.shiftKey) setOnlyVisible();
+        else setVisible(!visible);
+      }}
       title={`${visible ? "Hide" : "Show"} ${category} routes`}
     >
       <span
