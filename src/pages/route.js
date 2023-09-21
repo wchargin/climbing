@@ -107,8 +107,8 @@ function Route({ id }) {
           {route.date} &middot; {LOCATION_NAMES[route.location]}
         </h2>
         <Notes className="mt-6" notes={route.notes} holdsState={holdsState} />
-        <p className="text-link mt-6">
-          <Link to="/" scrollTo={`route#${id}`}>
+        <p className="mt-6">
+          <Link to="/" scrollTo={`route#${id}`} className="text-link block">
             &laquo; Back to route gallery
           </Link>
         </p>
