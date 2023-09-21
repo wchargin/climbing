@@ -6,6 +6,7 @@ import * as Server from "react-dom/server";
 import App from "./app";
 import data from "./data";
 import { pathToRoot } from "./path";
+import matchPath from "./paths";
 import Router from "./router";
 import { ThumbhashCacheProvider } from "./thumbhash";
 
@@ -73,6 +74,7 @@ async function renderPage(path, storeSubset, outdir, filename) {
   const store = ClimbingDataStore.fromData(storeSubset);
   const storeDataJson = JSON.stringify(storeSubset);
 
+  const match = matchPath(path, store);
   const rendered = Server.renderToString(
     <StoreContext.Provider value={{ store, loaded: false }}>
       <ThumbhashCacheProvider>
@@ -90,6 +92,7 @@ async function renderPage(path, storeSubset, outdir, filename) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
+<title>${escapeContent(match.title)}</title>
 <link rel="stylesheet" href="${toRoot}styles.css">
 <script src="${toRoot}store-loader.js" async></script>
 <script src="${toRoot}client.js" async defer></script>
@@ -111,6 +114,10 @@ ${escapeJsonScript(storeDataJson)}\
 
 function escapeAttr(text) {
   return text.replace(/[<>"'&]/g, (c) => `&#${c.charCodeAt(0)};`);
+}
+
+function escapeContent(text) {
+  return text.replace(/[<>&]/g, (c) => `&#${c.charCodeAt(0)};`);
 }
 
 function escapeJsonScript(text) {
