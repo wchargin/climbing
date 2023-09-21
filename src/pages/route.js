@@ -54,12 +54,17 @@ function Route({ id }) {
               className="max-w-full max-h-full md:h-auto md:w-full"
               style={{ aspectRatio: "3 / 4" }}
             />
-            <div className="text-center text-sm md:text-xs py-1 text-link text-muted bg-transparent">
+            <div className="text-center text-sm md:text-xs py-1 text-muted bg-transparent">
               {
                 // ^ want bg-black/25 but can't figure out layout to make that
                 // only extend to SVG width, not screen width
               }
-              <a href={imageUrl(route.id, "full")}>see full image</a>
+              <a
+                href={imageUrl(route.id, "full")}
+                className="text-link text-muted"
+              >
+                see full image
+              </a>
               {route.annotations && (
                 <span className="nojs-hidden">
                   <span className="mx-2">&middot;</span>
