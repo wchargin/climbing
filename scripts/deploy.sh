@@ -12,12 +12,11 @@ main() {
     printf >&2 'deploy: building from %s\n' "${tip}"
 
     ./scripts/build.sh --prod
-    git -C "${builddir}" init
-    git -C "${builddir}" add .
-    git -C "${builddir}" commit -m "[internal] build: clean deploy from ${tip}"
+    git --work-tree "${builddir}" add --all
+    tree="$(git write-tree)"
+    git reset
     git checkout gh-pages
-    git fetch "${builddir}"
-    commit="$(git commit-tree FETCH_HEAD^{tree} -p HEAD -m "build: deploy from ${tip}")"
+    commit="$(git commit-tree "${tree}" -p HEAD -m "build: deploy from ${tip}")"
     git reset --hard "${commit}"
     printf >&2 'Deploy commit created. To proceed, next steps:\n'
     printf >&2 '  * %s\n' '"python3 -m http.server" and poke around'
