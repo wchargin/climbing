@@ -21,6 +21,7 @@ main() {
     fi
 
     set -x
+    node ./scripts/checkData.js || false
     rm -rf build dist.new
     mkdir build dist.new
     node ./scripts/compile.js
