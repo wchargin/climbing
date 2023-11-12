@@ -24,8 +24,40 @@ function Gallery() {
 
   const bySeason = groupBySeason(routesDesc, seasonsDesc);
   return (
-    <main className="flex flex-col max-w-[1200px] px-6 pb-12 mx-auto">
-      <h1 className="mt-12">Completed routes</h1>
+    <main className="flex flex-col max-w-[1200px] p-6 pt-20 gap-12 mx-auto">
+      <section className="flex flex-col gap-2">
+        <h1>Hello.</h1>
+        <p className="mt-2">
+          This is my climbing journal. I&nbsp;catalogue routes that
+          I&nbsp;complete at V4&nbsp;difficulty or above.
+        </p>
+        <p>
+          Most of my routes are at Seattle Bouldering Project, which has the
+          following fuzzy color scale:
+        </p>
+        <ul className="px-4">
+          <li>
+            <strong>Black:</strong> V4–V6
+          </li>
+          <li>
+            <strong>Blue:</strong> V5–V7
+          </li>
+          <li>
+            <strong>Pink:</strong> V6–V8
+          </li>
+          <li>
+            <strong>White:</strong> V8 and above
+          </li>
+        </ul>
+        <p>
+          (Routes from lower colors <em>can</em> be V4+, but I&nbsp;only include
+          routes here that are sure to be in these ranges.)
+        </p>
+        <p>
+          This site is for my data collection, enjoyment, and sharing with
+          friends. May you enjoy it as well.
+        </p>
+      </section>
       {bySeason.map(({ season, routes }) => (
         <Season
           key={season.id}
@@ -74,8 +106,8 @@ function Season({ season, routes, categoriesVisible, setCategoriesVisible }) {
   }
 
   return (
-    <>
-      <div className="flex flex-row flex-wrap justify-between md:justify-start items-end mt-8">
+    <section>
+      <div className="flex flex-row flex-wrap justify-between md:justify-start items-end">
         <h2 className="text-2xl">{season.name}</h2>
         <div className="inline-flex text-xs md:ml-8 gap-2">
           {...colorLabels}
@@ -111,7 +143,7 @@ function Season({ season, routes, categoriesVisible, setCategoriesVisible }) {
           </button>
         </div>
       )}
-    </>
+    </section>
   );
 }
 
