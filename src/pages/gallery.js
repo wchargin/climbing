@@ -25,7 +25,7 @@ function Gallery() {
   const bySeason = groupBySeason(routesDesc, seasonsDesc);
   return (
     <main className="flex flex-col max-w-[1200px] px-6 pb-12 mx-auto">
-      <h1 className="text-4xl mt-12">Completed routes</h1>
+      <h1 className="mt-12">Completed routes</h1>
       {bySeason.map(({ season, routes }) => (
         <Season
           key={season.id}

@@ -7,6 +7,10 @@ body {
   color: white;
 }
 
+h1 {
+  @apply text-4xl;
+}
+
 .routes-grid {
   display: grid;
   grid-template-columns: 1fr;
