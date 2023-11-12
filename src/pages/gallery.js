@@ -24,8 +24,8 @@ function Gallery() {
 
   const bySeason = groupBySeason(routesDesc, seasonsDesc);
   return (
-    <main className="flex flex-col max-w-[1200px] px-4 pb-12 mx-auto">
-      <h1 className="text-4xl mt-12 mx-2">Completed routes</h1>
+    <main className="flex flex-col max-w-[1200px] px-6 pb-12 mx-auto">
+      <h1 className="text-4xl mt-12">Completed routes</h1>
       {bySeason.map(({ season, routes }) => (
         <Season
           key={season.id}
@@ -75,7 +75,7 @@ function Season({ season, routes, categoriesVisible, setCategoriesVisible }) {
 
   return (
     <>
-      <div className="flex flex-row flex-wrap justify-between md:justify-start items-end mx-2 mt-8">
+      <div className="flex flex-row flex-wrap justify-between md:justify-start items-end mt-8">
         <h2 className="text-2xl">{season.name}</h2>
         <div className="inline-flex text-xs md:ml-8 gap-2">
           {...colorLabels}
@@ -83,11 +83,11 @@ function Season({ season, routes, categoriesVisible, setCategoriesVisible }) {
       </div>
       {season.description.length > 0 && (
         <SeasonDescription
-          className="m-2 mt-4 max-w-[600px]"
+          className="mt-4 mb-2 max-w-[600px]"
           description={season.description}
         />
       )}
-      <div className="routes-grid grid gap-2 p-2">
+      <div className="routes-grid grid gap-2 py-2">
         {routes.map((route) => (
           <Fragment key={route.id}>
             {categoriesVisible[route.category] && <Route route={route} />}
