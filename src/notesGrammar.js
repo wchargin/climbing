@@ -35,6 +35,7 @@
 export { parse, unparse };
 
 function parse(text) {
+  text = text.trim();
   return intersperse(
     { type: "hr" },
     text.split("\n\n---\n\n").map((section) => {
