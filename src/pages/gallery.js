@@ -122,7 +122,7 @@ function Season({ season, routes, categoriesVisible, setCategoriesVisible }) {
       <div className="routes-grid grid gap-2 py-2">
         {routes.map((route) => (
           <Fragment key={route.id}>
-            {categoriesVisible[route.category] && <Route route={route} />}
+            <Route route={route} visible={categoriesVisible[route.category]} />
           </Fragment>
         ))}
       </div>
@@ -216,7 +216,7 @@ const LOCATION_NAMES = {
   fremont: "SBP Fremont",
 };
 
-function Route({ route }) {
+function Route({ route, visible }) {
   const { provideScroll } = useTelescroll();
 
   const title = `${route.category.replace(/\b./g, (c) => c.toUpperCase())} #${
@@ -236,6 +236,7 @@ function Route({ route }) {
       className={classNames(
         "flex flex-col flex-grow justify-between rounded-sm border",
         border,
+        visible || "hidden",
       )}
     >
       <figure
