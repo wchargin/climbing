@@ -1880,12 +1880,102 @@
         {
           "type": "p"
         },
-        "The crux is getting over the lip. I do this with my left heel on the hold on the lower volume, my right hand on the hold cluster at the end of the long volume, and my left hand grabbing the hold in the middle. Levering yourself up is difficult and takes a lot of strength! I don't think I could fully complete it in isolation. The trick for me was to realize that once you get high enough, you can thumb-grab to the hold on the underside of the top volume to pull yourself up the rest of the way. Then, after adjusting and stabilizing your center of mass, you can switch that thumb grab to an undercling to get solidly on top of it, and slowly reach for the finish.",
+        "The crux is getting over the lip formed by the long volume. I do this with my left heel on the ",
+        {
+          "type": "hold",
+          "id": "4+5",
+          "text": "hold on the lower volume"
+        },
+        ", my right hand on the ",
+        {
+          "type": "hold",
+          "id": "7+8",
+          "text": "hold cluster at the end of the long volume"
+        },
+        ", and my left hand grabbing the ",
+        {
+          "type": "hold",
+          "id": "6",
+          "text": "hold in the middle"
+        },
+        ". Levering yourself up is difficult and takes a lot of strength! I don't think I could fully complete it in isolation. The trick for me was to realize that once you get high enough, you can thumb-grab to the ",
+        {
+          "type": "hold",
+          "id": "9",
+          "text": "hold on the underside of the top volume"
+        },
+        " to pull yourself up the rest of the way. Then, after adjusting and stabilizing your center of mass, you can switch that thumb grab to an undercling to get solidly on top of it, and slowly reach for the finish.",
         {
           "type": "p"
         },
-        "Compared to the crux, the start is much easier, but I also find it interesting. The hold on the underside of the lower volume is quite good and has a little lip in its right side—not quite a jug, but maybe the closest you'll get to that in a pink. :-) My strategy brings me fairly far from the wall: I start with my right foot on the toe chip, then grab to that hold with my right hand and fully pivot around, putting my left foot on the start hold before grabbing up to the long volume and shimmying along it to attempt the crux. I wonder about other good approaches to the start."
-      ]
+        "Compared to the crux, the start is much easier, but I also find it interesting. The ",
+        {
+          "type": "hold",
+          "id": "4+5",
+          "text": "hold on the underside of the lower volume"
+        },
+        " is quite good and has a little lip in its right side—not quite a jug, but maybe the closest you'll get to that in a pink. :-) My strategy brings me fairly far from the wall: I start with my right foot on the ",
+        {
+          "type": "hold",
+          "id": "1+2",
+          "text": "higher toe chip"
+        },
+        ", then grab to ",
+        {
+          "type": "hold",
+          "id": "4+5",
+          "text": "that hold"
+        },
+        " with my right hand and fully pivot around, putting my left foot on the ",
+        {
+          "type": "hold",
+          "id": "3",
+          "text": "start hold"
+        },
+        " before grabbing up to the long volume and shimmying along it to attempt the crux. I wonder about other good approaches to the start."
+      ],
+      "annotations": {
+        "viewBox": [3024, 4032],
+        "holds": [
+          {
+            "id": "1+2",
+            "box": [921, 3458, 215, 230],
+            "color": "h-pnk-200"
+          },
+          {
+            "id": "3",
+            "box": [284, 2332, 404, 400],
+            "tags": [[2, "v", 0.7, 1]],
+            "color": "h-pnk-200"
+          },
+          {
+            "id": "4+5",
+            "box": [752, 1916, 180, 187],
+            "color": "h-pnk-100"
+          },
+          {
+            "id": "6",
+            "box": [1080, 1484, 224, 248],
+            "color": "h-pnk-100"
+          },
+          {
+            "id": "7+8",
+            "box": [1652, 1256, 296, 280],
+            "color": "h-pnk-100"
+          },
+          {
+            "id": "9",
+            "box": [996, 892, 204, 208],
+            "color": "h-pnk-100"
+          },
+          {
+            "id": "10+11",
+            "box": [1540, 108, 288, 328],
+            "tags": [[1, "v", 0.5, 1]],
+            "color": "h-pnk-100"
+          }
+        ]
+      }
     }
   ]
 }
