@@ -2,6 +2,8 @@ import Edit from "./pages/edit";
 import Gallery from "./pages/gallery";
 import Route from "./pages/route";
 
+import { imageUrl } from "./img";
+
 const ROUTE_BY_ID = /^\/routes\/([1-9][0-9]*)\/$/;
 const ROUTE_BY_CATEGORY_INDEX = /^\/routes\/([^/]+)\/([1-9][0-9]*)\/$/;
 
@@ -39,6 +41,9 @@ function matchPathInternal(path, store) {
       return {
         title: titleForRoute(id, store),
         render: () => <Route id={id} />,
+        meta: {
+          ogImage: imageUrl(id, "1200"),
+        },
       };
     }
   }

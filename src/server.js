@@ -85,6 +85,13 @@ async function renderPage(path, storeSubset, outdir, filename) {
     </StoreContext.Provider>,
   );
 
+  const meta = [];
+  if (match.meta?.ogImage) {
+    meta.push(
+      `<meta property="og:image" content="${escapeAttr(match.meta.ogImage)}">`,
+    );
+  }
+
   const toRoot = pathToRoot(path);
   const page = `\
 <!DOCTYPE html>
@@ -92,6 +99,7 @@ async function renderPage(path, storeSubset, outdir, filename) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
+${meta.map((s) => s + "\n").join()}\
 <title>${escapeContent(match.title)}</title>
 <link rel="stylesheet" href="${toRoot}styles.css">
 <script src="${toRoot}store-loader.js" async></script>
