@@ -1818,7 +1818,13 @@
       "location": "poplar",
       "thumbhash": "HggKDQBpZ393N4dXeIRnWJ+Y+4bZ",
       "notes": [
-        "Difficult, satisfying, rewarding! This route was added just a few days after Boulderfest, and I worked on it over two days. The ellipsoid hold is so good from all angles! You can lean against it ",
+        "Difficult, satisfying, rewarding! This route was added just a few days after Boulderfest, and I worked on it over two days. The ",
+        {
+          "type": "hold",
+          "id": "5",
+          "text": "ellipsoid hold"
+        },
+        " is so good from all angles! You can lean against it ",
         {
           "type": "em",
           "text": "and"
@@ -1832,25 +1838,231 @@
         {
           "type": "p"
         },
-        "Most of the route is consistently moderately difficult, and the crux—vertically straightening while stable on the big dark volume—is hard. The start is a bit cute because at first you might think to grab one hold with each hand, but it's better to use the lower hold for your left foot, your right hand on the upper hold, and your left hand either on that same hold or on the volume to the left. (Though one person does a wild kind of Warrior III pose facing left before stabilizing!) Traversing to the crux is fun, precise slabby business. The lower hold on the big volume is very solid for your right toe, if not the most pleasant.",
+        "Most of the route is consistently moderately difficult, and the crux—vertically straightening while stable on the ",
+        {
+          "type": "hold",
+          "id": "v-big",
+          "text": "big dark volume"
+        },
+        "—is hard. The start is a bit cute because at first you might think to grab ",
+        {
+          "type": "hold",
+          "id": "2",
+          "text": "one hold"
+        },
+        " with ",
+        {
+          "type": "hold",
+          "id": "3",
+          "text": "each hand"
+        },
+        ", but it's better to use the ",
+        {
+          "type": "hold",
+          "id": "2",
+          "text": "lower hold"
+        },
+        " for your left foot, your right hand on the ",
+        {
+          "type": "hold",
+          "id": "3",
+          "text": "upper hold"
+        },
+        ", and your left hand either on that same hold or on the left side of ",
+        {
+          "type": "hold",
+          "id": "v-start",
+          "text": "that volume"
+        },
+        ". (Though one person does a wild kind of Warrior III pose facing left before stabilizing!) Traversing to the crux is fun, precise slabby business. The ",
+        {
+          "type": "hold",
+          "id": "4",
+          "text": "lower hold on the big volume"
+        },
+        " is very solid for your right toe, if not the most pleasant. (It's not pokey, just a large force on a small area.)",
         {
           "type": "p"
         },
-        "The hard part comes once you try to grab to the rightmost, tall hold without immediately (yet slowly) barn-dooring off to the right. I got different pieces of beta from different people here: one person enters this segment by hooking their left ",
+        "The hard part comes once you try to grab to the ",
+        {
+          "type": "hold",
+          "id": "10",
+          "text": "rightmost, tall hold"
+        },
+        " without immediately (yet slowly) barn-dooring off to the right. I saw different approaches from different people here: one person enters this segment by hooking their left ",
         {
           "type": "em",
           "text": "calf"
         },
-        " around the ellipsoid and gripping it(!); a second person enters high and… somehow just gracefully finishes the route; a third person eventually manages to get their left foot on top of the left side of the ellipsoid. This last technique was key for me: I think once you get your left foot up on there, you're golden. (The rest still requires strength, balance, and precision, but the hardest parts are behind you.)",
+        " around the ",
+        {
+          "type": "hold",
+          "id": "5",
+          "text": "ellipsoid"
+        },
+        " and gripping it(!); a second person enters high and… somehow just gracefully finishes the route; a third person eventually manages to get their left foot ",
+        {
+          "type": "em",
+          "text": "on top"
+        },
+        " of the left side of the ",
+        {
+          "type": "hold",
+          "id": "5",
+          "text": "ellipsoid"
+        },
+        ". This last technique was key for me: I think once you get your left foot up on there, you're golden. (The rest still requires strength, balance, and precision, but the hardest parts are behind you.)",
         {
           "type": "p"
         },
-        "The final hold is also not great by any means. Its bottom section is only good to stabilize you a bit so that you can grab the top section. The top section is fine; it does what you need, but won't carry you if you're unsteady.",
+        "The ",
+        {
+          "type": "hold",
+          "id": "11",
+          "text": "final hold"
+        },
+        " is also not great by any means. Its bottom section is only good to stabilize you a bit so that you can grab the top section. The top section is fine; it does what you need, but won't carry you if you're unsteady.",
         {
           "type": "p"
         },
-        "Start: left foot on hold; push through it. Point left foot left so that you can get close enough to put right foot on the right section of the low sloper. Switch feet moving right, right hand on ellipsoid. Grab right to crimp; move left hand to ellipsoid. Move right foot to volume. Grab right to tall hold—it's a stretch! Put left foot on top of ellipsoid to stabilize; knee will form an acute angle. Pivot up, slowly balance right, and grab to the final hold before stepping up to the finish."
-      ]
+        "Start: left foot on ",
+        {
+          "type": "hold",
+          "id": "2",
+          "text": "hold"
+        },
+        "; push through it. Point left foot left so that you can get close enough to put right foot on the right section of the ",
+        {
+          "type": "hold",
+          "id": "1",
+          "text": "low sloper"
+        },
+        ". Switch feet moving right, right hand on ",
+        {
+          "type": "hold",
+          "id": "5",
+          "text": "ellipsoid"
+        },
+        ". Grab right to ",
+        {
+          "type": "hold",
+          "id": "6",
+          "text": "crimp"
+        },
+        "; move left hand to ",
+        {
+          "type": "hold",
+          "id": "5",
+          "text": "ellipsoid"
+        },
+        ". Move right foot to ",
+        {
+          "type": "hold",
+          "id": "v-center",
+          "text": "center volume"
+        },
+        ". Grab right to ",
+        {
+          "type": "hold",
+          "id": "10",
+          "text": "tall hold"
+        },
+        "—it's a stretch! Put left foot on top of ",
+        {
+          "type": "hold",
+          "id": "5",
+          "text": "ellipsoid"
+        },
+        " to stabilize; knee will form an acute angle. Pivot up, slowly balance right, and grab to the ",
+        {
+          "type": "hold",
+          "id": "11",
+          "text": "final hold"
+        },
+        " before stepping up to the finish."
+      ],
+      "annotations": {
+        "viewBox": [3024, 4032],
+        "holds": [
+          {
+            "id": "v-start",
+            "box": [297, 2490, 840, 762],
+            "style": "dashed",
+            "tags": [[2, "v", 0.775, 1]],
+            "color": "h-blu-200"
+          },
+          {
+            "id": "v-center",
+            "box": [1456, 2640, 972, 816],
+            "style": "dashed",
+            "color": "h-blu-200",
+            "maskOut": ["v-big", "1"]
+          },
+          {
+            "id": "v-big",
+            "box": [2164, 1456, 584, 1684],
+            "style": "dashed",
+            "color": "h-blu-200",
+            "maskOut": ["5", "10"]
+          },
+          {
+            "id": "1",
+            "box": [1293, 2838, 444, 435],
+            "color": "h-blu-400"
+          },
+          {
+            "id": "2",
+            "box": [855, 3009, 186, 195],
+            "color": "h-blu-400"
+          },
+          {
+            "id": "3",
+            "box": [903, 2721, 186, 183],
+            "color": "h-blu-400"
+          },
+          {
+            "id": "4",
+            "box": [2410, 2354, 154, 150],
+            "color": "h-blu-400"
+          },
+          {
+            "id": "5",
+            "box": [1998, 1950, 315, 402],
+            "color": "h-blu-400"
+          },
+          {
+            "id": "6",
+            "box": [2453, 2140, 145, 141],
+            "color": "h-blu-400"
+          },
+          {
+            "id": "7",
+            "box": [1332, 1620, 339, 549],
+            "color": "h-blu-400"
+          },
+          {
+            "id": "8",
+            "box": [2397, 1806, 141, 153],
+            "color": "h-blu-400"
+          },
+          {
+            "id": "9",
+            "box": [2209, 1523, 185, 174],
+            "color": "h-blu-400"
+          },
+          {
+            "id": "10",
+            "box": [2501, 1185, 216, 443],
+            "color": "h-blu-400"
+          },
+          {
+            "id": "11",
+            "box": [2256, 648, 245, 262],
+            "color": "h-blu-200"
+          }
+        ]
+      }
     },
     {
       "id": 163,
