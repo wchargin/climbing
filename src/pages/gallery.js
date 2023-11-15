@@ -2,7 +2,7 @@ import { Fragment, useState } from "react";
 
 import classNames from "../classNames";
 import FadingImage from "../fadingImage";
-import { imageUrl } from "../img";
+import { gcsUrl, imageUrl } from "../img";
 import Link from "../link";
 import { useTelescroll } from "../telescroll";
 import useThumbhash from "../thumbhash";
@@ -33,7 +33,11 @@ function Gallery() {
         </p>
         <p>
           Most of my routes are at Seattle Bouldering Project, which has the
-          following fuzzy color scale:
+          following{" "}
+          <a className="text-link" href={gcsUrl("assets/sbp-circuits.jpg")}>
+            fuzzy color scale
+          </a>
+          :
         </p>
         <ul className="px-4">
           <li>
