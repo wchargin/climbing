@@ -21,7 +21,7 @@ function matchPathInternal(path, store) {
 
   if (path === "/")
     return {
-      title: "Completed routes",
+      title: "Route gallery",
       render: () => <Gallery />,
     };
   if (process.env.NODE_ENV === "development") {
