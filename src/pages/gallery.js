@@ -32,8 +32,11 @@ function Gallery() {
           I&nbsp;complete at V4&nbsp;difficulty or above.
         </p>
         <p>
-          Most of my routes are at Seattle Bouldering Project, which has the
-          following{" "}
+          Most of my routes are at{" "}
+          <a className="text-link" href="https://seattleboulderingproject.com">
+            Seattle Bouldering Project
+          </a>
+          , which has the following{" "}
           <a className="text-link" href={gcsUrl("assets/sbp-circuits.jpg")}>
             fuzzy color scale
           </a>
