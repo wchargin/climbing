@@ -26,7 +26,7 @@ function Gallery() {
   return (
     <main className="flex flex-col max-w-[1200px] p-6 pt-20 gap-12 mx-auto">
       <section className="flex flex-col gap-2">
-        <h1>Hello.</h1>
+        <h1>hello!</h1>
         <p className="mt-2">
           This is my climbing journal. I&nbsp;catalogue routes that
           I&nbsp;complete at V4&nbsp;difficulty or above.
