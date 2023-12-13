@@ -63,6 +63,12 @@
       "name": "Fall 2023",
       "fromRouteId": 131,
       "description": []
+    },
+    {
+      "id": "2023q4",
+      "name": "Winter 2023",
+      "fromRouteId": 169,
+      "description": []
     }
   ],
   "routes": [
@@ -2192,6 +2198,215 @@
           }
         ]
       }
+    },
+    {
+      "id": 165,
+      "category": "black",
+      "indexInCategory": 124,
+      "date": "2023-11-17",
+      "location": "poplar",
+      "thumbhash": "2vcJHQSMh493iFmYd2qId4ePiPmI",
+      "notes": [
+        "It helps to take a look at this route ahead of time: (a) the two black holds on the right side of the higher gray volume are key, but you can't see them on the wall, and (b) it's useful to know that it traverses so far to the right. When I cleared this, I didn't end up using the farthest-right hold; I didn't trust my lean and opted to just bump to the finish."
+      ]
+    },
+    {
+      "id": 166,
+      "category": "blue",
+      "indexInCategory": 26,
+      "date": "2023-11-17",
+      "location": "poplar",
+      "thumbhash": "HAgOFQKWh4+Hp3e4h4mXeLB6BMx4",
+      "notes": [
+        "I tried this on three different days but only over four or so attempts total; on Friday, I was walking out of the gym, spotted it, decided to try it again, and got it.",
+        {
+          "type": "p"
+        },
+        "I think the start and middle of this one are the hardest. I start with my right foot on the hold and my left foot flagging just below the volume; it took me a while to get a feel for establishing. The lower start hold is fun. The inner nestled hold might be best used while leaning right, but it's not too bad if you just grab it (pulling straight out from the wall) and then the hold around it. The top lip of the wall is at an accommodating angle here (roughly 90°), so once you manage to wildly grab to the top, it's pretty manageable to top out with the holds provided."
+      ]
+    },
+    {
+      "id": 167,
+      "category": "blue",
+      "indexInCategory": 27,
+      "date": "2023-11-23",
+      "location": "poplar",
+      "thumbhash": "IAgOHQSJh393WHd4h3WIZ5V8X6r4",
+      "notes": [
+        "I flashed this one, then failed it the next session, then cleared it again the next two sessions, so I think I'm fairly comfortable with it. I start with right foot on the crescent hold and left foot hanging, then just kind of muscle up. In the middle, jamming your foot into the top-right of the start hold, where it touches the tall bar, is helpful."
+      ]
+    },
+    {
+      "id": 168,
+      "category": "black",
+      "indexInCategory": 125,
+      "date": "2023-11-27",
+      "location": "poplar",
+      "thumbhash": "WxgOFQR3h493h3hniHZoh2CNCJRo",
+      "notes": [
+        "Chatted with a friend about differences in approach: they suggested using a right heel hook on the start hold. That works, too!"
+      ]
+    },
+    {
+      "id": 169,
+      "category": "black",
+      "indexInCategory": 126,
+      "date": "2023-12-05",
+      "location": "poplar",
+      "thumbhash": "HAgODQKLh594N4aYiJmoiJePrPnZ",
+      "notes": [
+        "Super interesting black, and fairly hard, I think. It's a pretty dynamic start; you jump right onto the volume or volumes. (If using just the left volume, stabilizing by hooking your left foot around the left edge helps; it's easier overall to use one foot on the left volume and one foot on the right triangle volume, though.) Traversing right is precise but doable, and then there's a sequence of foot swaps until you can get into a rightward facing lunge position with your left foot on the big hold (behind you) and your right foot on the little hemisphere on the rightmost volume. Pushing up from there is strenuous, and the final hold doesn't give you too much aid, either. It feels good to complete!"
+      ]
+    },
+    {
+      "id": 170,
+      "category": "blue",
+      "indexInCategory": 28,
+      "date": "2023-12-07",
+      "location": "poplar",
+      "thumbhash": "GwgODQJ7aI+HN3doiHeIiM6/xfp6",
+      "notes": [
+        "Cool start on this one: the top start hold has barely any lip, so I do a kind of crossed-hand start facing right with right hand on the upper hold and left hand pressing into the lower hold. Establishing onto the four holds in the lower-right is doable enough; I think the crux is reaching to the high hold directly above them, whether dynamically or statically. I've done it statically, and tried it dynamically once but didn't stick it. It feels scary for some reason!",
+        {
+          "type": "p"
+        },
+        "Once you get to that high hold, it's not too hard to step onto the left volume and traverse over to the end. The finish hold is good enough."
+      ]
+    },
+    {
+      "id": 171,
+      "category": "blue",
+      "indexInCategory": 29,
+      "date": "2023-12-07",
+      "location": "poplar",
+      "thumbhash": "GAgODQJoh393t4iXiHl3h2d9b7j3",
+      "notes": [
+        "Decently difficult blue for me; I think it needs a little technique and a fair amount of strength/endurance. A friend taught me a pockets trick here: when using fingers 3 and 4 (middle and ring) in a pocket, also \"pulling down\" with fingers 2 and 5 (index and pinky) will recruit those muscles and strengthen the grip. Even though those fingers aren't actually touching the hold, all the insides are connected. It's super noticeable!",
+        {
+          "type": "p"
+        },
+        "The third pocket is very good, especially in the rightward direction. After grabbing there with left hand, you want to grab right to the lower-right hold on the big volume and work your feet over to the lower-right volume, so that you can grab to the other hold on the big volume with your left hand. Those two holds are both ",
+        {
+          "type": "em",
+          "text": "good"
+        },
+        " but a bit taxing and maybe slightly painful. After that, it's mostly a \"do you have any strength left?\" check for the rest of it."
+      ]
+    },
+    {
+      "id": 172,
+      "category": "black",
+      "indexInCategory": 127,
+      "date": "2023-12-07",
+      "location": "poplar",
+      "thumbhash": "FggODQJpiI+Hp4iXeHmHh2l/iPqm",
+      "notes": [
+        "This black just kind of goes straight up. It has good tiny toe chips. The two handholds on opposite sides of the top volume are a bit fun. :-)"
+      ]
+    },
+    {
+      "id": 173,
+      "category": "black",
+      "indexInCategory": 128,
+      "date": "2023-12-07",
+      "location": "poplar",
+      "thumbhash": "GggKDQJ2d193uHaodliHhmZbr4X3",
+      "notes": [
+        "I found this harder than it looks, to a surprising degree! The second big hold is really unaccommodating. I did it with two different \"big dynos\": one with left hand to the big hold just beneath the high blocky volume, and one right after that with right hand up to the volume. They both feel very \"heavy\" in that a lot of your body is moving; I felt like I was dragging myself along. It's more tractable once you've grabbed that top blocky volume, but it still takes some strength to scramble up the rest of the way."
+      ]
+    },
+    {
+      "id": 174,
+      "category": "black",
+      "indexInCategory": 129,
+      "date": "2023-12-07",
+      "location": "poplar",
+      "thumbhash": "HggKDQJ8iJ93aHeId3aYZ2yv+cVo",
+      "notes": [
+        "I want to try this one again so that I remember more about it. I remember the holds being annoyingly unaccommodating; I usually like the big slot holds, but I think the way that it's set as a vertically oriented start hold negates most of the utility that I usually enjoy. This felt hard when I cleared it but it was also at the end of a session."
+      ]
+    },
+    {
+      "id": 175,
+      "category": "black",
+      "indexInCategory": 130,
+      "date": "2023-12-11",
+      "location": "poplar",
+      "thumbhash": "GAgKDQJhZn91SGlXiHeZl2B6Bno4",
+      "notes": [
+        "Interesting, difficult downstairs corner route. Some people have trouble with the start (which you approach from the far left, leaning back), but I find it okay, maybe due to height. The hold on the top-right of the big volume—the penultimate hold, in fact—is ",
+        {
+          "type": "em",
+          "text": "really bad"
+        },
+        " at the angles that you need. I can with some effort get to that hold and get my feet to various positions near it (notably a frog-like pose with knees splayed outward), but the finish hold feels so far away!",
+        {
+          "type": "p"
+        },
+        "What ended up working for me was to try to stand up some and actually brace against the top corner wall. You can do this somewhat with your left hand to stabilize, and then stand more and use more of your shoulder. Eventually I was able to get high enough and rightward enough that I could reach to the finish hold and use that grip to get the rest of the way (it's not great, but it's enough). I would love to see other people's approaches!"
+      ]
+    },
+    {
+      "id": 176,
+      "category": "blue",
+      "indexInCategory": 30,
+      "date": "2023-12-11",
+      "location": "poplar",
+      "thumbhash": "GAgODQJ4eI+Ih4d4d4d4d7efr/v7",
+      "notes": [
+        "Look, I didn't think that this one looked ",
+        {
+          "type": "em",
+          "text": "easy"
+        },
+        ", but what surprised me was the ",
+        {
+          "type": "em",
+          "text": "ways"
+        },
+        " in which it was difficult. I expected getting over the mantle/lip to be basically the crux, and that did take me a few tries, but it was even harder to get \"around\" the cone, and also hard to actually top out even once I had both hands solidly above the top edge. Other people seemed to have trouble with these, too.",
+        {
+          "type": "p"
+        },
+        "I think what worked for me with the cone was getting just enough height by pressing into it that I could reach up with my left hand to grab the top edge, which is surprisingly workable here. (As always, sitting on the start hold is a trap! You cannot get back up!) Then you can work rightward without too much trouble—both the little chips above the edge are on. I thought I would just be able to \"walrus up\", but it feels really scary with how big of a vertical gap there is. Eventually, I mustered the courage to lift my left toe up to the top-right face of the middle volume, which gave me enough purchase to finish.",
+        {
+          "type": "p"
+        },
+        "Was part of a train of five people sending this in a row, and I think that might have been a first-clear for each of us, so that felt cool! :-)"
+      ]
+    },
+    {
+      "id": 177,
+      "category": "blue",
+      "indexInCategory": 31,
+      "date": "2023-12-12",
+      "location": "poplar",
+      "thumbhash": "WQgGFQKnmm91yGmHmnh2h7R6b4v3",
+      "notes": [
+        "Now here's a project that I can be proud of! I think I first tried this maybe a month ago; I made progress on the start but couldn't quite land the last move. Then I didn't touch it for a while, until I spent a good while on it on Saturday and Monday, getting decently consistent at the last move but really struggling with the start… then, I came back on Tuesday, put it all together, and flashed it!",
+        {
+          "type": "p"
+        },
+        "The start is really hard for me. I do it by leaning back with both hands on the start hold and my right foot on the lower-right volume, then grabbing right, pointing my left toe into the lower hold, dropping my right foot, and quickly matching left to right. It's such an exerting sequence! I can barely do it. A strong climber who's shorter than me starts the same way but, after grabbing right, really leans into his right foot, ",
+        {
+          "type": "em",
+          "text": "wedges"
+        },
+        " his toe at the junction of the lower and middle volumes, and fully pivots up-right to match hands, getting his center of mass high enough that he could easily grab the arête if he wanted. It looks really pretty, but I don't think it works for my body too well!",
+        {
+          "type": "p"
+        },
+        "Traversing left takes strength and care, as the holds' angles aren't great, but it doesn't have any surprises. The very last grab is what feels scary. At that point, I have my left hand on the penult and my right hand on the antepenult, and finish by grabbing right hand across to the finish hold, swinging only ",
+        {
+          "type": "em",
+          "text": "moderately"
+        },
+        " wildly, matching left, and sticking it. That's actually easier than it sounds, I think; now that I know I can do it, I don't have trouble with it. So that's nice.",
+        {
+          "type": "p"
+        },
+        "I don't know if there's something in particular that clicked for me to be able to do the start. I don't feel like I intentionally changed something. Maybe it's fresh energy; maybe it's just intuitive practice."
+      ]
     }
   ]
 }
