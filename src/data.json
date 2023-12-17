@@ -62,7 +62,21 @@
       "id": "2023q3",
       "name": "Fall 2023",
       "fromRouteId": 131,
-      "description": []
+      "description": [
+        "Out of town for the back half of September. Boulderfest was November 4th (and this journal does not include routes that I first climbed during the competition); I placed in the top one-sixth of the intermediate division, which I'm proud of. Especially proud of ",
+        {
+          "type": "route",
+          "id": 164,
+          "text": "Pink #4"
+        },
+        " and ",
+        {
+          "type": "route",
+          "id": 162,
+          "text": "Blue #25"
+        },
+        " this season."
+      ]
     },
     {
       "id": "2023q4",
