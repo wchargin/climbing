@@ -2650,17 +2650,184 @@
         {
           "type": "p"
         },
-        "Of the sequence of three crimps in the middle, the third (leftmost) crimp is really quite unaccommodating. I've seen a few different approaches to that middle section. I do it by moving from both hands on the right two crimps to just grabbing right to the pinch above, skipping the uncooperative crimp. I see other people really move and shift their weight left so that they can use that third crimp. Once I get to the pinch, I feel like grabbing left to the top crimp (which is a solid hold) is pretty hit-or-miss for me; sometimes it feels like maybe my feet are wrong, but I don't know exactly what the difference is. I know it feels good to me to have my left foot on the hold just below-left of the start hold and my right foot kind of slanted on the volume.",
+        "Of the sequence of ",
+        {
+          "type": "hold",
+          "id": "6",
+          "text": "three"
+        },
+        " ",
+        {
+          "type": "hold",
+          "id": "7",
+          "text": "little"
+        },
+        " ",
+        {
+          "type": "hold",
+          "id": "8",
+          "text": "crimps"
+        },
+        " in the middle, the ",
+        {
+          "type": "hold",
+          "id": "8",
+          "text": "third (leftmost) crimp"
+        },
+        " is really quite unaccommodating. I've seen a few different approaches to that middle section. I do it by moving from both hands on the right ",
+        {
+          "type": "hold",
+          "id": "6",
+          "text": "two"
+        },
+        " ",
+        {
+          "type": "hold",
+          "id": "7",
+          "text": "crimps"
+        },
+        " to just grabbing right to ",
+        {
+          "type": "hold",
+          "id": "9",
+          "text": "the pinch above"
+        },
+        ", skipping the ",
+        {
+          "type": "hold",
+          "id": "8",
+          "text": "uncooperative crimp"
+        },
+        "entirely. I see other people really move and shift their weight left so that they can use that ",
+        {
+          "type": "hold",
+          "id": "8",
+          "text": "third crimp"
+        },
+        ". Once I get to ",
+        {
+          "type": "hold",
+          "id": "9",
+          "text": "the pinch"
+        },
+        ", I feel like grabbing left to the ",
+        {
+          "type": "hold",
+          "id": "10",
+          "text": "top crimp"
+        },
+        " (which is a solid hold) is pretty hit-or-miss for me; sometimes it feels like maybe my feet are wrong, but I don't know exactly what the difference is. I know it feels good to me to have my left foot on ",
+        {
+          "type": "hold",
+          "id": "4",
+          "text": "the hold just below-left of the start hold"
+        },
+        " and my right foot kind of slanted on ",
+        {
+          "type": "hold",
+          "id": "v-start",
+          "text": "the start volume"
+        },
+        ".",
         {
           "type": "p"
         },
-        "For the end, starting from a position with left hand on the top crimp and right hand on the pinch, grab ",
+        "For the end, starting from a position with left hand on ",
+        {
+          "type": "hold",
+          "id": "10",
+          "text": "the top crimp"
+        },
+        " and right hand on ",
+        {
+          "type": "hold",
+          "id": "9",
+          "text": "the pinch"
+        },
+        ", grab ",
         {
           "type": "em",
           "text": "right"
         },
-        " to finish. I started trying to go left first, and a few times was able to establish left hand on the finish hold and even touch the finish hold with my right hand, but it's not enough support. The first time that I tried going right first, I got it!"
-      ]
+        " to finish. I started trying to go left first, and a few times was able to establish left hand on ",
+        {
+          "type": "hold",
+          "id": "11",
+          "text": "the finish hold"
+        },
+        " and even touch the finish hold with my right hand, but it's not enough support. The first time that I tried going right first, I got it!"
+      ],
+      "annotations": {
+        "viewBox": [3024, 4032],
+        "holds": [
+          {
+            "id": "1",
+            "box": [1881, 3222, 180, 172],
+            "color": "h-blu-400"
+          },
+          {
+            "id": "2",
+            "box": [777, 2958, 204, 210],
+            "color": "h-blu-400"
+          },
+          {
+            "id": "3",
+            "box": [1311, 2724, 180, 192],
+            "color": "h-blu-400"
+          },
+          {
+            "id": "5",
+            "box": [1245, 2247, 268, 232],
+            "color": "h-blu-400",
+            "maskOut": ["4"],
+            "tags": [[1, "v", 0.5, 1]]
+          },
+          {
+            "id": "4",
+            "box": [1170, 2359, 153, 159],
+            "color": "h-blu-400"
+          },
+          {
+            "id": "v-start",
+            "box": [1431, 2094, 492, 522],
+            "style": "dashed",
+            "color": "h-blu-400",
+            "maskOut": ["5", "6"],
+            "tags": [[1, "v", 0.25, 1]]
+          },
+          {
+            "id": "6",
+            "box": [1365, 1941, 180, 180],
+            "color": "h-blu-400"
+          },
+          {
+            "id": "7",
+            "box": [1009, 1765, 180, 180],
+            "color": "h-blu-400"
+          },
+          {
+            "id": "8",
+            "box": [804, 1629, 180, 180],
+            "color": "h-blu-400"
+          },
+          {
+            "id": "9",
+            "box": [885, 1203, 282, 354],
+            "color": "h-blu-400"
+          },
+          {
+            "id": "10",
+            "box": [645, 1035, 180, 180],
+            "color": "h-blu-400"
+          },
+          {
+            "id": "11",
+            "box": [705, 555, 378, 300],
+            "color": "h-blu-400",
+            "tags": [[1, "v", 0.4, 1]]
+          }
+        ]
+      }
     }
   ]
 }
