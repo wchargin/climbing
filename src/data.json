@@ -2617,6 +2617,50 @@
       "notes": [
         "I had tried this maybe a week ago and gotten really stuck on the start. The polyhedral volume-looking things to the right of the start hold are, according to the consensus of folks with standard color vision, decidedly purple and not volumes, but they look close enough to volumes to me that I was brain-stuck on trying to go up in that general direction. But then I saw someone doing it by using the fun hexagonal volumes to the left, and a few days later I tried that approach and was able to clear it on the first such try. It's not easy, and the grips are not accommodating (very slopey), but I enjoyed it!"
       ]
+    },
+    {
+      "id": 193,
+      "category": "black",
+      "indexInCategory": 143,
+      "date": "2024-01-31",
+      "location": "poplar",
+      "thumbhash": "FggSDQJYh392eIdoh3d4d3VfzfXL",
+      "notes": [
+        "The end is quite the swing; a friend says that they've seen \"99% of people\" do it that way."
+      ]
+    },
+    {
+      "id": 194,
+      "category": "black",
+      "indexInCategory": 144,
+      "date": "2024-02-04",
+      "location": "poplar",
+      "thumbhash": "",
+      "notes": []
+    },
+    {
+      "id": 195,
+      "category": "blue",
+      "indexInCategory": 35,
+      "date": "2024-02-14",
+      "location": "poplar",
+      "thumbhash": "GegJDQDDiIuJCGd3d4aYd/U+lOzz",
+      "notes": [
+        "Quite proud of this project! Started it with a couple of friends immediately after it was set—we saw the cones get removed—and my friend was the first person to clear it! Not a flash, but maybe six tries or so for them. I worked on it for two weeks over maybe four visits. It takes a lot of crimpy strength so I only get a limited number of tries per session.",
+        {
+          "type": "p"
+        },
+        "Of the sequence of three crimps in the middle, the third (leftmost) crimp is really quite unaccommodating. I've seen a few different approaches to that middle section. I do it by moving from both hands on the right two crimps to just grabbing right to the pinch above, skipping the uncooperative crimp. I see other people really move and shift their weight left so that they can use that third crimp. Once I get to the pinch, I feel like grabbing left to the top crimp (which is a solid hold) is pretty hit-or-miss for me; sometimes it feels like maybe my feet are wrong, but I don't know exactly what the difference is. I know it feels good to me to have my left foot on the hold just below-left of the start hold and my right foot kind of slanted on the volume.",
+        {
+          "type": "p"
+        },
+        "For the end, starting from a position with left hand on the top crimp and right hand on the pinch, grab ",
+        {
+          "type": "em",
+          "text": "right"
+        },
+        " to finish. I started trying to go left first, and a few times was able to establish left hand on the finish hold and even touch the finish hold with my right hand, but it's not enough support. The first time that I tried going right first, I got it!"
+      ]
     }
   ]
 }
