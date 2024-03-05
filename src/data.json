@@ -82,6 +82,26 @@
       "id": "2023q4",
       "name": "Winter 2023–2024",
       "fromRouteId": 169,
+      "description": [
+        "Climbing a lot less these few months, partially due to lower overall energy and partly due to increased yoga and skating. (Only 9, 8, and 6 sessions per month respectively.) No new pinks, but quite proud of ",
+        {
+          "type": "route",
+          "id": 195,
+          "text": "Blue #31"
+        },
+        " and ",
+        {
+          "type": "route",
+          "id": 195,
+          "text": "Blue #35"
+        },
+        " this season nonetheless!"
+      ]
+    },
+    {
+      "id": "2024q1",
+      "name": "Spring 2024",
+      "fromRouteId": 201,
       "description": []
     }
   ],
