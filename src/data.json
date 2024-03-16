@@ -1,9 +1,39 @@
 {
   "seasons": [
     {
+      "id": "2021q3",
+      "name": "Summer and Fall 2021",
+      "fromRouteId": 4,
+      "description": [
+        "Highlights: first black, and started climbing! My first three black clears I actually don't have pictures of; there were two in August and one on September 20."
+      ]
+    },
+    {
+      "id": "2021q4",
+      "name": "Winter 2021–2022",
+      "fromRouteId": 8,
+      "description": [
+        "Highlights: ",
+        {
+          "type": "route",
+          "id": 12,
+          "text": "first blue"
+        },
+        "! Really only December; I went five times in January (but no new blacks) and not at all in Feburary (out of town almost the whole month)."
+      ]
+    },
+    {
+      "id": "2022q1",
+      "name": "Spring 2022",
+      "fromRouteId": 17,
+      "description": [
+        "(See description of Summer 2022 for explanation of the Vital red routes.)"
+      ]
+    },
+    {
       "id": "2022q2",
       "name": "Summer 2022",
-      "fromRouteId": 25,
+      "fromRouteId": 28,
       "description": [
         "Was in New York for most of June, visiting Vital Brooklyn every other day or so and climbing a fair proportion of those days. \"Reds\" are V4–V5; \"oranges\" are V2–V3. I wish there were more overlap; routes and grading seem more interesting and inviting at SBP. Starting to get more blues: ",
         {
@@ -140,6 +170,259 @@
     }
   ],
   "routes": [
+    {
+      "id": 4,
+      "category": "black",
+      "indexInCategory": 4,
+      "date": "2021-11-10",
+      "location": "poplar",
+      "thumbhash": "YugFBQI8aoZnSFk3h2B4WRr0lN9s",
+      "notes": [
+        "Upstairs, north room, south wall. Great grips at the start, requiring a pivot; decent holds throughout. Can do solidly without height advantage."
+      ]
+    },
+    {
+      "id": 5,
+      "category": "black",
+      "indexInCategory": 5,
+      "date": "2021-11-15",
+      "location": "poplar",
+      "thumbhash": "HRgKDQJXeH+HiIiXh3iIh/xL1L9U",
+      "notes": [
+        "Upstairs, north room, northwest corner. Cleared this on the second try, which happened to be the last day that it was up."
+      ]
+    },
+    {
+      "id": 6,
+      "category": "black",
+      "indexInCategory": 6,
+      "date": "2021-11-22",
+      "location": "poplar",
+      "thumbhash": "HQgODQKIdp93d4iId3hnh4qaXwvo",
+      "notes": [
+        "Upstairs, north room, southern floating boulder, eastern face. First try, then failed it another day, then figured it out again. The trick is to lay back to the right when climbing up the long, thin hold on the giant purple volume."
+      ]
+    },
+    {
+      "id": 7,
+      "category": "black",
+      "indexInCategory": 7,
+      "date": "2021-11-22",
+      "location": "poplar",
+      "thumbhash": "XwgODQJmhn+HZ2hYeXaIdzKvaPmH",
+      "notes": [
+        "Upstairs, north room, northern floating boulder, eastern face. First try, and honestly pretty easy (never failed, actually; cleared on three separate days). First cleared this on the same day as #6. Getting the right balance at the very end to top out is a nice exercise."
+      ]
+    },
+    {
+      "id": 8,
+      "category": "black",
+      "indexInCategory": 8,
+      "date": "2021-12-01",
+      "location": "poplar",
+      "thumbhash": "G/gRDQJ3eY+Hd4h4iIaIiLJvBtnV",
+      "notes": [
+        "Downstairs, entry room, northwest corner. First got this on a Wednesday a week after it was being installed, so hopefully I'll have some time to refine it (failed twice on Monday, but got close the second time, with one hand on the finish hold). Wants a heel hook and knee grab around the first big boulder, then maneuver to hold the lower mid-high boulder with right hand and the higher one with right hand, so that you can pull into the wall and move right hand over to the tiny hold below the finish."
+      ]
+    },
+    {
+      "id": 9,
+      "category": "black",
+      "indexInCategory": 9,
+      "date": "2021-12-01",
+      "location": "poplar",
+      "thumbhash": "HvgNBQCJiIqJCId3d4aXZ56f+/ip",
+      "notes": [
+        "Downstairs, secret room, southern wall. Cleared on second attempt (ever; first of the day). First clear got some value out of the bolt hole on the black hold right above the vertical white hold, which I'd like to not have to do. This route might not be here for much longer, though. Cleared again on 2021-12-03, totally legitimately."
+      ]
+    },
+    {
+      "id": 10,
+      "category": "black",
+      "indexInCategory": 10,
+      "date": "2021-12-08",
+      "location": "poplar",
+      "thumbhash": "GggGDQR1Z193N3eYm3R5hyCvqPiH",
+      "notes": [
+        "Upstairs, north room, northern floating boulder, eastern face. Second try. Not too bad; angling at the start is important."
+      ]
+    },
+    {
+      "id": 11,
+      "category": "black",
+      "indexInCategory": 11,
+      "date": "2021-12-13",
+      "location": "poplar",
+      "thumbhash": "GwgKBQSNaY+JiHZ4hneXZ/7K+YmJ",
+      "notes": [
+        "Photo 1/2 (TODO: get the other photo up). Upstairs, starts at exit for between southern and northern rooms and curves around into northern room. Third hold is a bit tricky. The rest wasn't too bad."
+      ]
+    },
+    {
+      "id": 12,
+      "category": "blue",
+      "indexInCategory": 1,
+      "date": "2021-12-17",
+      "location": "poplar",
+      "thumbhash": "XQgKHQTFeJ+GZ3h3mYeJp69d+sel",
+      "notes": [
+        "Upstairs, southern room, floating boulder, southern/southwestern face. First blue! Stay close to the wall and match hands a lot. You can do it. This was added in the last two days, so I look forward to mastering it.",
+        {
+          "type": "p"
+        },
+        "Cleared again on 2021-12-20, after a few failures, including getting to the top hold and then failing to top out. Seems to be helpful to stand up on the tiny foothold ",
+        {
+          "type": "em",
+          "text": "before"
+        },
+        " grabbing the hold above it.",
+        {
+          "type": "p"
+        },
+        "This route definitely got more difficult over time as the holds wore down, especially on the initial tiny right foothold."
+      ]
+    },
+    {
+      "id": 13,
+      "category": "black",
+      "indexInCategory": 12,
+      "date": "2021-12-17",
+      "location": "poplar",
+      "thumbhash": "GggODQKId494p4eYh3iId5Zfefmm",
+      "notes": [
+        "Upstairs, northern room, eastern wall. It helps to know that the highest hold is slotted, which you can't see from right below. This one is fun, moderately strength-y, and slightly contortionate. I move from the start hold to the left hand's next hold with a bit of reach."
+      ]
+    },
+    {
+      "id": 14,
+      "category": "black",
+      "indexInCategory": 13,
+      "date": "2021-12-22",
+      "location": "poplar",
+      "thumbhash": "XhgKDQJnaH92V2eHh3V2ZruOcPk3",
+      "notes": [
+        "Upstairs, southern room, northern face. Had tried before and not managed to start. The balance at the start is very tricky; hard to keep from just falling backward. Got beta from someone who just completed it, and started with left foot on hold and right foot kind of pushing off the ground, which I'm not super pleased with (prefer to get off the ground in a stable position). Also reached a bit at the end. Legal clear, though; can work on improving."
+      ]
+    },
+    {
+      "id": 15,
+      "category": "black",
+      "indexInCategory": 14,
+      "date": "2021-12-24",
+      "location": "poplar",
+      "thumbhash": "HvgNDQJ4eImJCIhnd4eXePKrxq84",
+      "notes": [
+        "Downstairs, secret room, southern wall. Route is new; cleared on sight. Not too bad. Kind of a spicy barndoor/catch in the middle."
+      ]
+    },
+    {
+      "id": 16,
+      "category": "black",
+      "indexInCategory": 15,
+      "date": "2021-12-24",
+      "location": "poplar",
+      "thumbhash": "G/gFBQITeZuIB6iXiYWXVjMvuHz6",
+      "notes": [
+        "Downstairs, secret room, western wall. Route is new; cleared on second try. Penultimate hold is bad and awkwardly angled; first clear used some thumb-in-bolt-hole advantage. The rest is fine. Can probably polish this up."
+      ]
+    },
+    {
+      "id": 17,
+      "category": "black",
+      "indexInCategory": 16,
+      "date": "2022-04-07",
+      "location": "poplar",
+      "thumbhash": "Y/gJDQIUZW9oZ3mHiJRXaO9XwfpY",
+      "notes": [
+        "Upstairs, southern room, northern wall. (Note start tag at left.) Second day back since January/February/March, so all the blacks are new. Not too bad here. A bit of a reach at the mid-end."
+      ]
+    },
+    {
+      "id": 18,
+      "category": "black",
+      "indexInCategory": 17,
+      "date": "2022-04-07",
+      "location": "poplar",
+      "thumbhash": "IggKFQSGZ2+Hl1iGeYZ4d4KfWfeY",
+      "notes": [
+        "Upstairs, northern room, northern floating boulder. Note start tag on right volume; note tiny foothold on left-top volume. Good route; not easy, but I feel like I can improve. Questionable first clear at end; right foot was very close to putting weight on third-to-top big red foothold, and not sure if clear was legit."
+      ]
+    },
+    {
+      "id": 19,
+      "category": "black",
+      "indexInCategory": 18,
+      "date": "2022-04-19",
+      "location": "poplar",
+      "thumbhash": "4ucJDQJUeZ9oV3eKeGaJSZqvCdy5",
+      "notes": [
+        "Upstairs, southern room, northeastern corner. Trick is to start with right foot on foothold and left foot in crack between quarterspherical volume and wall. Cool route; don't think that I've done one quite so reliant on a crack before."
+      ]
+    },
+    {
+      "id": 20,
+      "category": "black",
+      "indexInCategory": 19,
+      "date": "2022-05-09",
+      "location": "poplar",
+      "thumbhash": "3vcJDQKJm314OHdGhWBpR1V/jvbX",
+      "notes": [
+        "Upstairs, northern room, southern face. You have the option to vault onto the start hold, but I find it easier to just jump. Cleared twice, first using the top edge to transition from the penultimate hold to the finish, then again without that aid. Honestly fairly straightforward; getting to the second hold (the big one just to the right of the start) takes a bit of careful weight balancing, but is totally doable."
+      ]
+    },
+    {
+      "id": 21,
+      "category": "black",
+      "indexInCategory": 20,
+      "date": "2022-05-18",
+      "location": "poplar",
+      "thumbhash": "3+cFDQKKZo93N2k3aJJHV/dMlP5n",
+      "notes": [
+        "Upstairs, southern room, northern face. Cool new outcroppy hold, with non-obvious characteristics: the intersection of the tall left rock with the long center rock is a great hold, and the rest of the points aren't really. Managed once entirely legitimately but with a lot of exertion and reach. Failed on 2022-05-22. Re-cleared on 2022-05-26. Good footwork seems important: remember to bring the right foot up before extending hands, and try internal rotating the left foot on the tetrahedral volume."
+      ]
+    },
+    {
+      "id": 22,
+      "category": "black",
+      "indexInCategory": 21,
+      "date": "2022-05-18",
+      "location": "poplar",
+      "thumbhash": "WQgOFQJ4eI93l3d3h3eHd3aFYOUI",
+      "notes": [
+        "Upstairs, northern room, northern floating boulder, eastern face. This was… very easy? It has no start tags. Easiest start is left hand on the big C-shaped hold and right hand on the smaller crimp hold above-left, then just move left hand across and ascend. Also re-cleared on 2022-05-22 while actually using all the holds: not much harder. Unsure why this is a black."
+      ]
+    },
+    {
+      "id": 23,
+      "category": "black",
+      "indexInCategory": 22,
+      "date": "2022-05-22",
+      "location": "poplar",
+      "thumbhash": "GwgODQKIiH93l3iXeHiHh3BrSPeV",
+      "notes": [
+        "Upstairs, northern room, eastern face. Cleared first try. All the holds are good. Hard to match in the spherical-pocket hold near the end, but the hold above that is solid."
+      ]
+    },
+    {
+      "id": 24,
+      "category": "black",
+      "indexInCategory": 23,
+      "date": "2022-05-26",
+      "location": "poplar",
+      "thumbhash": "4PcVDQJ5iH+Hd4eIh3eIeK6vzff3",
+      "notes": [
+        "Downstairs, entry room, southern face. Extremely pleased with this one. I first saw it a month or so. The ending is easy enough (probably a standard orange), but the beginning is quite tricky, to get to the first handhold to the right. (It's not a friendly hold.) I first saw this route about a month ago, and was working with a sweet stranger on the beginning. Our approach at the time was to dyno it, but you end up with a lot of momentum that's pulling you off the wall. I started to think that a more controlled movement might be more feasible, especially with my reach, and have worked on this on and off since then. Some tips: you need all your momentum to be going ",
+        {
+          "type": "em",
+          "text": "into"
+        },
+        " the wall and to the right, so point your right toe accordingly; also, rotate hips and get your right hand as close as possible before committing. Finally got the beginning and cleared the route without issue. Then, tried to capture on video; got the beginning three more times but was out of strength for the end. Hope to get this again on Saturday, if it's still here.",
+        {
+          "type": "p"
+        },
+        "Update (2022-05-28): Re-cleared twice, including on video. For the last hold, pivot your weight to the left and into the wall."
+      ]
+    },
     {
       "id": 25,
       "category": "vital-red",
