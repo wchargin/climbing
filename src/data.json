@@ -1,6 +1,24 @@
 {
   "seasons": [
     {
+      "id": "2022q2",
+      "name": "Summer 2022",
+      "fromRouteId": 37,
+      "description": []
+    },
+    {
+      "id": "2022q3",
+      "name": "Fall 2022",
+      "fromRouteId": 48,
+      "description": []
+    },
+    {
+      "id": "2022q4",
+      "name": "Winter 2022–2023",
+      "fromRouteId": 58,
+      "description": []
+    },
+    {
       "id": "2023q1",
       "name": "Spring 2023",
       "fromRouteId": 70,
@@ -106,6 +124,346 @@
     }
   ],
   "routes": [
+    {
+      "id": 37,
+      "category": "blue",
+      "indexInCategory": 2,
+      "date": "2022-07-12",
+      "location": "poplar",
+      "thumbhash": "HugJDACC+odoeX1mh1eDkEUPdg==",
+      "notes": [
+        "Ground floor, north room, southern face. Just kind of flashed this blue as my first climb of the day. Honestly feels like a standard orange to me, but I'll take it! Have re-cleared it on subsequent days, so I know that it's not a fluke."
+      ]
+    },
+    {
+      "id": 38,
+      "category": "black",
+      "indexInCategory": 24,
+      "date": "2022-07-12",
+      "location": "poplar",
+      "thumbhash": "WwgSDAKH+HiYd4h4iHeVYlD5tQ==",
+      "notes": [
+        "Ground floor, northern room, north floating boulder, east face. Note black chip on top face. Surprisingly difficult; all the angles are just bad and the holds are not very grippy. Get hands to 4L and 5R with foot on 2, then grab to 6L and 7R. Beta from a friendly stranger."
+      ]
+    },
+    {
+      "id": 39,
+      "category": "black",
+      "indexInCategory": 25,
+      "date": "2022-07-12",
+      "location": "poplar",
+      "thumbhash": "GggODASG93and3qHh4ehn1n4iA==",
+      "notes": [
+        "Ground floor, north room, northeastern face. Hold 3, on the lower face of the purple volume, is critical but difficult. Matching on top of it seems to be the way to go. Then, at the end, just go for the finish. Co-solved with a friendly stranger (same person as on the previous route, Black #24)."
+      ]
+    },
+    {
+      "id": 40,
+      "category": "black",
+      "indexInCategory": 26,
+      "date": "2022-07-16",
+      "location": "poplar",
+      "thumbhash": "GggOBALB9ph3iYd3iIhL+4v4qw==",
+      "notes": [
+        "Ground floor, south room, southeastern face. Not too much to say for this one; it was pretty much what it says on the tin."
+      ]
+    },
+    {
+      "id": 41,
+      "category": "black",
+      "indexInCategory": 27,
+      "date": "2022-07-19",
+      "location": "poplar",
+      "thumbhash": "5fcNDACI93h3iXlnmGhZn5ywzQ==",
+      "notes": [
+        "Ground floor, south room, northeastern corner. Interesting. Cleared once on the first try, fairly easily, albeit with some amount of reach, I think. Interested to try to improve on this to be more elegant and less tall."
+      ]
+    },
+    {
+      "id": 42,
+      "category": "black",
+      "indexInCategory": 28,
+      "date": "2022-07-19",
+      "location": "poplar",
+      "thumbhash": "HwgKDAKa+XY4dmg4dmcwbUrztw==",
+      "notes": [
+        "Ground floor, north room, southeastern corner. The start is really the only tricky part here; leaning right and pushing left against the start hold with arms near-locked works well. The semicylindrical volume is lovely."
+      ]
+    },
+    {
+      "id": 43,
+      "category": "blue",
+      "indexInCategory": 3,
+      "date": "2022-07-22",
+      "location": "poplar",
+      "thumbhash": "GggODAKY+HiHd4iIiHePHIT2wQ==",
+      "notes": [
+        "Upstairs, south room, southeast corner. Fantastic route; super fun and incremental progress. Good chats with a friendly stranger whom I sadly haven't seen before or since. Tips: right foot immediately to hold, before grabbing first right-hand hold; right foot heel-and-toe hook on holds 4 and 5; dyno to pocket, preferably with two fingers; (?): right foot to hold 6 (not the sloper)."
+      ]
+    },
+    {
+      "id": 44,
+      "category": "black",
+      "indexInCategory": 29,
+      "date": "2022-08-04",
+      "location": "poplar",
+      "thumbhash": "IQgGDQIheY+HKJaWhmGZNnhvjfjW",
+      "notes": [
+        "Ground floor, south room, east face. Don't miss the foothold that's the second-lowest and farthest right hold: it helps."
+      ]
+    },
+    {
+      "id": 45,
+      "category": "black",
+      "indexInCategory": 30,
+      "date": "2022-08-13",
+      "location": "poplar",
+      "thumbhash": "HPgJBQKXiH+HaHhoiHaHaUd/FfhF",
+      "notes": []
+    },
+    {
+      "id": 46,
+      "category": "black",
+      "indexInCategory": 31,
+      "date": "2022-08-23",
+      "location": "poplar",
+      "thumbhash": "H/gVDQCJeJ+HOHh3iIaIeHWf+zH7",
+      "notes": []
+    },
+    {
+      "id": 47,
+      "category": "black",
+      "indexInCategory": 32,
+      "date": "2022-08-28",
+      "location": "poplar",
+      "thumbhash": "2PcFFQLkp/1qyIlopGZodrdvuPyG",
+      "notes": []
+    },
+    {
+      "id": 48,
+      "category": "black",
+      "indexInCategory": 33,
+      "date": "2022-09-01",
+      "location": "poplar",
+      "thumbhash": "WhgGHQR+W697OZWHeaaId6+J9p1o",
+      "notes": [
+        "Super interesting. Push into left volume with fingertips. Get feet on top of big start handhold. Grab wall (arête). Then just kind of execute. Tricky. Requires reach at end to final hold. Want to refine. Tiny hold on left side of left volume is purple, not black."
+      ]
+    },
+    {
+      "id": 49,
+      "category": "black",
+      "indexInCategory": 34,
+      "date": "2022-09-01",
+      "location": "poplar",
+      "thumbhash": "2OcJDQJjmH91yViHiZaIiDBaWIBm",
+      "notes": [
+        "Fun corner with only two black holds, both visible here! The trick is to rotate your hand and press back on the higher black hold."
+      ]
+    },
+    {
+      "id": 50,
+      "category": "blue",
+      "indexInCategory": 4,
+      "date": "2022-09-29",
+      "location": "poplar",
+      "thumbhash": "3ucNDQS4iW92t2anmXeIaGeQaAeJ",
+      "notes": [
+        "At SBP Fremont. Suggested by a friend. Cleared first try, I think."
+      ]
+    },
+    {
+      "id": 51,
+      "category": "black",
+      "indexInCategory": 35,
+      "date": "2022-09-29",
+      "location": "poplar",
+      "thumbhash": "GggKFQK4hb14CGhZaHNph1+t2On6",
+      "notes": ["At SBP Fremont. Suggested by a friend."]
+    },
+    {
+      "id": 52,
+      "category": "black",
+      "indexInCategory": 36,
+      "date": "2022-10-17",
+      "location": "poplar",
+      "thumbhash": "GwgKDQKTeG+Il2iIaIZ4eFR/afZ4",
+      "notes": ["Fun with the giant spike volume."]
+    },
+    {
+      "id": 53,
+      "category": "black",
+      "indexInCategory": 37,
+      "date": "2022-10-17",
+      "location": "poplar",
+      "thumbhash": "GwgODQKIiJ+Hl3iYd4mXh4d/h/dY",
+      "notes": [
+        "Straightforward but somewhat tricky balance/weight manipulation. The volume around the top edge ",
+        {
+          "type": "em",
+          "text": "is"
+        },
+        " on (panicked a bit)."
+      ]
+    },
+    {
+      "id": 54,
+      "category": "black",
+      "indexInCategory": 38,
+      "date": "2022-11-01",
+      "location": "poplar",
+      "thumbhash": "XRgODQKGeG93SHd3h3VYd2+T/TXZ",
+      "notes": [
+        "Grab the top-right tetrahedral volume with your hand spanning the black hold and the bottom surface. Fun; feels like good technique practice."
+      ]
+    },
+    {
+      "id": 55,
+      "category": "black",
+      "indexInCategory": 39,
+      "date": "2022-11-01",
+      "location": "poplar",
+      "thumbhash": "WhgKDQKSho93mHeXh3d4eD+Z+JaX",
+      "notes": [
+        "Volumes only. I looked at this and thought \"this doesn't look too difficult\". It's not, really. If anything, I think that the crux is standing up at the very end; it doesn't feel super stable."
+      ]
+    },
+    {
+      "id": 56,
+      "category": "black",
+      "indexInCategory": 40,
+      "date": "2022-11-01",
+      "location": "poplar",
+      "thumbhash": "XggGFQKBiKmJJ5c4qXB5J7x/SPa2",
+      "notes": ["Cool weight transfer."]
+    },
+    {
+      "id": 57,
+      "category": "black",
+      "indexInCategory": 41,
+      "date": "2022-11-12",
+      "location": "poplar",
+      "thumbhash": "HwgKDQKAeU+JR4eneYKYaHlfaffG",
+      "notes": []
+    },
+    {
+      "id": 58,
+      "category": "black",
+      "indexInCategory": 42,
+      "date": "2022-12-07",
+      "location": "poplar",
+      "thumbhash": "HugNDQJ6h4+IOIZ4d3aIZ6mfd/m6",
+      "notes": []
+    },
+    {
+      "id": 59,
+      "category": "black",
+      "indexInCategory": 43,
+      "date": "2022-12-07",
+      "location": "poplar",
+      "thumbhash": "WegJDQBrdZ94V4eId3h3eF6PpL/I",
+      "notes": []
+    },
+    {
+      "id": 60,
+      "category": "blue",
+      "indexInCategory": 5,
+      "date": "2022-12-13",
+      "location": "poplar",
+      "thumbhash": "XBgOFQJ7iJ93eHiHh3eId5mP+Pln",
+      "notes": [
+        "Blue cleared! on the first day of attempts after maybe 10 minutes of tries. Start is hardest; I'm using a three-point dyno into matched grab with barndoor. (Cleared again next time I was hear with a static start. Needs more flexibility but may be easier.) Made that once, then failed the last hold and fell. Next time I made it, I cleared. The penult hold is strong but demanding. Left toe pointing into volume is strong. Get close to wall at the end!"
+      ]
+    },
+    {
+      "id": 61,
+      "category": "black",
+      "indexInCategory": 44,
+      "date": "2022-12-23",
+      "location": "poplar",
+      "thumbhash": "XxgKDQSIeX94eGpnaXV3Z+B/B8qH",
+      "notes": []
+    },
+    {
+      "id": 62,
+      "category": "black",
+      "indexInCategory": 45,
+      "date": "2022-12-23",
+      "location": "poplar",
+      "thumbhash": "GwgKDQKIaH+Il4Z4d3dod6j8vrq/",
+      "notes": []
+    },
+    {
+      "id": 63,
+      "category": "black",
+      "indexInCategory": 46,
+      "date": "2022-12-24",
+      "location": "poplar",
+      "thumbhash": "XAgKDQK0Zp94l3iYiIh4ePR9Fe+J",
+      "notes": ["Establishing can take a bit of balance."]
+    },
+    {
+      "id": 64,
+      "category": "black",
+      "indexInCategory": 47,
+      "date": "2022-12-24",
+      "location": "poplar",
+      "thumbhash": "WBgSDQKIiH+ImHeId3h3d3Z9j8j3",
+      "notes": [
+        "Actually may be a great demo for balance and weight redistribution."
+      ]
+    },
+    {
+      "id": 65,
+      "category": "black",
+      "indexInCategory": 48,
+      "date": "2022-12-24",
+      "location": "poplar",
+      "thumbhash": "GggODQKJeI+ImHeIh3iIh3qfufm5",
+      "notes": [
+        "I remember really liking this one; the hex-frustum is quite fun."
+      ]
+    },
+    {
+      "id": 66,
+      "category": "black",
+      "indexInCategory": 49,
+      "date": "2023-01-25",
+      "location": "poplar",
+      "thumbhash": "VxgKDQKdh49liGaXiIiHiN/rvb/b",
+      "notes": []
+    },
+    {
+      "id": 67,
+      "category": "black",
+      "indexInCategory": 50,
+      "date": "2023-01-25",
+      "location": "poplar",
+      "thumbhash": "HPgNBQKKiKh5CIeId4eHd5989Yxm",
+      "notes": [
+        "Kinda just jump-and-shoot-man it. Feel some core strength around the transition from the start hold to the end hold (heh)."
+      ]
+    },
+    {
+      "id": 68,
+      "category": "black",
+      "indexInCategory": 51,
+      "date": "2023-02-03",
+      "location": "poplar",
+      "thumbhash": "HPgNBQKPiI14V4Z4d4d3d49kqAh4",
+      "notes": []
+    },
+    {
+      "id": 69,
+      "category": "pink",
+      "indexInCategory": 1,
+      "date": "2023-02-15",
+      "location": "poplar",
+      "thumbhash": "GwgODQKGd394Z4iHiHZ4d1l7b3T2",
+      "notes": [
+        "First pink! Definitely a balance-oriented, mountain-goat kind of route. The very last move is the hardest. Isolated the end twice successfully before I was able to make it in a full attempt. Multiple successful clears now, totally stable but just barely touching the end with both hands."
+      ]
+    },
     {
       "id": 70,
       "category": "blue",
