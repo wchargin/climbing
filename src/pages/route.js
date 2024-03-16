@@ -5,14 +5,10 @@ import FadingImage from "../fadingImage";
 import Holds, { useHoldsState } from "../holds";
 import { imageUrl } from "../img";
 import Link from "../link";
+import { CATEGORIES, LOCATION_NAMES } from "../metadata";
 import useThumbhash from "../thumbhash";
 
 import { useStore } from "../store/context";
-
-const LOCATION_NAMES = {
-  poplar: "SBP Poplar",
-  fremont: "SBP Fremont",
-};
 
 function capitalize(s) {
   return s.replace(/\b./g, (c) => c.toUpperCase());
@@ -78,7 +74,7 @@ function Route({ id }) {
       <div className="mt-12 md:mt-0 tall:mt-12 w-full h-full lg:max-w-[600px] px-6 lg:px-0">
         <div className="flex items-center">
           <h1 className="flex-grow">
-            {capitalize(route.category)} #{route.indexInCategory}
+            {CATEGORIES[route.category].title} #{route.indexInCategory}
           </h1>
           <NavAdjacentLink
             id={prevInCategory}

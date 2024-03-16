@@ -113,6 +113,7 @@ function Edit() {
             <option>black</option>
             <option>blue</option>
             <option>pink</option>
+            <option>vital-red</option>
           </select>
         </Cell>
         <Cell label="index">
@@ -147,6 +148,7 @@ function Edit() {
           >
             <option>poplar</option>
             <option>fremont</option>
+            <option>vital-brooklyn</option>
           </select>
         </Cell>
         <Cell label="thumbhash">

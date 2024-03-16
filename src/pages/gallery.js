@@ -4,6 +4,7 @@ import classNames from "../classNames";
 import FadingImage from "../fadingImage";
 import { gcsUrl, imageUrl } from "../img";
 import Link from "../link";
+import { CATEGORIES, LOCATION_NAMES } from "../metadata";
 import { useTelescroll } from "../telescroll";
 import useThumbhash from "../thumbhash";
 
@@ -12,7 +13,7 @@ import { useStore } from "../store/context";
 function Gallery() {
   const { store } = useStore();
   const [categoriesVisible, setCategoriesVisible] = useState(() =>
-    Object.fromEntries(Object.keys(CATEGORY_COLORS).map((k) => [k, true])),
+    Object.fromEntries(Object.keys(CATEGORIES).map((k) => [k, true])),
   );
 
   const routesDesc = Array.from(store.routeHeaders.values()).sort(
@@ -103,7 +104,7 @@ function Season({ season, routes, categoriesVisible, setCategoriesVisible }) {
         setOnlyVisible={() =>
           setCategoriesVisible((o) => ({
             ...Object.fromEntries(
-              Object.keys(CATEGORY_COLORS).map((k) => [k, false]),
+              Object.keys(CATEGORIES).map((k) => [k, false]),
             ),
             [category]: true,
           }))
@@ -161,7 +162,7 @@ function CategoryCountChip({
   setVisible,
   setOnlyVisible,
 }) {
-  const color = CATEGORY_COLORS[category];
+  const color = CATEGORIES[category];
   return (
     <button
       key={category}
@@ -184,7 +185,7 @@ function CategoryCountChip({
         )}
         style={{ borderColor: color.hex }}
       >
-        {count} {category}
+        {count} {CATEGORIES[category].name}
       </span>
     </button>
   );
@@ -213,25 +214,13 @@ function SeasonDescription({ description, className }) {
   return <p className={className}>{...p}</p>;
 }
 
-const CATEGORY_COLORS = {
-  black: { hex: "#111111", dark: true },
-  blue: { hex: "#82a5d6", dark: false },
-  pink: { hex: "#f0b5ad", dark: false },
-};
-const LOCATION_NAMES = {
-  poplar: "SBP Poplar",
-  fremont: "SBP Fremont",
-};
-
 function Route({ route, visible }) {
   const { provideScroll } = useTelescroll();
 
-  const title = `${route.category.replace(/\b./g, (c) => c.toUpperCase())} #${
-    route.indexInCategory
-  }`;
+  const title = `${CATEGORIES[route.category].title} #${route.indexInCategory}`;
   const location = LOCATION_NAMES[route.location] ?? null;
 
-  const categoryColor = CATEGORY_COLORS[route.category] ?? null;
+  const categoryColor = CATEGORIES[route.category] ?? null;
   const border = categoryColor.dark ? "border-brand-500" : "border-transparent";
 
   const thumbhash = useThumbhash(route.thumbhash);

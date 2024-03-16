@@ -3,6 +3,7 @@ import Gallery from "./pages/gallery";
 import Route from "./pages/route";
 
 import { imageUrl } from "./img";
+import { CATEGORIES } from "./metadata";
 
 const ROUTE_BY_ID = /^\/routes\/([1-9][0-9]*)\/$/;
 const ROUTE_BY_CATEGORY_INDEX = /^\/routes\/([^/]+)\/([1-9][0-9]*)\/$/;
@@ -69,9 +70,5 @@ function matchPathInternal(path, store) {
 function titleForRoute(routeId, store) {
   const route = store.routes.get(routeId);
   if (route == null) throw new Error(`No route #${routeId}`);
-  return `${capitalize(route.category)} #${route.indexInCategory}`;
-}
-
-function capitalize(s) {
-  return s.replace(/\b./g, (c) => c.toUpperCase());
+  return `${CATEGORIES[route.category].title} #${route.indexInCategory}`;
 }
