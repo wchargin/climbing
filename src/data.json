@@ -4,13 +4,29 @@
       "id": "2022q2",
       "name": "Summer 2022",
       "fromRouteId": 25,
-      "description": []
+      "description": [
+        "Was in New York for most of June, visiting Vital Brooklyn every other day or so and climbing a fair proportion of those days. \"Reds\" are V4–V5; \"oranges\" are V2–V3. I wish there were more overlap; routes and grading seem more interesting and inviting at SBP. Starting to get more blues: ",
+        {
+          "type": "route",
+          "id": 37,
+          "text": "#37 (Blue #2)"
+        },
+        " felt confusingly easy, but ",
+        {
+          "type": "route",
+          "id": 43,
+          "text": "#43 (Blue #3)"
+        },
+        " was really fun and worth being proud of."
+      ]
     },
     {
       "id": "2022q3",
       "name": "Fall 2022",
       "fromRouteId": 48,
-      "description": []
+      "description": [
+        "Busy season for me outside of the gym: lots of work throughout September, then decompressing after that. Energy was scarce."
+      ]
     },
     {
       "id": "2022q4",
